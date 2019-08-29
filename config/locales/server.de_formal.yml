@@ -146,6 +146,7 @@ de_formal:
         one: hat die falsche Länge (sollte %{count} Zeichen lang sein)
         other: hat die falsche Länge (sollte %{count} Zeichen lang sein)
       other_than: "darf nicht %{count} sein"
+      sso_overrides_username: "Der Benutzername muss von der SSO Anbieterseite aus aktualisiert werden, da `sso_overrides_username` aktiviert ist."
     template:
       body: "Es gab Probleme mit diesen Feldern:"
       header:
@@ -154,6 +155,7 @@ de_formal:
     embed:
       load_from_remote: "Beim Laden des Beitrags ist ein Fehler aufgetreten."
     site_settings:
+      invalid_category_id: "Sie haben eine Kategorie angegeben, die nicht existiert"
       invalid_choice:
         one: "Sie haben die ungültige Auswahl %{name} getroffen"
         other: "Sie haben die ungültige Auswahl %{name} getroffen"
@@ -167,6 +169,8 @@ de_formal:
     errors:
       <<: *errors
   invite:
+    not_found: "Ihr Einladungstoken ist ungültig. Bitte <a href='%{base_url}/about'>kontaktieren Sie das Team</a>."
+    not_found_json: "Ihr Einladungstoken ist ungültig. Bitte kontaktieren Sie das Team. "
     not_found_template: |
       <p>Ihre Einladung zu <a href="%{base_url}">%{site_name}</a> wurde bereits zurückgezogen.</p>
 
@@ -217,6 +221,7 @@ de_formal:
     continue: "Diskussion fortsetzen"
     error: "Fehler bei der Einbettung"
     referer: "Referrer:"
+    error_topics: "Die 'bette Themenliste ein' Webseiten-Einstellung ist nicht aktiv"
     mismatch: "Der Referrer wurde entweder nicht mitgesendet oder entsprach keinem der folgenden Hostnamen:"
     no_hosts: "Es wurden keine Hostnamen für die Einbettung konfiguriert."
     configure: "Einbettung konfigurieren"
@@ -252,6 +257,8 @@ de_formal:
   too_many_links:
     one: "Entschuldigung, neue Benutzer können Beiträgen höchstens einen Link hinzufügen."
     other: "Entschuldigung, neue Benutzer können Beiträgen höchstens %{count} Links hinzufügen."
+  contains_blocked_word: "Ihr Beitrag enthält ein nicht erlaubtes Wort: %{word}"
+  contains_blocked_words: "Ihr Beitrag enthält mehrere Worte, die nicht erlaubt sind: %{words}"
   spamming_host: "Entschuldigung, Sie können keine Links zu diesem Webserver posten."
   user_is_suspended: "Gesperrte Benutzer dürfen keine Beiträge schreiben."
   topic_not_found: "Etwas ist schief gelaufen. Wurde das Thema eventuell geschlossen oder gelöscht, während Sie es angeschaut haben?"
@@ -325,6 +332,7 @@ de_formal:
     request_membership_pm:
       title: "Mitgliedschaftsanfrage für @%{group_name}"
       handle: "Mitgliedschaftsanfrage bearbeiten"
+    view_hidden_topic_request_reason: "Ich möchte der Gruppe '%{group_name}' beitreten, damit ich auf [this topic](%{topic_url}) zugreifen kann"
   education:
     until_posts:
       one: "%{count} Beitrag"
@@ -506,6 +514,7 @@ de_formal:
       description_incomplete: "Die Kategorie-Beschreibung muss mindestens einen Absatz enthalten."
       permission_conflict: "Jede Gruppe, die Zugriff auf eine Unterkategorie hat, muss auch Zugriff auf die übergeordnete Kategorie erhalten. Folgende Gruppen haben Zugriff auf eine der Unterkategorien, aber keinen Zugriff auf die übergeordnete Kategorie: %{group_names}."
       disallowed_topic_tags: "Dieses Thema hat Tags, die in dieser Kategorie nicht erlaubt sind: '%{tags}'"
+      disallowed_tags_generic: "Dieses Thema hat unerlaubte Tags."
     cannot_delete:
       uncategorized: "Diese Kategorie ist etwas Spezielles. Sie dient als Bereich für Themen, die keine Kategorie haben und kann nicht gelöscht werden."
       has_subcategories: "Diese Kategorie kann nicht gelöscht werden, weil sie Unterkategorien besitzt."
@@ -851,6 +860,7 @@ de_formal:
     post_edits:
       title: "Beitragsbearbeitungen"
       labels:
+        edited_at: Datum
         post: Beitrag
         editor: Bearbeiter
         author: Ersteller
@@ -1180,9 +1190,11 @@ de_formal:
     force_https_warning: "Ihre Webseite verwendet SSL, aber die `<a href='%{base_path}/admin/site_settings/category/all_results?filter=force_https'>force_https</a>` ist in den Website-Einstellungen noch nicht aktiviert."
     out_of_date_themes: "Updates sind zu folgenden Themes verfügbar:"
     unreachable_themes: "Wir konnten die folgenden Themes nicht auf Updates prüfen:"
+    watched_word_regexp_error: "Der reguläre Ausdruck für %{action} beobachtete Wörter ist ungültig. Bitte prüfen Sie Ihre <a href='%{base_path}/admin/logs/watched_words'> Einstellungen für beobachtete Wörter</a>, oder deaktivieren Sie die 'reguläre Ausdrücke beobachteter Wörter' Seiteneinstellung."
   site_settings:
     censored_words: "Wörter, die automatisch durch &#9632;&#9632;&#9632;&#9632; ersetzt werden"
     delete_old_hidden_posts: "Automatisch alle Beiträge löschen, die länger als 30 Tage versteckt bleiben."
+    default_locale: "Die Standardsprache dieser Discourse Instanz. Sie können die Texte der system-generierten Kategorien und Themen auf  <a href='%{base_path}/admin/customize/site_texts' target='_blank'>Customize / Text</a> anpassen."
     allow_user_locale: "Erlaube Benutzern, ihre eigene Oberflächensprache zu wählen"
     set_locale_from_accept_language_header: "Sprache der Benutzeroberfläche für anonyme Benutzer anhand der Spracheinstellung ihres Browsers wählen (EXPERIMENTELL, funktioniert nicht mit Caches für anonyme Benutzer)"
     support_mixed_text_direction: "Unterstütze die Vermischung von rechtsläufigem und linksläufigem Text"
@@ -1291,6 +1303,7 @@ de_formal:
     enable_markdown_typographer: "Verwende typographische Regeln, um die Lesbarkeit von Text zu erhöhen: ersetze einfache Anführungszeichen ' durch geneigte Anführungszeichen ’, (c) (tm) durch Symbole, -- durch Gedankenstriche –, usw."
     enable_markdown_linkify: "Text, der nach einem Link aussieht, automatisch als Link behandeln: www.example.com und https://example.com werden automatisch verlinkt"
     markdown_linkify_tlds: "Liste der Top-Level-Domains, die automatisch als Links behandelt werden"
+    markdown_typographer_quotation_marks: "Liste von doppelten und einzelnen Ausführungszeichen-Paaren für die Ersetzung"
     post_undo_action_window_mins: "Minuten, die ein Benutzer hat, um Aktionen auf einen Beitrag rückgängig zu machen (Gefällt mir, Meldung, usw.)."
     must_approve_users: "Alle neuen Benutzerkonten müssen von Mitarbeitern freigeschaltet werden, bevor sie Zugriff auf die Seite erhalten."
     pending_users_reminder_delay: "Die Moderatoren benachrichtigen, falls neue Benutzer mehr als so viele Stunden auf ihre Genehmigung gewartet haben. Stellen Sie -1 ein, um diese Benachrichtigungen zu deaktivieren."
@@ -1338,6 +1351,7 @@ de_formal:
     email_token_valid_hours: "Tokens zur Passwort-Wiederherstellung / Aktivierung eines Kontos sind für (n) Stunden gültig."
     enable_badges: "Abzeichen aktivieren"
     enable_whispers: "Erlaube dem Team private Kommunikation innerhalb von Themen."
+    allow_index_in_robots_txt: "Legen Sie in der robots.txt fest, dass diese Seite gestattet von Web-Suchmaschinen indiziert zu werden. In außergewöhnlichen Fällen können Sie dauerhaft <a href='%{base_path}/admin/customize/robots'>robots.txt überschreiben</a>."
     email_domains_blacklist: "Eine durch senkrechte Striche getrennte Liste von E-Mail-Domains, die für die Registrierung neuer Konten nicht verwendet werden dürfen. Beispiel: mailinator.com|trashmail.net"
     email_domains_whitelist: "Eine durch senkrechte Striche getrennte Liste von E-Mail-Domains, die für die Registrierung neuer Konten verwendet werden können. ACHTUNG: Benutzer mit E-Mail-Adressen anderer Domains werden nicht zugelassen!"
     hide_email_address_taken: "Benutzern während der Registrierung und beim „Passwort vergessen“-Formular nicht mitteilen, wenn ein Konto mit der angegebenen E-Mail-Adresse existiert."
@@ -1597,8 +1611,11 @@ de_formal:
     reset_bounce_score_after_days: "Bounce-Score automatisch nach X Tagen zurücksetzen."
     attachment_content_type_blacklist: "Liste der Schlüsselwörter für die Ablehnung von Anhängen basierend auf Inhaltstypen."
     attachment_filename_blacklist: "Liste der Schlüsselwörter für die Ablehnung von Anhängen basierend auf dem Dateinamen."
+    forwarded_emails_behaviour: "Wie an Discourse weitergeleitete E-Mails behandelt werden"
     always_show_trimmed_content: "Immer den gekürzten Teil von eingehenden E-Mails anzeigen. WARNUNG: lässt möglicherweise E-Mail-Adressen erkennen."
     private_email: "Keine Inhalte von Beiträgen oder Themen in E-Mail Titeln oder E-Mail Bodies einschließen. Außerdem werden Digest E-Mails deaktiviert."
+    email_total_attachment_size_limit_kb: "Maximale Gesamtzahl von Dateien an ausgehenden E-Mails. Auf 0 setzen, um das Versenden von Dateianhängen zu deaktivieren."
+    post_excerpts_in_emails: "Sende in Notifizierungs E-Mails immer Auszüge anstelle vollständiger Beiträge"
     manual_polling_enabled: "Eingehende E-Mails über die API für E-Mail-Antworten annehmen."
     pop3_polling_enabled: "E-Mail-Antworten über POP3 abholen."
     pop3_polling_ssl: "SSL für die Verbindung zum POP3-Server verwenden. (Empfohlen)"
@@ -1635,6 +1652,7 @@ de_formal:
     suppress_digest_email_after_days: "Unterdrücke E-Mail-Zusammenfassungen für Benutzer, die länger als (n) Tage nicht auf der Seite gesehen wurden."
     digest_suppress_categories: "Unterdrücke diese Kategorien in E-Mail-Zusammenfassungen."
     disable_digest_emails: "Deaktiviere E-Mail-Zusammenfassungen für alle Benutzer."
+    apply_custom_styles_to_digest: "Angepasste E-Mail Vorlage und CSS werden auf E-Mail Zusammenfassungen angewendet."
     email_accent_bg_color: "Die Hervorhebungsfarbe, die als Hintergrundfarbe bestimmter Elemente in HTML-Mails verwendet wird. Geben Sie einen Farbnamen (z.B. 'red' für rot) oder einen Hex-Wert ('#FF0000') an."
     email_accent_fg_color: "Geben Sie einen Namen ('white') oder einen Hex-Wert ('#FFFFFF') der Farbe an."
     email_link_color: "Die Farbe von Links in HTML-Mails. Geben Sie einen Namen ('blue') oder einen Hex-Wert ('#0000FF') der Farbe an."
@@ -1672,6 +1690,7 @@ de_formal:
     likes_notification_consolidation_window_mins: "Zeitfenster in Minuten, in dem mehrere Like-Benachrichtigungen in eine einzelne Benachrichtigung zusammengeführt werden, sobald der Schwellenwert erreicht wird. Der Schwellenwert kann via `SiteSetting.likes_notification_consolidation_threshold` eingestellt werden."
     automatically_unpin_topics: "Themen automatisch loslösen, wenn ein Benutzer das Ende erreicht."
     read_time_word_count: "Wörter pro Minute für die Berechnung der geschätzten Lesezeit."
+    topic_page_title_includes_category: "Themen-Seite <a href='https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title' target='_blank'>title tag</a> enthält einen Kategorienamen."
     native_app_install_banner_ios: "Zeigt das DiscourseHub Applikationsbanner auf iOS Geräten für Stammgäste (Vertrauensstufe 1 und höher) an."
     native_app_install_banner_android: "Zeigt das DiscourseHub Applikationsbanner auf Android Geräten für Stammgäste (Vertrauensstufe 1 und höher) an. "
     share_anonymized_statistics: "Anonymisierte Nutzungsdaten teilen."
@@ -1687,6 +1706,7 @@ de_formal:
     warn_reviving_old_topic_age: "Wenn jemand beginnt auf ein Thema zu antworten, dessen letzte Antwort älter als diese Anzahl an Tagen ist, wird eine Warnung angezeigt. Deaktiviere dies durch setzen auf 0."
     autohighlight_all_code: "Erzwinge Syntaxhervorhebung für alle Quellcode-Blöcke, auch dann wenn keine Sprache angeben wurde."
     highlighted_languages: "Aktivierter Regeln für das Syntax-Hervorhebung. (Warnung: Das Aktivieren zu vieler Sprachen kann die Leistung beeinträchtigen) siehe: <a href='https://highlightjs.org/static/demo/' target='_blank'>https://highlightjs.org/static/demo</a> für eine Demonstration"
+    embed_topics_list: "Unterstütze HTML-Einbettung von Themenlisten"
     embed_truncate: "Kürze die eingebetteten Beiträge"
     embed_support_markdown: "Unterstütze Markdown-Formatierung für eingebettete Beiträge"
     embed_whitelist_selector: "Eine komma-getrennte Liste von CSS Elementen, die in Einbettungen erlaubt sind."
@@ -1819,11 +1839,13 @@ de_formal:
         regex_invalid: "Der reguläre Ausdruck ist ungültig: %{error}"
         leading_trailing_slash: "Der reguläre Ausdruck darf nicht mit einem Schrägstrich beginnen und enden."
       unicode_usernames_avatars: "Die internen System-Profilbilder unterstützen Unicode Benutzernamen nicht."
+      list_value_count: "Die Liste muss genau %{count} Werte enthalten."
     placeholder:
       sso_provider_secrets:
         key: "www.example.com"
         value: "SSO-Secret"
   search:
+    extreme_load_error: "Die Seite ist extreme unter Last, die Suche ist deaktiviert. Bitte versuchen Sie es später noch einmal."
     within_post: "#%{post_number} von %{username}"
     types:
       category: "Kategorien"
@@ -1838,6 +1860,7 @@ de_formal:
     timeout_expired: "Die Anmeldung ist abgelaufen, bitte versuchen Sie sich erneut anzumelden."
     no_email: "Es wurde keine E-Mail-Adresse angegeben. Bitte kontaktieren Sie den Administrator dieser Seite."
     email_error: "Ein Konto konnte nicht registriert werden mit der E-Mail-Adresse <b>%{email}</b>. Bitte kontaktieren Sie den Administrator dieser Seite."
+    missing_secret: "SSO Authentifizierung wegen fehlendem Secret fehlgeschlagen. Kontaktieren Sie die Seiten-Aministration, damit dieses Problem behoben wird."
   original_poster: "Autor des ersten Beitrags"
   most_posts: "Autor der meisten Beiträge"
   most_recent_poster: "Autor des jüngsten Beitrags"
@@ -1928,7 +1951,14 @@ de_formal:
     errors: "%{errors}"
     not_available: "Nicht verfügbar. %{suggestion} versuchen?"
     something_already_taken: "Etwas ist schief gelaufen. Möglicherweise ist der Benutzername bereits registriert. Probieren Sie den 'Passwort vergessen'-Link."
+    omniauth_error:
+      generic: "Entschuldigung, bei der Authentifizierung deines Kontos ist ein Fehler aufgetreten. Versuchen Sie es bitte noch einmal."
+      csrf_detected: "Authentifizierung abgelaufen oder Browser gewechselt. Bitte noch einmal versuchen."
+      request_error: "Beim Start der Authentifizierung ist ein Fehler aufgetreten. Versuchen Sie es bitte noch einmal."
+      invalid_iat: "Authentifizierungstoken kann wegen Differenzen der Server Uhrzeit nicht geprüft werden. Versuchen Sie es bitte noch einmal."
     omniauth_error_unknown: "Während des Anmeldens ist etwas schief gelaufen, bitte versuchen Sie es noch einmal."
+    omniauth_confirm_title: "Anmeldung per %{provider}"
+    omniauth_confirm_button: "Weiter"
     authenticator_error_no_valid_email: "E-Mail-Adressen mit %{account} sind nicht erlaubt. Sie müssen möglicherweise Ihr Konto mit einer anderen E-Mail-Adresse einrichten."
     new_registrations_disabled: "Leider können derzeit keine neuen Konten registriert werden."
     password_too_long: "Passwörter sind beschränkt auf 200 Zeichen."
@@ -2190,9 +2220,35 @@ de_formal:
     post_hidden:
       title: "Benachrichtigung: Beitrag versteckt"
       subject_template: "Beitrag versteckt wegen Community-Meldungen"
+      text_body_template: |
+        Hallo,
+
+        dies ist eine automatische Benachrichtigung von %{site_name}, um Sie zu informieren, dass Ihr Beitrag verborgen wurde.
+
+        <%{base_url}%{url}>
+
+        %{flag_reason}
+
+        Dieser Beitrag wurde wegen Meldungen der Community verborgen. Deshalb prüfen Sie bitte, wie Sie ihn überarbeiten können, um ihrem Feedback zu entsprechen. **Sie können Ihren Beitrag nach %{edit_delay} Minuten bearbeiten, und er wird automatisch wieder sichtbar.**
+
+        Falls er jedoch noch einmal von der Community verborgen wird, bleibt er dies, bis ein Teammitglied ihn prüft.
+
+        Für zusätzliche Hinweise informieren Sie sich bitte über unsere [Community Richtlinien](%{base_url}/guidelines).
     post_hidden_again:
       title: "Beitrag wieder ausgeblendet"
       subject_template: "Beitrag ausgeblendet wegen Community-Meldungen, Team wurde informiert"
+      text_body_template: |
+        Hallo,
+
+        dies ist eine automatische Benachrichtigung von %{site_name}, um Sie zu informieren, dass Ihr Beitrag erneut verborgen wurde.
+
+        <%{base_url}%{url}>
+
+        %{flag_reason}
+
+        Die Community hat den Beitrag gemeldet und er ist nun verborgen. **Da er mehr als einmal verborgen wurde, wird er es bleiben, bis ein Teammitglied ihn prüft.**
+
+        Für zusätzliche Hinweise informieren Sie sich bitte über unsere [Community Richtlinien](%{base_url}/guidelines).
     flags_agreed_and_post_deleted:
       title: "Gemeldeter Beitrag von Team entfernt"
       subject_template: "Gemeldeter Beitrag von Team entfernt"
@@ -2316,6 +2372,14 @@ de_formal:
     csv_export_succeeded:
       title: "CSV-Export erfolgreich"
       subject_template: "[%{export_title}] Datenexport abgeschlossen"
+      text_body_template: |
+        Ihr Datenexport war erfolgreich! :dvd:
+
+        %{download_link}
+
+        Dieser Link wird 48 Stunden verfügbar sein.
+
+        Die Daten sind in ein .zip-Archiv komprimiert. Sollte das Archiv sich nicht selbst extrahieren, wenn Sie es öffnen, benutzen Sie zB. das hier empfohlene Tool: https://www.7-zip.org/
     csv_export_failed:
       title: "CSV-Export fehlgeschlagen"
       subject_template: "Datenexport fehlgeschlagen"
@@ -2525,6 +2589,14 @@ de_formal:
     ignored_users_summary:
       title: "Schwellenwert für ignorierte Benutzer"
       subject_template: "Ein Benutzer wird von vielen anderen Benutzern ignoriert"
+      text_body_template: |
+        Hallo,
+
+        dies ist eine automatische Nachricht von %{site_name}, um Sie darüber zu informieren, dass @%{username} von %{ignores_threshold} Benutzern ignoriert wird. Dies könnte auf ein in Ihrer Community entstehendes Problem hindeuten.
+
+        Eventuell möchten Sie [letzte Beiträge](%{base_url}/u/%{username}/summary) dieses Benutzers prüfen, und potentielle weitere Benutzer im [ignorierte und stummgeschaltete Benutzer-Report](%{base_url}/admin/reports/top_ignored_users).
+
+        Weitere Hinweise finden Sie in unseren [Community-Richtlinien](%{base_url}/guidelines).
     too_many_spam_flags:
       title: "Neues Konto gesperrt wegen zu viel Spam"
       subject_template: "Neues Konto gesperrt"
@@ -3077,6 +3149,7 @@ de_formal:
     user_email_post_deleted: "Beitrag wurde vom Ersteller entfernt"
     user_email_user_suspended: "Benutzer wurde gesperrt"
     user_email_already_read: "Benutzer hat diesen Beitrag bereits gelesen"
+    user_email_access_denied: "Der Benutzer hat kein Recht, diesen Beitrag zu sehen"
     sender_message_blank: "Nachricht ist leer"
     sender_message_to_blank: "message.to ist leer"
     sender_text_part_body_blank: "text_part.body ist leer"
@@ -3727,6 +3800,9 @@ de_formal:
       other: "Sie müssen mindestens %{count} Schlagwörter auswählen. "
     upload_row_too_long: "Die CSV-Datei sollte ein Schlagwort pro Zeile haben. Optional kann das Schlagwort von einem Komma und dem Namen einer Schlagwortgruppe gefolgt sein."
     forbidden:
+      invalid:
+        one: "Der ausgewählte Tag kann nicht genutzt werden."
+        other: "Keiner der ausgewählten Tags kann genutzt werden"
       in_this_category: '"%{tag_name}" kann in dieser Kategorie nicht verwendet werden'
       restricted_to:
         one: '"%{tag_name}" ist beschränkt auf die Kategorie "%{category_names}"'
@@ -3938,6 +4014,9 @@ de_formal:
       agree_and_keep:
         title: "Beitrag behalten"
         description: "Meldung zustimmen und den Beitrag unbearbeitet lassen."
+      agree_and_keep_hidden:
+        title: "Beitrag ausgeblendet lassen"
+        description: "Dem Flag zustimmen und den Beitrag ausgeblendet lassen."
       agree_and_suspend:
         title: "Benutzer sperren"
         description: "Meldung zustimmen und Benutzer bannen."
@@ -3983,6 +4062,7 @@ de_formal:
         title: "Genehmigen"
       approve_post:
         title: "Bestätige Beitrag"
+        confirm_closed: "Dieses Thema ist geschlossen. Möchten Sie den Beitrag trotzdem erstellen?"
       reject_post:
         title: "Lehne Beitrag ab"
       approve_user:
@@ -4001,3 +4081,5 @@ de_formal:
         title: "Benutzer löschen"
         confirm: "Möchten Sie diesen Benutzer wirklich löschen? Dies wird alle seine Beiträge löschen und seine E-Mail-Adresse und IP-Adresse sperren."
         reason: "Gelöscht via Review-Warteschlange"
+  email_style:
+    html_missing_placeholder: "Die HTML Vorlage muss %{placeholder} beinhalten"

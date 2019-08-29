@@ -225,6 +225,7 @@ de_formal:
       other: "{{count}} Zeichen"
     related_messages:
       title: "Verwandte Nachrichten"
+      see_all: "Siehe <a href=\"%{path}\">alle Nachrichten</a> von @%{username}..."
     suggested_topics:
       title: "Vorgeschlagene Themen"
       pm_title: "Vorgeschlagene Nachrichten"
@@ -234,6 +235,7 @@ de_formal:
       stats: "Website-Statistiken"
       our_admins: "Unsere Administratoren"
       our_moderators: "Unsere Moderatoren"
+      moderators: "Moderatoren"
       stat:
         all_time: "Gesamt"
         last_7_days: "Letzte 7"
@@ -297,6 +299,8 @@ de_formal:
     banner:
       close: "Diesen Banner ausblenden."
       edit: "Diesen Ankündigungsbanner bearbeiten >>"
+    pwa:
+      install_banner: "Möchten Sie <a href>%{title} auf diesem Gerät installieren?</a>"
     choose_topic:
       none_found: "Keine Themen gefunden."
       title:
@@ -581,6 +585,7 @@ de_formal:
         remove_owner: "Als Eigentümer entfernen"
         remove_owner_description: "<b>%{username}</b> als Eigentümer dieser Gruppe entfernen"
         owner: "Eigentümer"
+        forbidden: "Sie haben nicht das Recht, die Mitglieder zu sehen."
       topics: "Themen"
       posts: "Beiträge"
       mentions: "Erwähnungen"
@@ -930,7 +935,12 @@ de_formal:
         title: "Zugehörige Konten"
         connect: "Verbinden"
         revoke: "Entziehen"
+        cancel: "Abbrechen"
         not_connected: "(nicht verbunden)"
+        confirm_modal_title: "Verbinde %{provider} Konto "
+        confirm_description:
+          account_specific: "Ihr %{provider} Konto '%{account_description}' wird für die Authentifizierung genutzt werden. "
+          generic: "Ihr %{provider} Konto wird für die Authentifzierung genutzt werden."
       name:
         title: "Name"
         instructions: "vollständiger Name (optional)"
@@ -1180,6 +1190,9 @@ de_formal:
       enabled: "Diese Website befindet sich im Nur-Lesen-Modus. Sie können weiterhin Inhalte lesen, aber das Erstellen von Beiträgen, Vergeben von Likes und Durchführen einiger weiterer Aktionen ist derzeit nicht möglich."
       login_disabled: "Die Anmeldung ist deaktiviert während sich die Website im Nur-Lesen-Modus befindet."
       logout_disabled: "Die Abmeldung ist deaktiviert während sich die Website im Nur-Lesen-Modus befindet."
+    too_few_topics_and_posts_notice: "Lassen Sie <a href='https://blog.discourse.org/2014/08/building-a-discourse-community/'>die Diskussion starten!</a> Da sind <strong>%{currentTopics} / %{requiredTopics}</strong> Themen und <strong>%{currentPosts} / %{requiredPosts}</strong> Beiträge – Besucher brauchen mehr zum Lesen und Beantworten. Nur Teammitglieder können diese Nachricht sehen."
+    too_few_topics_notice: "Lassen Sie <a href='https://blog.discourse.org/2014/08/building-a-discourse-community/'>die Diskussion starten!</a> Da sind <strong>%{currentTopics} / %{requiredTopics}</strong> Themen  – Besucher brauchen mehr zum Lesen und Beantworten. Nur Teammitglieder können diese Nachricht sehen."
+    too_few_posts_notice: "Lassen Sie <a href='https://blog.discourse.org/2014/08/building-a-discourse-community/'>die Diskussion starten!</a> Da sind <strong>%{currentPosts} / %{requiredPosts}</strong> Beiträge – Besucher brauchen mehr zum Lesen und Beantworten. Nur Teammitglieder können diese Nachricht sehen."
     logs_error_rate_notice:
       reached_hour_MF: "<b>{relativeAge}</b> – <a href='{url}' target='_blank'>{rate, plural, one {# Fehler/Stunde} other {# errors/hour}}</a> hat die Grenze der Webseiten-Einstellung von {limit, plural, one {# Fehler/Stunde} other {# Fehler/Stunde}} erreicht."
       reached_minute_MF: "<b>{relativeAge}</b> – <a href='{url}' target='_blank'>{rate, plural, one {# Fehler/Minute} other {# Fehler/Minute}}</a> hat die Grenze der Webseiten-Einstellung von {limit, plural, one {# Fehler/Minute} other {# Fehler/Minute}} erreicht."
@@ -1377,6 +1390,11 @@ de_formal:
       min_content_not_reached:
         one: "mindestens einen Eintrag auswählen."
         other: "Mindestens {{count}} Einträge auswählen."
+    date_time_picker:
+      from: Von
+      to: An
+      errors:
+        to_before_from: "Das Datum muss später als das von-Datum sein."
     emoji_picker:
       filter_placeholder: Emoji suchen
       smileys_&_emotion: Smileys und Emotion
@@ -1426,6 +1444,7 @@ de_formal:
         category: "Sie haben {{username}} erwähnt, aber diese Person wird nicht benachrichtigt da sie keinen Zugriff auf diese Kategorie hat. Fügen Sie sie einer Gruppe hinzu, die Zugriff auf diese Kategorie hat."
         private: "Sie haben {{username}} erwähnt, aber diese Person wird nicht benachrichtigt, da sie diese persönliche Nachricht nicht sehen kann. Laden Sie sie zu dieser PM ein."
       duplicate_link: "Es sieht so aus als wäre Ihr Link auf <b>{{domain}}</b> in dem Thema bereits geschrieben worden von <b>@{{username}}</b> in <a href='{{post_url}}'>einer Antwort vor {{ago}}</a> – sind Sie sicher, dass Sie ihn noch einmal schreiben möchten?"
+      reference_topic_title: "AW: {{title}}"
       error:
         title_missing: "Titel ist erforderlich"
         title_too_short: "Titel muss mindestens {{min}} Zeichen lang sein"
@@ -1565,6 +1584,7 @@ de_formal:
       granted_badge: "Sie haben '{{description}}' verliehen bekommen"
       topic_reminder: "<span>{{username}}</span> {{description}}"
       watching_first_post: "<span>New Topic</span> {{description}}"
+      membership_request_accepted: "Mitgliedschaft akzeptiert in '{{group_name}}' "
       group_message_summary:
         one: "{{count}} Nachricht in Ihrem {{group_name}} Posteingang"
         other: "{{count}} Nachrichten in Ihrem {{group_name}} Posteingang"
@@ -1804,6 +1824,9 @@ de_formal:
       toggle_information: "Details zum Thema ein- oder ausblenden"
       read_more_in_category: "Möchten Sie mehr lesen? Entdecken Sie andere Themen in {{catLink}} oder {{latestLink}}."
       read_more: "Möchten Sie mehr lesen? {{catLink}} oder {{latestLink}}."
+      group_request: "Um dieses Thema zu sehen, müssen Sie die Mitgliedschaft der Gruppe `{{name}}` beantragen"
+      group_join: "Sie müssen der Gruppe `{{name}}` beitreten, um dieses Thema zu sehen"
+      group_request_sent: "Ihr Mitgliedschafts-Antrag wurde gesendet. Sie bekommen eine Information, ob er akzepiert wurde."
       read_more_MF: "Sie {UNREAD, plural, =0 {} one {haben <a href='{basePath}/unread'>ein ungelesenes</a> Thema } other {haben<a href='{basePath}/unread'># ungelesene</a> Themen } } {NEW, plural, =0 {} one { {BOTH, select, true{und } false {haben} other{}} <a href='{basePath}/new'>ein neues</a> Thema} other { {BOTH, select, true{und } false {haben} other{}} <a href='{basePath}/new'># neue</a> Themen} }. Oder {CATEGORY, select, true {entdecken Sie andere Themen in {catLink}} false {{latestLink}} other {}}"
       browse_all_categories: Alle Kategorien durchsehen
       view_latest_topics: aktuelle Themen anzeigen
@@ -1970,6 +1993,9 @@ de_formal:
         title: "Melden"
         help: "Dieses Thema den Moderatoren melden oder eine Nachricht senden."
         success_message: "Sie haben dieses Thema erfolgreich gemeldet."
+      make_public:
+        title: "Konvertiere zum öffentlichen Thema"
+        choose_category: "Bitte wählen Sie eine Kategorie für das öffentliche Thema:"
       feature_topic:
         title: "Thema hervorheben"
         pin: "Dieses Thema am Anfang der {{categoryLink}} Kategorie anzeigen bis"
@@ -2161,6 +2187,7 @@ de_formal:
       abandon:
         confirm: "Möchten Sie Ihren Beitrag wirklich verwerfen?"
         no_value: "Nein, beibehalten"
+        no_save_draft: "Nein, speichere den Entwurf"
         yes_value: "Ja, verwerfen"
       via_email: "dieser Beitrag ist per E-Mail eingetroffen"
       via_auto_generated_email: "dieser Beitrag ist als automatisch generierte E-Mail eingegangen"
@@ -2210,6 +2237,7 @@ de_formal:
         delete_topic: "Thema löschen"
         add_post_notice: "Team Notiz hinzufügen"
         remove_post_notice: "Team Notiz entfernen"
+        remove_timer: "Stoppuhr entfernen"
       actions:
         flag: "Melden"
         defer_flags:
@@ -2329,6 +2357,7 @@ de_formal:
       special_warning: "Warnung: Diese Kategorie wurde bei der Installation angelegt. Die Sicherheitseinstellungen können daher nicht verändert werden. Wenn Sie diese Kategorie nicht benötigen, dann sollten Sie sie löschen anstatt sie für andere Zwecke zu verwenden."
       uncategorized_security_warning: "Diese Kategorie ist etwas Spezielles. Sie dient als Bereich für Themen, die keine Kategorie haben und besitzt keine Sicherheitseinstellungen."
       uncategorized_general_warning: 'Diese Kategorie ist etwas Spezielles. Sie wird als Standard-Kategorie für neue Themen genutzt, für die keine Kategorie ausgewählt wurde. Deaktiviere <a href="%{settingLink}">diese Einstellung</a>, wenn dieses Verhalten verhindert und eine Kategoriewahl erzwungen werden soll. Der Name und die Beschreibung können unter <a href="%{customizeLink}">Anpassen / Textinhalte</a> geändert werden.'
+      pending_permission_change_alert: "Sie haben %{group} nicht zu dieser Kategorie hinzugefügt; klicken Sie diese Schaltfläche, um sie zuzufügen."
       images: "Bilder"
       email_in: "Benutzerdefinierte Adresse für eingehende E-Mails:"
       email_in_allow_strangers: "E-Mails von anonymen Benutzern akzeptieren."
@@ -2476,6 +2505,8 @@ de_formal:
         help: "Dieses Thema ist für Sie angeheftet; es wird immer am Anfang seiner Kategorie auftauchen"
       unlisted:
         help: "Dieses Thema ist unsichtbar. Es wird in keiner Themenliste angezeigt und kann nur mit einem direkten Link betrachtet werden."
+      personal_message:
+        title: "Dieses Thema ist eine persönliche Nachricht"
     posts: "Beiträge"
     posts_long: "dieses Thema enthält {{number}} Beiträge"
     posts_likes_MF: |
@@ -2752,6 +2783,7 @@ de_formal:
         about: "Schlagwörter zu Gruppen hinzufügen, um sie einfacher zu verwalten."
         new: "Neue Gruppe"
         tags_label: "Schlagwörter in dieser Gruppe:"
+        tags_placeholder: "Schlagwörter (Tags)"
         parent_tag_label: "Übergeordnetes Schlagwort"
         parent_tag_placeholder: "Optional"
         parent_tag_description: "Schlagwörter aus dieser Gruppe können nur verwendet werden, wenn das übergeordnete Schlagwort zugeordnet ist."
@@ -2867,6 +2899,8 @@ de_formal:
           view_table: "Tabelle"
           view_graph: "Netzwerk"
           refresh_report: "Bericht aktualisieren"
+          start_date: "Startdatum (UTC)"
+          end_date: "Enddatum (UTC)"
           groups: "Alle Gruppen"
           disabled: "Dieser Bericht ist deaktiviert"
           totals_for_sample: "Insgesamt für Stichprobe"
@@ -2912,7 +2946,14 @@ de_formal:
             visibility_levels:
               title: "Wer kann diese Gruppe sehen?"
               public: "Jeder"
+              logged_on_users: "Angemeldete Benutzer"
+              members: "Gruppenbesitzer, Mitglieder"
               staff: "Gruppenbesitzer und Team"
+              owners: "Gruppenbesitzer"
+              description: "Administratoren können alle Gruppen sehen."
+            members_visibility_levels:
+              title: "Wer kann diese Gruppenmitglieder sehen?"
+              description: "Administratoren können die Mitglieder aller Gruppen sehen."
           membership:
             automatic: Automatisch
             trust_level: Vertrauensstufe
@@ -3017,6 +3058,9 @@ de_formal:
         reviewable_event:
           name: "Überpüfbares Ereignis"
           details: "Wenn ein neuer Eintrag zur Überprüfung bereit ist und wenn sich sein Status ändert."
+        notification_event:
+          name: "Benachrichtigungs-Ereignis"
+          details: "Wenn ein Benutzer eine Benachrichtigung in seinem Feed erhält."
         delivery_status:
           title: "Versandstatus"
           inactive: "Inaktiv"
@@ -3152,6 +3196,7 @@ de_formal:
         copy_to_clipboard_error: "Beim Kopieren in die Zwischenablage trat ein Fehler auf"
         theme_owner: "Nicht bearbeitbar, Eigentümer:"
         email_templates:
+          title: "E-Mail"
           subject: "Betreff"
           multiple_subjects: "Diese E-Mail-Vorlage enthält mehrere Betreffzeilen."
           body: "Nachrichtentext"
@@ -3202,6 +3247,7 @@ de_formal:
           inactive_themes: "Inaktive Themes:"
           inactive_components: "Nicht verwendete Komponenten:"
           broken_theme_tooltip: "Dieses Theme hat fehlerhaftes CSS, HTML oder YAML."
+          disabled_component_tooltip: "Diese Komponente wurde deaktiviert"
           default_theme_tooltip: "Dieses Theme ist das Standardtheme der Seite."
           updates_available_tooltip: "Updates sind verfügbar für dieses Theme"
           and_x_more: "und {{count}} mehr."
@@ -3227,6 +3273,7 @@ de_formal:
           delete_upload_confirm: "Upload löschen? (Theme-CSS funktioniert eventuell nicht mehr!)"
           import_web_tip: "Repository mit dem Theme"
           import_web_advanced: "Erweitert..."
+          import_file_tip: ".tar.gz, .zip, oder .dcstyle.json Datei, die ein Theme enthält"
           is_private: "Theme ist in einem privaten Git-Repository"
           remote_branch: "Branch-Name (optional)"
           public_key: "Dem folgenden öffentlichen Schlüssel Zugriff auf das Repository gewähren:"
@@ -3243,6 +3290,8 @@ de_formal:
           source_url: "Quelle"
           enable: "Aktivieren"
           disable: "Deaktivieren"
+          disabled: "Diese Komponente wurde deaktiviert."
+          disabled_by: "Diese Komponente wurde deaktiviert von"
           required_version:
             error: "Dieses Theme wurde automatisch deaktiviert, weil es mit dieser Discourse-Version nicht kompatibel ist."
             minimum: "Erfordert Discourse-Version {{version}} oder höher"
@@ -3332,6 +3381,19 @@ de_formal:
           love:
             name: "Liebe"
             description: "Die Farbe des Like-Buttons."
+        robots:
+          title: "Überschreiben Sie die robots.txt Datei Ihrer Seite:"
+          warning: "Dies wird sämtliche zugehörigen Seiteneinstellungen dauerhaft überschreiben."
+          overridden: Die robots.txt Standard-Datei Ihrer Seite ist überschrieben.
+        email_style:
+          title: "E-Mail Stil"
+          heading: "E-Mail Stil anpassen"
+          html: "HTML Vorlage"
+          css: "CSS"
+          reset: "Auf Standard zurücksetzen"
+          reset_confirm: "Sind Sie sicher, dass Sie auf Standard %{fieldName} zurücksetzen und die Änderungen verlieren wollen?"
+          save_error_with_reason: "Ihre Änderungen wurden nicht gespeichert. %{error}"
+          instructions: "Passen Sie die Vorlage an, mit der alle HTML E-Mails erstellt werden, und den Stil per CSS."
       email:
         title: "E-Mails"
         settings: "Einstellungen"
@@ -3515,6 +3577,8 @@ de_formal:
             embeddable_host_update: "Einbettbaren Host aktualisieren"
             embeddable_host_destroy: "Einbettbaren Host entfernen"
             change_theme_setting: "Theme Einstellung ändern"
+            disable_theme_component: "Theme-Komponente deaktivieren"
+            enable_theme_component: "Theme-Komponente aktivieren"
         screened_emails:
           title: "Gefilterte E-Mails"
           description: "Wenn jemand ein Konto erstellt, werden die folgenden E-Mail-Adressen überprüft und es wird die Anmeldung blockiert oder eine andere Aktion ausgeführt."
@@ -3563,6 +3627,13 @@ de_formal:
         search: "Suchen"
         clear_filter: "Zurücksetzen"
         show_words: "Wörter anzeigen"
+        one_word_per_line: "Ein Wort pro Zeile"
+        download: Herunterladen
+        clear_all: Auswahl aufheben
+        clear_all_confirm_block: "Sind Sie sicher, dass alle Watched Words für die Blockier-Prozedur entfernt werden sollen?"
+        clear_all_confirm_censor: "Sind Sie sicher, dass alle Watched Words für das Zensieren entfernt werden sollen?"
+        clear_all_confirm_flag: "Sind Sie sicher, dass alle Watched Words für Meldungen entfernt werden sollen?"
+        clear_all_confirm_require_approval: "Sind Sie sicher, dass alle Watched Words für die Genehmigung-erforderlich Prozedur entfernt werden sollen?"
         word_count:
           one: "%{count} Wort"
           other: "%{count} Wörter"
@@ -3583,7 +3654,14 @@ de_formal:
           add: "Hinzufügen"
           success: "Erfolg"
           exists: "Existiert bereits"
+          upload: "Aus Datei hinzufügen"
           upload_successful: "Hochladen erfolgreich. Wörter wurden hinzugefügt."
+        test:
+          button_label: "Test"
+          modal_title: "Teste '%{action}' beobachtete Wörter"
+          description: "Fügen Sie unten Text ein, um auf Übereinstimmungen mit beobachteten Wörtern zu prüfen"
+          found_matches: "Gefundene Übereinstimmungen:"
+          no_matches: "Keine Treffer gefunden"
       impersonate:
         title: "Als Benutzer ausgeben"
         help: "Benutzen Sie dieses Werkzeug, um zur Fehlersuche in die Rolle eines anderen Benutzers zu schlüpfen. Sie müssen sich abmelden, wenn Sie fertig sind."
@@ -3778,6 +3856,8 @@ de_formal:
           likes_received: "Erhaltene Likes"
           likes_received_days: "Erhaltene Likes: eindeutige Tage"
           likes_received_users: "Erhaltene Likes: eindeutige Benutzer"
+          suspended: "Gesperrt (letzte 6 Monate)"
+          silenced: "Stummgeschaltet (letzte 6 Monate)"
           qualifies: "Erfüllt die Anforderungen für Vertrauensstufe 3."
           does_not_qualify: "Erfüllt nicht die Anforderungen für Vertrauensstufe 3."
           will_be_promoted: "Wird bald befördert werden."
@@ -3829,6 +3909,7 @@ de_formal:
       site_text:
         description: "Du kannst jeden Text Ihres Forums anpassen. Benutzen Sie dazu die Suche:"
         search: "Suche nach dem Text, den Sie bearbeiten möchten"
+        title: "Text"
         edit: "bearbeiten"
         revert: "Änderungen verwerfen"
         revert_confirm: "Möchten Sie wirklich Ihre Änderungen verwerfen?"
@@ -3923,6 +4004,7 @@ de_formal:
         enabled: Abzeichen aktivieren
         icon: Symbol
         image: Bild
+        icon_help: "Geben Sie einen Font Awesome Icon Namen ein (für reguläre Icons das Präfix 'far-' und für Marken-Icons 'fab-' benutzen)"
         image_help: "Geben Sie die URL eines Bildes ein (überschreibt Symbol Feld wenn beide aktiv sind)"
         query: Abzeichen-Abfrage (SQL)
         target_posts: Abfrage betrifft Beiträge
