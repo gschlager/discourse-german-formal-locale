@@ -16,7 +16,7 @@ You can select the locale as “Deutsch (Sie)”.
 
 Execute `bin/pull_translations.rb` in order to pull the latest translations from Transifex.
 
-Translations are done on [Transifex](https://www.transifex.com/discourse-formal-german/discourse-formal-german).
+Translations are done on [Transifex](https://www.transifex.com/discourse/discourse-german-formal/).
 
 ## Feedback
 
