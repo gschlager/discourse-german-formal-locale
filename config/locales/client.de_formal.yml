@@ -24,6 +24,7 @@ de_formal:
     bookmarks:
       created: "Lesezeichen zum Beitrag hinzugefügt"
       confirm_clear: "Sollen wirklich alle Lesezeichen in diesem Thema entfernt werden?"
+      no_timezone: 'Sie haben noch keine Zeitzone ausgewählt. Sie werden keine Erinnerungen erstellen können. Stellen Sie eine <a href="%{basePath}/my/preferences/profile">in Ihrem Profil</a> ein.'
     drafts:
       abandon:
         confirm: "Sie haben schon anderen Entwurf in diesem Thema geöffnet. Soll er verworfen werden?"
@@ -32,13 +33,15 @@ de_formal:
       install_banner: "Möchten Sie <a href>%{title} auf diesem Gerät installieren?</a>"
     choose_topic:
       title:
-        search: "Nach Thema anhand von Überschrift, URL oder ID suchen:"
-        placeholder: "Geben Sie hier den Titel des Themas ein"
+        search: "Suchen Sie nach einem Thema"
+        placeholder: "Geben Sie Thema Titel, URL oder id hier ein"
     choose_message:
       title:
-        search: "Eine Nachricht anhand der Überschrift suchen:"
-        placeholder: "Geben Sie hier die Überschrift der Nachricht ein"
+        search: "Suchen Sie nach einer Nachricht"
+        placeholder: "Geben Sie Nachrichten Titel, URL oder id hier ein"
     review:
+      explain:
+        why: "Erklären Sie, warum dieses Element in der Warteschlange gelandet ist"
       claim_help:
         optional: "Sie können dieses Element reservieren, damit andere es nicht überprüfen."
         required: "Sie müssen dieses Element reservieren, bevor Sie es überprüfen können. "
@@ -133,6 +136,7 @@ de_formal:
       second_factor_backup:
         manage: "Sicherungscodes verwalten. Sie haben noch <strong>{{count}}</strong> Sicherungscodes."
         remaining_codes: "Sie haben noch <strong>{{count}}</strong> Wiederherstellungscodes übrig."
+        use: "Benutzen Sie einen Backup-Code"
         enable_prerequisites: "Sie müssen vor dem Generieren von Sicherungscodes einen primären zweiten Faktor aktivieren."
         codes:
           description: "Jeder dieser Wiederherstellungscodes kann nur einmal benutzt werden. Bewahren Sie diese an einem sicheren, aber verfügbaren Ort auf."
@@ -147,7 +151,13 @@ de_formal:
         extended_description: |
           Zwei-Faktor-Authentifizierung (2FA) sichert Ihr Konto zusätzlich ab, indem sie zusätzlich zu Ihrem Passwort einen einmalig gültigen Code anfordert. Codes können auf <a href="https://www.google.com/search?q=authenticator+apps+for+android" target='_blank'>Android-</a> und <a href="https://www.google.com/search?q=authenticator+apps+for+ios">iOS-</a>-Geräten generiert werden.
         oauth_enabled_warning: "Beachten Sie bitte, dass soziale Anmelde-Methoden deaktiviert werden, sobald die Zwei-Faktor-Authentifizierung für Ihr Konto aktiviert ist."
+        use: "Benutzen Sie die Authentifizierungs-App"
         enforced_notice: "Sie müssen Zwei-Faktor-Authentifizierung aktivieren, bevor Sie auf diese Seite zugreifen können."
+        enable_security_key_description: "Wenn Sie Ihren physischen Sicherheitsschlüssel vorbereitet haben, klicken Sie unten auf die Schaltfläche Registrieren."
+        security_key:
+          add: "Registrieren Sie den Sicherheitsschlüssel"
+          already_added_error: "Sie haben diesen Sicherheitsschlüssel bereits registriert. Sie müssen ihn nicht erneut registrieren.\e"
+          edit: "Den Sicherheitsschlüssel bearbeiten"
       change_username:
         confirm: "Sind Sie sich sicher, dass Sie Ihren Benutzernamen ändern möchten?"
       change_email:
@@ -210,6 +220,9 @@ de_formal:
     logout: "Sie wurden abgemeldet."
     read_only_mode:
       enabled: "Diese Website befindet sich im Nur-Lesen-Modus. Sie können weiterhin Inhalte lesen, aber das Erstellen von Beiträgen, Vergeben von Likes und Durchführen einiger weiterer Aktionen ist derzeit nicht möglich."
+    too_few_topics_and_posts_notice: "Lassen Sie <a href='https://blog.discourse.org/2014/08/building-a-discourse-community/'>die Diskussion beginnen!</a> Es gibt <strong>%{currentTopics}</strong> Themen und <strong>%{currentPosts}</strong> Beiträge. Besucher brauchen mehr zum Lesen und Beantworten – wir empfehlen mindestens <strong>%{requiredTopics}</strong> Themen und <strong>%{requiredPosts}</strong> Beiträge. Diese Nachricht ist nur für das Team sichtbar."
+    too_few_topics_notice: "Lassen Sie <a href='https://blog.discourse.org/2014/08/building-a-discourse-community/'>die Diskussion beginnen!</a> Es gibt <strong>%{currentTopics}</strong> Themen. Besucher brauchen mehr zum Lesen und Beantworten – wir empfehlen mindestens <strong>%{requiredTopics}</strong> Themen. Diese Nachricht ist nur für das Team sichtbar."
+    too_few_posts_notice: "Lassen <a href='https://blog.discourse.org/2014/08/building-a-discourse-community/'>die Diskussion beginnen!</a> Es gibt <strong>%{currentPosts}</strong> Beiträge. Besucher brauchen mehr zum Lesen und Beantworten – wir empfehlen mindestens <strong>%{requiredPosts}</strong> Beiträge. Diese Nachricht ist nur für das Team sichtbar."
     signup_cta:
       hide_session: "Mich morgen erinnern"
       hidden_for_session: "In Ordnung, ich frage Sie morgen wieder. Sie können sich auch jederzeit unter „Anmelden“ ein Benutzerkonto erstellen."
@@ -240,6 +253,9 @@ de_formal:
     login:
       second_factor_description: "Bitte geben Sie den Authentifizierungscode aus Ihrer App ein:"
       second_factor_backup_description: "Bitte geben Sie einen Ihrer Wiederherstellungs-Codes ein:"
+      security_key_description: "Wenn Sie Ihren physischen Sicherheitsschlüssel vorbereitet haben, klicken Sie unten auf die Schaltfläche \"Mit Sicherheitsschlüssel authentifizieren\"."
+      security_key_alternative: "Versuchen Sie einen anderen Weg"
+      security_key_support_missing_error: "Ihr aktuelles Gerät oder Browser unterstützt die Verwendung von Sicherheitsschlüsseln nicht. Bitte verwenden Sie eine andere Methode."
       cookies_error: "Ihr Browser scheint Cookies deaktiviert zu haben. Sie könnensich möglicherweise nicht anmelden, ohne diese zuerst zu aktivieren"
       rate_limit: "Warten Sie bitte ein wenig, bevor Sie erneut versuchen sich anzumelden."
       blank_username: "Bitte geben Sie Ihre E-Mail-Adresse oder Ihren Benutzernamen ein."
@@ -288,6 +304,7 @@ de_formal:
         try_like: "Haben Sie schon die {{heart}}-Schaltfläche ausprobiert?"
         category_missing: "Sie müssen eine Kategorie auswählen"
         tags_missing: "Sie müssen mindestens %{count} Schlagwörter wählen."
+        topic_template_not_modified: "Bitte fügen Sie Details und Spezifikationen zu Ihrem Thema hinzu, indem Sie die Themenvorlage anpasst."
       create_shared_draft: "gemeinsame Vorlage erstellen"
       title_placeholder: "Um was geht es in dieser Diskussion? Schreiben Sie einen kurzen Satz."
       title_or_link_placeholder: "Geben Sie einen Titel ein oder fügen Sie einen Link ein"
@@ -298,6 +315,7 @@ de_formal:
       reply_placeholder_choose_category: "Vor dem Tippen eine Kategorie wählen."
       view_new_post: "Sehen Sie Ihren neuen Beitrag an."
       link_description: "geben Sie hier eine Link-Beschreibung ein"
+      link_url_placeholder: "Fügen Sie eine URL ein oder tippen Sie, um die Themen zu durchsuchen"
       paste_code_text: "Code hier eintippen oder -fügen"
       upload_description: "geben Sie hier eine Beschreibung des Uploads ein"
       cant_send_pm: "Entschuldigung, aber Sie können keine Nachricht an %{username} senden."
@@ -343,7 +361,6 @@ de_formal:
       local_tip_with_attachments: "Wählen Sie Bilder oder Dateien von Ihrem Gerät aus {{authorized_extensions}}"
       hint: "(Sie können Dateien auch in den Editor ziehen, um sie hochzuladen)"
       hint_for_supported_browsers: "Sie können Bilder auch in den Editor ziehen oder sie aus der Zwischenablage einfügen"
-      image_link: "Der Link Ihres Bildes verweist auf"
     search:
       more_results: "Es gibt mehr Ergebnisse. Bitte grenzen Sie Ihre Suchkriterien weiter ein."
       cant_find: "Das gesuchte nicht gefunden?"
@@ -368,6 +385,8 @@ de_formal:
           new: '<p>Hier werden neue Themen angezeigt.</p><p>Standardmäßig werden jene Themen als neu angesehen und mit dem <span class="badge new-topic badge-notification" style="vertical-align:middle;line-height:inherit;">neu</span> Indikator versehen, die in den letzten 2 Tagen erstellt wurden.</p><p>Sie können das in Ihren <a href="%{userPrefsUrl}">Einstellungen</a> ändern.</p>'
           unread: '<p>Hier werden Ihre ungelesenen Themen angezeigt.</p><p>Die Anzahl der ungelesenen Beiträge wird standardmäßig als <span class="badge new-posts badge-notification">1</span> neben den Themen angezeigt, wenn Sie:</p><ul><li>das Thema erstellt haben</li><li>auf das Thema geantwortet haben</li><li>das Thema länger als 4 Minuten gelesen haben</li></ul><p>Außerdem werden jene Themen berücksichtigt, die Sie in den Benachrichtigungseinstellungen am Ende eines jeden Themas ausdrücklich auf Beobachten oder Verfolgen gesetzt haben.</p><p>Sie können das in Ihren<a href="%{userPrefsUrl}">Einstellungen</a> ändern.</p>'
     topic:
+      remove_from_profile:
+        help: "Entfernen Sie diesen Link zum Thema aus Ihrem Profil"
       invalid_access:
         description: "Entschuldigung, Sie haben keinen Zugriff auf dieses Thema!"
         login_required: "Sie müssen sich anmelden, um dieses Thema sehen zu können."
@@ -525,6 +544,8 @@ de_formal:
         confirm:
           one: "Möchten Sie diese Beiträge wirklich zusammenführen?"
           other: "Möchten Sie diese {{count}} Beiträge wirklich zusammenführen?"
+      bookmarks:
+        set_reminder: "Eine Erinnerung erstellen"
     category:
       manage_tag_groups_link: "Schlagwort-Gruppen verwalten."
       allow_global_tags_label: "Auch andere Schlagwörter erlauben."
@@ -535,7 +556,6 @@ de_formal:
       pending_permission_change_alert: "Sie haben %{group} nicht zu dieser Kategorie hinzugefügt; klicken Sie diese Schaltfläche, um sie zuzufügen."
       email_in_allow_strangers: "E-Mails von anonymen Benutzern akzeptieren."
       email_in_disabled_click: 'aktivieren Sie die Einstellung „email in“.'
-      suppress_from_latest: "Die Kategorie bei den aktuellen Themen unterdrücken"
       show_subcategory_list: "Liste der Unterkategorien oberhalb von Themen in dieser Kategorie zeigen"
       all_topics_wiki: "Neue Themen standardmäßig zu Wikis machen."
       allow_badges_label: "Das Verleihen von Abzeichen in dieser Kategorie erlauben."
@@ -589,11 +609,16 @@ de_formal:
       multiple_grant: "Sie können dieses Abzeichen mehrmals verliehen bekommen"
       select_badge_for_title: Wählen Sie ein Abzeichen als Ihren Titel aus
     tagging:
+      edit_synonyms: "Synonyme verwalten"
+      add_synonyms_failed: "Die folgenden Schlagwörter konnten nicht als Synonyme hinzugefügt werden: <b>%{tag_names}</b>. Stellen Sie sicher, dass nicht bereits Synonyme und keine Synonyme eines anderen Schlagwortes da sind."
+      delete_synonym_confirm: 'Wollen Sie das Synonym "%{tag_name}" wirklich entfernen?'
       delete_tag: "Schlagwort löschen"
       delete_confirm:
         one: "Sind Sie sicher, dass Sie dieses Schlagwort löschen und von einem zugeordneten Thema entfernen möchten?"
         other: "Sind Sie sicher, dass Sie dieses Schlagwort löschen und von {{count}} zugeordneten Themen entfernen möchten?"
       delete_confirm_no_topics: "Sind Sie sicher, dass Sie dieses Schlagwort löschen möchten?"
+      delete_confirm_synonyms:
+        other: "{{count}} weitere Synonyme werden ebenfalls gelöscht."
       upload_description: "Laden Sie eine CSV-Datei hoch, um mehrere Schlagwörter auf einmal zu erstellen"
       notifications:
         watching:
@@ -647,6 +672,8 @@ de_formal:
         about: "Hier können Sie Gruppenzugehörigkeiten und Gruppennamen bearbeiten."
         none_selected: "Eine Gruppe wählen, um loszulegen"
         no_custom_groups: "Eine neue benutzerdefinierte Gruppe erstellen"
+      api:
+        undo_revoke: "Widerruf zurückziehen"
       web_hooks:
         warn_local_payload_url: "Es sieht so aus als wenn Sie versuchen einen Webhook an eine lokale URL einzurichten. Ereignisse, die an eine lokale Adresse ausgeliefert werden, können möglicherweise Nebeneffekte oder unvorhergesehenes Verhalten auslösen. Möchten Sie fortfahren?"
         event_type_missing: "Sie müssen mindestens einen Ereignistyp definieren."
@@ -685,6 +712,7 @@ de_formal:
           themes_intro: "Ein bestehendes Theme wählen oder ein neues installieren, um anzufangen"
           long_title: "Farben, CSS und HTML-Inhalte Ihrer Seite erweitern"
           edit_confirm: "Dies ist ein Remote-Theme. Wenn Sie CSS/HTML bearbeiten, werden Ihre Änderungen zurückgesetzt, wenn Sie das Theme das nächste Mal aktualisieren."
+          update_confirm: "Folgendes wird vom Update geändert. Sind Sie sicher, dass Sie fortfahren wollen?"
           update_confirm_yes: "Ja, fahre mit dem Update fort"
           color_scheme_select: "Farben für dieses Theme wählen"
           convert_component_alert: "Sind Sie sicher, dass Sie diese Komponente in ein Theme umwandeln möchten? Sie wird als Komponente entfernt von %{relatives}."
@@ -695,6 +723,7 @@ de_formal:
           edit_css_html_help: "Sie haben kein CSS oder HTML bearbeitet"
           public_key: "Dem folgenden öffentlichen Schlüssel Zugriff auf das Repository gewähren:"
           install_upload: "Von Ihrem Gerät"
+          imported_from_archive: "Das Design wurde von einer .zip Datei importiert"
           scss:
             title: "Geben Sie benutzerdefiniertes CSS ein. Wir akzeptieren alle gültigen CSS und SCSS-Stile"
           header:
@@ -726,6 +755,7 @@ de_formal:
         staff_actions:
           actions:
             unsilence_user: "Benutzer nicht mehr stummschaltenG"
+            api_key_destroy: "Api Schlüssel vernichten"
         screened_ips:
           description: 'IP-Adressen die beobachtet werden. Benutzen Sie „Erlauben“, um IP-Adressen auf die Whitelist zu setzen.'
           delete_confirm: "Möchten Sie wirklich die Regel für %{ip_address} entfernen?"

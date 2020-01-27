@@ -61,6 +61,9 @@ de_formal:
   provider_not_enabled: "Sie sind nicht berechtigt, die angeforderte Ressource anzuzeigen. Der Authentifizierungsprovider ist nicht aktiviert."
   provider_not_found: "Sie sind nicht berechtigt, die angeforderte Ressource anzuzeigen. Der Authentifizierungsprovider existiert nicht."
   invalid_whisper_access: "Enweder ist Flüstern nicht aktiviert oder Sie haben keinen Zugang zu Flüster-Beiträgen"
+  not_in_group:
+    title_topic: "Sie müssen in einer Gruppe sein um dieses Thema zu sehen."
+    title_category: "Sie müssen in einer Gruppe sein um diese Kategorie zu sehen."
   max_consecutive_replies:
     one: "Es ist nicht mehr als %{count} aufeinanderfolgende Antwort erlaubt. Bitte bearbeiten Sie stattdessen Ihre letzte Antwort oder warten Sie, bis Ihnen jemand antwortet."
     other: "Es sind nicht mehr als %{count} aufeinanderfolgende Antworten erlaubt. Bitte bearbeiten Sie stattdessen Ihre letzte Antwort oder warten Sie, bis Ihnen jemand antwortet."
@@ -246,9 +249,6 @@ de_formal:
     error: "Es gab einen Fehler beim Ändern Ihrer E-Mail-Adresse. Wird vielleicht diese Adresse bereits verwendet?"
     error_staged: "Es gab einen Fehler beim Ändern Ihrer E-Mail-Adresse. Die Adresse wird bereits von einem vorbereiteten Benutzer verwendet."
     already_done: "Entschuldigung, dieser Bestätigungs-Link ist nicht mehr gültig. Wurde vielleicht die E-Mail-Adresse bereits geändert?"
-    authorizing_old:
-      title: "Vielen Dank für die Bestätigung Ihrer aktuellen E-Mail-Adresse"
-      description: "Wir senden Ihnen jetzt zur Bestätigung eine E-Mail an Ihre neue Adresse."
   associated_accounts:
     revoke_failed: "Das Widerrufen Ihres Kontos bei %{provider_name} ist fehlgeschlagen."
   activation:
@@ -376,6 +376,8 @@ de_formal:
     google_oauth2_hd: "Eine optionale Google Apps gehostete Domain zu welcher das Anmelden limitiert sein wird. Siehe <a href='https://developers.google.com/identity/protocols/OpenIDConnect#hd-param' target='_blank'>https://developers.google.com/identity/protocols/OpenIDConnect#hd-param</a> für weitere Informationen."
     enable_twitter_logins: "Twitter-Authentifizierung aktivieren; erfordert twitter_consumer_key und twitter_consumer_secret. Siehe <a href='https://meta.discourse.org/t/13395' target='_blank'>Configuring Twitter login (and rich embeds) for Discourse</a>."
     enable_facebook_logins: "Facebook-Authentifizierung aktivieren; erfordert facebook_api_id und facebook_app_secret. Siehe <a href='https://meta.discourse.org/t/13394' target='_blank'>Configuring Facebook login for Discourse</a>."
+    discord_client_id: 'Discord Client ID (benötigen Sie eine? Besuchen Sie<a href="https://discordapp.com/developers/applications/me">das Discord Entwickler Portal</a>)'
+    discord_trusted_guilds: 'Das Einloggen per Discord nur Mitgliedern dieser Discord Gilden gestatten. Verwenden Sie die numerische ID der Gilde. Lesen Sie die Anleitung <a href="https://meta.discourse.org/t/configuring-discord-login-for-discourse/127129">hier</a>, um mehr zu erfahren. Leer lassen, um jede Gilde zuzulassen.'
     s3_endpoint: "Dieser Endpunkt kann so angepasst werden, dass er die Sicherung an einen S3-kompatiblen Service wie DigitalOcean Spaces oder Minio übertragt. WARNUNG: bei Verwendung von AWS S3 den Standard verwenden."
     enable_s3_inventory: "Erstellen Sie Berichte und überprüfen Sie Uploads mit Amazon S3-Bestand. WICHTIG: Benötigt gültige S3-Anmeldeinformationen (sowohl access_key_id als auch secret_access_key)."
     max_likes_per_day: "Maximale Anzahl der \"Gefällt mir\"-Angaben pro Benutzer und Tag."
@@ -409,6 +411,7 @@ de_formal:
     enable_mobile_theme: "Mobilgeräte verwenden eine mobile Darstellung mit der Möglichkeit, zur vollständigen Site zu wechseln. Deaktivieren Sie diese Option, wenn Sie ein eigenes Full-Responsive-Stylesheet verwenden möchten."
     auto_handle_queued_age: "Einträge automatisch bearbeiten, die so viele Tage auf Überprüfung warten. Meldungen werden ignoriert. Beiträge und Benutzer in der Warteschlange werden zurückgewiesen. Setzen Sie den Wert auf 0, um diese Funktion zu deaktivieren."
     svg_icon_subset: "Fügen Sie zusätzliche Font Awesome 5 Icons hinzu, die Sie verfügbar machen möchten. Verwenden Sie das Präfix 'fa-' für Icons der Kategorie 'solid', 'far-' für die Kategorie 'regular' und 'fab-' für die Kategorie 'brand'."
+    embed_any_origin: "Einbettbaren Inhalt ohne Berücksichtigung der Herkunft erlauben. Dies ist notwendig für mobile Applikationen mit statischem HTML."
     returning_user_notice_tl: "Minimale Vertrauensstufe, die für das Sehen von Beitrags Benachrichtigungen wiederkehrender Benutzer erforderlich ist."
     default_email_messages_level: "Standard E-Mail Benachrichtigungs-Stufe, wenn jemand einem Benutzer Nachrichten schickt."
     default_other_new_topic_duration_minutes: "Zeit, wie lange ein Thema als \"Neu\" markiert werden soll. "
@@ -454,6 +457,9 @@ de_formal:
       one: "Dieses Thema wurde automatisch geschlossen, nachdem die maximale Anzahl von Antworten erreicht wurde."
       other: "Dieses Thema wurde automatisch geschlossen, nachdem die maximale Anzahl von %{count} Antworten erreicht wurde."
   login:
+    security_key_description: "Wenn Sie Ihren physischen Sicherheitsschlüssel vorbereitet haben, klicken Sie unten auf die Schaltfläche \"Mit Sicherheitsschlüssel authentifizieren\"."
+    security_key_alternative: "Versuchen Sie einen anderen Weg"
+    security_key_support_missing_error: "Ihr aktuelles Gerät oder Browser unterstützt die Verwendung von Sicherheitsschlüsseln nicht. Bitte verwenden Sie eine andere Methode."
     not_approved: "Ihr Benutzerkonto wurde noch nicht genehmigt. Sie werden per E-Mail benachrichtigt, sobald dies geschehen ist."
     wait_approval: "Danke fürs Registrieren. Wir werden Sie benachrichtigen, sobald Ihr Benutzerkonto genehmigt wurde."
     active: "Ihr Konto ist nun freigeschaltet und einsatzbereit."
@@ -695,6 +701,19 @@ de_formal:
         Die Community hat den Beitrag gemeldet und er ist nun verborgen. **Da er mehr als einmal verborgen wurde, wird er es bleiben, bis ein Teammitglied ihn prüft.**
 
         Für zusätzliche Hinweise informieren Sie sich bitte über unsere [Community Richtlinien](%{base_url}/guidelines).
+    flags_disagreed:
+      text_body_template: |
+        Hallo,
+
+        dies ist eine automatische Nachricht von %{site_name}, um Sie zu informieren, dass [Ihr Beitrag](%{base_url}%{url}) wiederhergestellt worden ist.
+
+        Dieser Beitrag wurde von der Community gemeldet, und ein Teammitglied hat entschieden, ihn wiederherzustellen.
+
+        [details="Hier klicken, um wiederhergestellten Beitrag auszuklappen"]
+        ``` markdown
+        %{flagged_post_raw_content}
+        ```
+        [/details]
     flags_agreed_and_post_deleted:
       text_body_template: |
         Hallo,
@@ -991,6 +1010,7 @@ de_formal:
         [Bitte überprüfen Sie diese](%{base_url}/review).
     dashboard_problems:
       subject_template: "Neue Ratschläge auf Ihrem Webseiten-Dashboard"
+      text_body_template: "Basierend auf Ihren aktuellen Seiteneinstellungen haben wir  einige neue Ratschläge und Empfehlungen für Sie. \n\n[Besuchen Sie das Dashboard Ihrer Seite](%{base_url}/admin), um sie zu sehen.\n\nSollte im Dashboard nichts sichtbar sein, hat bereits ein anderes Teammitglied auf die Ratschläge reagiert. Eine Liste der Team Handlungen finden sich in den  [Team Handlungs Logs](%{base_url}/admin/logs/staff_action_logs).\n"
     new_user_of_the_month:
       title: "Sie sind ein neuer Benutzer des Monats!"
       subject_template: "Sie sind ein neuer Benutzer des Monats!"
@@ -1096,14 +1116,6 @@ de_formal:
 
         Folgen Sie diesem Link, um ein Passwort zu wählen:
         %{base_url}/u/password-reset/%{email_token}
-    admin_login:
-      text_body_template: |
-        Jemand hat angefordert, sich mit Ihrem Konto auf [%{site_name}](%{base_url}) anzumelden.
-
-        Wenn Sie diese Anfrage nicht gestellt haben, können Sie diese E-Mail einfach ignorieren.
-
-        Folgen Sie diesem Link, um sich anzumelden:
-        %{base_url}/u/admin-login/%{email_token}
     account_created:
       subject_template: "[%{email_prefix}] Ihr neues Konto"
       text_body_template: |
@@ -1113,18 +1125,8 @@ de_formal:
         %{base_url}/u/password-reset/%{email_token}
     confirm_new_email:
       subject_template: "[%{email_prefix}] Bestätigen Sie Ihre neue E-Mail-Adresse"
-      text_body_template: |
-        Bestätigen Sie Ihre neue E-Mail-Adresse für %{site_name}, indem Sie diesem Link folgen:
-
-        %{base_url}/u/authorize-email/%{email_token}
     confirm_old_email:
       subject_template: "[%{email_prefix}] Bestätigen Sie Ihre aktuelle E-Mail-Adresse"
-      text_body_template: |
-        Bevor wir Ihre E-Mail-Adresse ändern können, ist es nötig, dass Sie die Kontrolle über Ihre aktuelle E-Mail-Adresse bestätigen. Wenn Sie diesen Schritt erledigen, werden wir Sie bitten, Ihre neue E-Mail-Adresse zu bestätigen.
-
-        Bestätigen Sie Ihre aktuelle E-Mail-Adresse für %{site_name}, indem Sie diesem Link folgen:
-
-        %{base_url}/u/authorize-email/%{email_token}
     notify_old_email:
       subject_template: "[%{email_prefix}] Ihre E-Mail-Adresse wurde geändert"
       text_body_template: |
@@ -1210,6 +1212,8 @@ de_formal:
     sockpuppet: "Ein neuer Benutzer hat ein Thema erstellt und ein anderer neuer Benutzer mit der selben IP-Adresse (%{ip_address}) hat darauf geantwortet. Beachten Sie die <a href='%{base_path}/admin/site_settings/category/spam'>`flag_sockpuppets`</a> Einstellung."
   skipped_email_log:
     exceeded_bounces_limit: "bounce_score_threshold überschritten"
+  csv_export:
+    rate_limit_error: "Beiträge können pro Tag nur einmal heruntergeladen werden. Bitte versuchen Sie es morgen wieder."
   static_topic_first_reply: |
     Bearbeiten Sie den ersten Beitrag in diesem Thema, um den Inhalt von %{page_name} zu ändern.
   guidelines_topic:
@@ -1682,18 +1686,8 @@ de_formal:
       description: Hat je fünf "Gefällt mir"-Angaben auf 300 Beiträge erhalten
       long_description: |
         Das Abzeichen wird verliehen, wenn 300 Ihrer Beiträge mindestens 5 Likes erhalten. Wow! Die Community bewundert Ihre regelmäßigen, hochwertigen Beiträge zu den Dialogen!
-    out_of_love:
-      description: Hat 50 "Gefällt mir"-Angaben an einem Tag vergeben
-      long_description: |
-        Das Abzeichen wird verliehen, wenn Sie alle Ihrer 50 täglichen Likes nutzen. Daran zu denken, sich einen Moment zu nehmen und die Beiträge mit „Gefällt mir“ zu markieren, die Sie genießen und schätzen, ermuntert Ihre Community-Kollegen, in der Zukunft noch großartigere Diskussionen zu erstellen.
-    higher_love:
-      description: Hat fünfmal je 50 "Gefällt mir"-Angaben an einem Tag vergeben
-      long_description: |
-        Das Abzeichen wird verliehen, wenn Sie fünf Tage lang alle Ihrer 50 täglichen Likes nutzen. Danke, dass Sie sich die Zeit nehmen, die besten Dialoge täglich zu fördern!
     crazy_in_love:
       description: Hat 20-mal je 50 "Gefällt mir"-Angaben an einem Tag vergeben
-      long_description: |
-        Dieses Abzeichen wird verliehen, wenn Sie 20 Tage lang alle Ihrer 50 täglichen Likes nutzen. Wow! Sie sind ein Vorbild, das Ihre Community-Kollegen ermutigt!
     thank_you:
       description: Hat 20 "Gefällt mir"-Angaben für Beiträge erhalten und 10 "Gefällt mir"-Angaben vergeben
       long_description: |
@@ -1825,3 +1819,5 @@ de_formal:
         confirm: "Möchten Sie diesen Benutzer wirklich löschen? Dies wird alle seine Beiträge löschen und seine E-Mail-Adresse und IP-Adresse sperren."
   email_style:
     html_missing_placeholder: "Die HTML Vorlage muss %{placeholder} beinhalten"
+  discord:
+    not_in_allowed_guild: "Authentifizierung fehlgeschlagen. Sie sind kein Mitglied einer erlaubten Discord Gilde."
