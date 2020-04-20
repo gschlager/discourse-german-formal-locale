@@ -67,7 +67,7 @@ de_formal:
         delete_member_confirm: "„%{username}“ aus der Gruppe „%{group}“ entfernen?"
       public_admission: "Benutzern erlauben, die Gruppe eigenständig zu betreten (Erfordert, dass die Gruppe öffentlich sichtbar ist)"
       public_exit: "Benutzern erlauben, die Gruppe eigenständig zu verlassen"
-      allow_membership_requests: "Benutzern erlauben, eine Mitgliedschaftsanfrage an Gruppen-Eigentümer zu senden."
+      confirm_leave: "Wollen Sie die Gruppe wirklich verlassen?"
       membership_request_template: "Benutzerdefinierte Vorlage, die Benutzern angezeigt wird, welche eine Mitgliedschaftsanfrage senden"
       membership_request:
         reason: "Lassen Sie die Gruppenbesitzer wissen, warum Sie in diese Gruppe gehören"
@@ -104,6 +104,11 @@ de_formal:
         ignore_option_title: "Sie werden keine Benachrichtigungen zu diesem Benutzer erhalten, und seine Themen und Antworten werden ausgeblendet."
         mute_option_title: "Sie werden keine Benachrichtigungen zu diesem Benutzer bekommen."
         normal_option_title: "Sie werden benachrichtigt, wenn dieser Benutzer Ihnen antwortet, Sie zitiert oder erwähnt."
+      feature_topic_on_profile:
+        open_search: "Wählen Sie ein neues Thema"
+        title: "Wählen Sie ein Thema"
+        clear:
+          warning: "Wollen Sie Ihr Thema wirklich entfernen? "
       desktop_notifications:
         perm_denied_expl: "Sie haben das Anzeigen von Benachrichtigungen verboten. Aktivieren Sie die Benachrichtigungen über Ihre Browser-Einstellungen."
         each_browser_note: "Hinweis: Sie müssen diese Einstellung in jedem Browser einzeln ändern."
@@ -112,7 +117,6 @@ de_formal:
       external_links_in_new_tab: "Alle externen Links in einem neuen Tab öffnen"
       enable_defer: "Verzögerung für das ungelesen Markieren von Themen aktivieren"
       mailing_list_mode:
-        individual_no_echo: "Für alle fremden Beträge eine E-Mail senden"
         many_per_day: "Mir für jeden neuen Beitrag eine E-Mail (etwa {{dailyEmailEstimate}} pro Tag) senden"
         few_per_day: "Mir für jeden neuen Beitrag eine E-Mail (etwa 2 pro Tag) senden"
       watched_tags_instructions: "Sie werden automatisch alle neuen Themen mit diesen Schlagwörtern beobachten. Sie werden über alle neuen Beiträge und Themen benachrichtigt und die Anzahl der neuen Antworten wird bei den betroffenen Themen angezeigt."
@@ -166,10 +170,10 @@ de_formal:
         success_staff: "Wir haben eine E-Mail an Ihre aktuelle Adresse geschickt. Bitte folgen Sie den Bestätigungsanweisungen."
       change_avatar:
         title: "Ändern Sie Ihr Profilbild"
-        gravatar_title: "Ändern Sie Ihren Avatar auf der Gravatar-Webseite"
-        refresh_gravatar_title: "Gravatar aktualisieren"
         upload_title: "Bild hochladen"
         image_is_not_a_square: "Achtung: Bild wurde zugeschnitten, weil Höhe und Breite nicht übereingestimmt haben."
+      change_featured_topic:
+        instructions: "Eine Verknüpfung zu diesem Thema wird auf Ihrer Benutzerkarte und Ihrem Profil sein."
       email:
         ok: "Wir senden Ihnen zur Bestätigung eine E-Mail"
         invalid: "Bitte geben Sie eine gültige E-Mail-Adresse ein"
@@ -220,9 +224,6 @@ de_formal:
     logout: "Sie wurden abgemeldet."
     read_only_mode:
       enabled: "Diese Website befindet sich im Nur-Lesen-Modus. Sie können weiterhin Inhalte lesen, aber das Erstellen von Beiträgen, Vergeben von Likes und Durchführen einiger weiterer Aktionen ist derzeit nicht möglich."
-    too_few_topics_and_posts_notice: "Lassen Sie <a href='https://blog.discourse.org/2014/08/building-a-discourse-community/'>die Diskussion beginnen!</a> Es gibt <strong>%{currentTopics}</strong> Themen und <strong>%{currentPosts}</strong> Beiträge. Besucher brauchen mehr zum Lesen und Beantworten – wir empfehlen mindestens <strong>%{requiredTopics}</strong> Themen und <strong>%{requiredPosts}</strong> Beiträge. Diese Nachricht ist nur für das Team sichtbar."
-    too_few_topics_notice: "Lassen Sie <a href='https://blog.discourse.org/2014/08/building-a-discourse-community/'>die Diskussion beginnen!</a> Es gibt <strong>%{currentTopics}</strong> Themen. Besucher brauchen mehr zum Lesen und Beantworten – wir empfehlen mindestens <strong>%{requiredTopics}</strong> Themen. Diese Nachricht ist nur für das Team sichtbar."
-    too_few_posts_notice: "Lassen <a href='https://blog.discourse.org/2014/08/building-a-discourse-community/'>die Diskussion beginnen!</a> Es gibt <strong>%{currentPosts}</strong> Beiträge. Besucher brauchen mehr zum Lesen und Beantworten – wir empfehlen mindestens <strong>%{requiredPosts}</strong> Beiträge. Diese Nachricht ist nur für das Team sichtbar."
     signup_cta:
       hide_session: "Mich morgen erinnern"
       hidden_for_session: "In Ordnung, ich frage Sie morgen wieder. Sie können sich auch jederzeit unter „Anmelden“ ein Benutzerkonto erstellen."
@@ -242,8 +243,6 @@ de_formal:
       invite: "Geben SIe Ihren Benutzernamen oder Ihre E-Mail-Adresse ein. Wir senden Ihnen eine E-Mail zum Zurücksetzen des Passworts."
       complete_username: "Wenn ein Benutzerkonto dem Benutzernamen <b>%{username}</b> entspricht, sollten Sie in Kürze eine E-Mail mit Anweisungen zum Zurücksetzen Ihres Passwortes erhalten."
       complete_email: "Wenn ein Benutzerkonto der E-Mail <b>%{email}</b> entspricht, sollten Sie in Kürze eine E-Mail mit Anweisungen zum Zurücksetzen Ihres Passwortes erhalten."
-      complete_username_found: "Wir haben ein zum Benutzernamen <b>%{username}</b> gehörendes Konto gefunden. Sie sollten in Kürze eine E-Mail mit Anweisungen zum Zurücksetzen Ihres Passwortes erhalten."
-      complete_email_found: "Wir haben ein zu <b>%{email}</b> gehörendes Benutzerkonto gefunden. Sie sollten in Kürze eine E-Mail mit Anweisungen zum Zurücksetzen Ihres Passwortes erhalten."
       help: "E-Mail nicht angekommen? Bitte prüfen Sie zuerst Ihren Spam-Ordner. <p>Nicht sicher, welche E-Mail-Adresse Sie verwendet haben? Geben Sie eine E-Mail-Adresse ein und wir werden Ihnen sagen, ob sie hier existiert.</p><p>Falls Sie keinen Zugriff mehr auf die hinterlegte E-Mail-Adresse Ihres Kontos haben, kontaktieren Sie bitte <a href='%{basePath}/about'>unser hilfsbereites Team. </a></p>"
     email_login:
       complete_username: "Sofern ein Benutzerkonto mit dem Benutzernamen <b>%{username}</b> existiert, sollten Sie in Kürze eine E-Mail mit einem Anmeldelink erhalten."
@@ -304,7 +303,7 @@ de_formal:
         try_like: "Haben Sie schon die {{heart}}-Schaltfläche ausprobiert?"
         category_missing: "Sie müssen eine Kategorie auswählen"
         tags_missing: "Sie müssen mindestens %{count} Schlagwörter wählen."
-        topic_template_not_modified: "Bitte fügen Sie Details und Spezifikationen zu Ihrem Thema hinzu, indem Sie die Themenvorlage anpasst."
+        topic_template_not_modified: "Bitte fügen Sie Details und Spezifikationen zu Ihrem Thema hinzu, indem Sie die Themenvorlage anpassen."
       create_shared_draft: "gemeinsame Vorlage erstellen"
       title_placeholder: "Um was geht es in dieser Diskussion? Schreiben Sie einen kurzen Satz."
       title_or_link_placeholder: "Geben Sie einen Titel ein oder fügen Sie einen Link ein"
@@ -385,7 +384,10 @@ de_formal:
           new: '<p>Hier werden neue Themen angezeigt.</p><p>Standardmäßig werden jene Themen als neu angesehen und mit dem <span class="badge new-topic badge-notification" style="vertical-align:middle;line-height:inherit;">neu</span> Indikator versehen, die in den letzten 2 Tagen erstellt wurden.</p><p>Sie können das in Ihren <a href="%{userPrefsUrl}">Einstellungen</a> ändern.</p>'
           unread: '<p>Hier werden Ihre ungelesenen Themen angezeigt.</p><p>Die Anzahl der ungelesenen Beiträge wird standardmäßig als <span class="badge new-posts badge-notification">1</span> neben den Themen angezeigt, wenn Sie:</p><ul><li>das Thema erstellt haben</li><li>auf das Thema geantwortet haben</li><li>das Thema länger als 4 Minuten gelesen haben</li></ul><p>Außerdem werden jene Themen berücksichtigt, die Sie in den Benachrichtigungseinstellungen am Ende eines jeden Themas ausdrücklich auf Beobachten oder Verfolgen gesetzt haben.</p><p>Sie können das in Ihren<a href="%{userPrefsUrl}">Einstellungen</a> ändern.</p>'
     topic:
+      feature_on_profile:
+        help: "Fügen Sie eine Verknüpfung zu diesem Thema zu Ihrer Benutzerkarte und Ihrem Profil hinzu"
       remove_from_profile:
+        warning: "Ihr Profil hat bereits ein hervorgehobenes Thema. Wenn Sie fortfahren, wird dieses das bestehende Thema ersetzen."
         help: "Entfernen Sie diesen Link zum Thema aus Ihrem Profil"
       invalid_access:
         description: "Entschuldigung, Sie haben keinen Zugriff auf dieses Thema!"
@@ -544,8 +546,6 @@ de_formal:
         confirm:
           one: "Möchten Sie diese Beiträge wirklich zusammenführen?"
           other: "Möchten Sie diese {{count}} Beiträge wirklich zusammenführen?"
-      bookmarks:
-        set_reminder: "Eine Erinnerung erstellen"
     category:
       manage_tag_groups_link: "Schlagwort-Gruppen verwalten."
       allow_global_tags_label: "Auch andere Schlagwörter erlauben."
@@ -610,6 +610,9 @@ de_formal:
       select_badge_for_title: Wählen Sie ein Abzeichen als Ihren Titel aus
     tagging:
       edit_synonyms: "Synonyme verwalten"
+      add_synonyms_explanation:
+        one: "Jede Stelle, die dieses Schlagwort aktuell verwendet, wird auf die Verwendung von <b>%{tag_name}</b> geändert. Sind Sie sicher, dass diese Änderung erfolgen soll?"
+        other: "Jede Stelle, die dieses Schlagwort aktuell verwendet, wird auf die Verwendung von <b>%{tag_name}</b> geändert. Sind Sie sicher, dass diese Änderung erfolgen soll?"
       add_synonyms_failed: "Die folgenden Schlagwörter konnten nicht als Synonyme hinzugefügt werden: <b>%{tag_names}</b>. Stellen Sie sicher, dass nicht bereits Synonyme und keine Synonyme eines anderen Schlagwortes da sind."
       delete_synonym_confirm: 'Wollen Sie das Synonym "%{tag_name}" wirklich entfernen?'
       delete_tag: "Schlagwort löschen"
@@ -674,10 +677,12 @@ de_formal:
         no_custom_groups: "Eine neue benutzerdefinierte Gruppe erstellen"
       api:
         undo_revoke: "Widerruf zurückziehen"
+        not_shown_again: "Dieser Schlüssel wird nicht noch einmal angezeigt. Stellen Sie sicher, dass Sie eine Kopie haben, bevor Sie fortfahren."
       web_hooks:
         warn_local_payload_url: "Es sieht so aus als wenn Sie versuchen einen Webhook an eine lokale URL einzurichten. Ereignisse, die an eine lokale Adresse ausgeliefert werden, können möglicherweise Nebeneffekte oder unvorhergesehenes Verhalten auslösen. Möchten Sie fortfahren?"
         event_type_missing: "Sie müssen mindestens einen Ereignistyp definieren."
         individual_event: "Einzelne Ereignisse auswählen."
+        active_notice: "Wir werden Ereignisdetails übermitteln, wenn es eintritt."
         categories_filter_instructions: "In Frage kommende Webhooks werden nur dann getriggert, wenn das Ereignis in Verbindung mit den angegebenen Kategorien steht. Wert freilassen, um den Webhook für alle Kategorien auszuführen."
         groups_filter_instructions: "In Frage kommende Webhooks werden nur dann getriggert, wenn das Ereignis in Verbindung mit den angegebenen Gruppen steht. Wert freilassen, um den Webhook für alle Gruppen auszuführen."
         events:
@@ -720,6 +725,7 @@ de_formal:
           no_uploads: "Sie können Medieninhalte hochladen, die zu Ihrem Theme gehören, wie etwa Schriftarten und Bilder."
           upload_file_tip: "Wählen Sie einen hochzuladenen Medieninhalt aus (png, woff2, usw.)"
           unsaved_changes_alert: "Sie haben Ihre Änderungen noch nicht gespeichert, möchten Sie sie verwerfen und weitermachen?"
+          unsaved_parent_themes: "Sie haben die Komponente keinen Themes zugewiesen, wollen Sie fortfahren?"
           edit_css_html_help: "Sie haben kein CSS oder HTML bearbeitet"
           public_key: "Dem folgenden öffentlichen Schlüssel Zugriff auf das Repository gewähren:"
           install_upload: "Von Ihrem Gerät"
@@ -794,7 +800,7 @@ de_formal:
         help: "Fügen Sie Felder hinzu, welche Ihre Benutzer ausfüllen können."
         delete_confirm: "Sind Sie sicher, dass Sie dieses Benutzerfeld löschen möchten?"
       site_text:
-        description: "Du kannst jeden Text Ihres Forums anpassen. Benutzen Sie dazu die Suche:"
+        description: "Sie können jeden Text Ihres Forums anpassen. Benutzen Sie dazu die Suche:"
         search: "Suche nach dem Text, den Sie bearbeiten möchten"
         revert_confirm: "Möchten Sie wirklich Ihre Änderungen verwerfen?"
         recommended: "Wir empfehlen, dass Sie den folgenden Text an Ihre Bedürfnisse anpassen:"
@@ -816,6 +822,10 @@ de_formal:
             text: "Es fehlen Beispieldaten. Das passiert, wenn die Abzeichen-Abfrage IDs von Benutzern oder Beiträgen liefert, die nicht existieren. Das kann in weiterer Folge zu unerwarteten Ergebnissen führen. Bitte überprüfen Sie nochmals die Abfrage."
         badge_intro:
           title: "Ein bestehendes Abzeichen wählen oder ein neues erstellen, um loszulegen"
+        mass_award:
+          no_badge_selected: "Bitte wählen Sie ein Abzeichen, um anzufangen."
+          perform: "Abzeichen an Benutzer verleihen"
+          replace_owners: Entfernt das Abzeichen von vorherigen Eigentümern
       emoji:
         help: "Neues Emoji hinzufügen, das für alle verfügbar sein wird. (Tipp: per Drag & Drop können Sie gleichzeitig mehrere Dateien hinzufügen)"
         delete_confirm: "Möchten Sie wirklich das :%{name}: Emoji löschen?"
@@ -827,7 +837,6 @@ de_formal:
         embed_truncate: "Die eingebetteten Beiträge kürzen"
         embed_classname_whitelist: "CSS-Klassen erlauben"
       permalink:
-        description: "Bitte beachten: dies trifft nur auf externe Quellen zu. In Ihrem Forum gepostete Links werden nicht umgeleitet."
         delete_confirm: "Möchten Sie wirklich diesen Permanentlink löschen?"
   wizard_js:
     wizard:

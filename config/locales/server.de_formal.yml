@@ -30,6 +30,7 @@ de_formal:
         one: "Sie haben die ungültige Auswahl %{name} getroffen"
         other: "Sie haben die ungültige Auswahl %{name} getroffen"
       default_categories_already_selected: "Sie können keine Kategorie auswählen, die bereits in einer anderen Liste benutzt wird. "
+      default_tags_already_selected: "Sie können keinen Tag wählen, der in einer anderen Liste verwendet wird."
       s3_backup_requires_s3_settings: "Sie können S3 nicht als Backup-Ort verwenden, solange Sie die Einstellung '%{setting_name}' nicht angegeben haben."
       s3_bucket_reused: "Sie können nicht den gleichen Bucket für 's3_upload_bucket' und 's3_backup_bucket' verwenden. Bitte verwenden Sie einen anderen Bucket oder verwenden Sie für jeden Bucket einen anderen Pfad."
     conflicting_google_user_id: 'Die Google-Konto-ID für dieses Konto hat sich geändert; das Einschreiten des Teams ist aus Sicherheitsgründen erforderlich. Bitte kontaktieren Sie das Team und verweisen Sie es auf <br><a href="https://meta.discourse.org/t/76575">https://meta.discourse.org/t/76575</a>'
@@ -89,7 +90,7 @@ de_formal:
   spamming_host: "Entschuldigung, Sie können keine Links zu diesem Webserver posten."
   topic_not_found: "Etwas ist schief gelaufen. Wurde das Thema eventuell geschlossen oder gelöscht, während Sie es angeschaut haben?"
   not_accepting_pms: "Entschuldigung, %{username} akzeptiert gerade keine Nachrichten."
-  max_pm_recepients: "Sorry, Sie können eine Nachricht nur an maximal %{recipients_limit} Emfpänger senden."
+  max_pm_recipients: "Sorry, Sie können eine Nachricht nur an maximal %{recipients_limit} Emfpänger senden."
   pm_reached_recipients_limit: "Entschuldigung, aber Sie können nicht mehr als %{recipients_limit} Empfänger in einer Nachricht haben."
   just_posted_that: "ist einer einer vor Kurzem von Ihnen geschriebenen Nachricht zu ähnlich"
   read_full_topic: "Das vollständige Thema lesen"
@@ -249,6 +250,14 @@ de_formal:
     error: "Es gab einen Fehler beim Ändern Ihrer E-Mail-Adresse. Wird vielleicht diese Adresse bereits verwendet?"
     error_staged: "Es gab einen Fehler beim Ändern Ihrer E-Mail-Adresse. Die Adresse wird bereits von einem vorbereiteten Benutzer verwendet."
     already_done: "Entschuldigung, dieser Bestätigungs-Link ist nicht mehr gültig. Wurde vielleicht die E-Mail-Adresse bereits geändert?"
+    authorizing_new:
+      title: "Bestätigen Sie Ihre neue E-Mail Adresse"
+      description: "Bitte bestätigen Sie, dass Ihre E-Mail Adresse geändert wird auf:"
+    authorizing_old:
+      title: "Ändern Sie Ihre E-Mail Adresse"
+      description: "Bitte bestätigen Sie die Änderung Ihrer E-Mail Adresse"
+      almost_done_title: "bestätigen Sie die neue E-Mail Adresse"
+      almost_done_description: "Wir haben eine E-Mail an Ihre neue Adresse gesendet, um die Änderung zu bestätigen!"
   associated_accounts:
     revoke_failed: "Das Widerrufen Ihres Kontos bei %{provider_name} ist fehlgeschlagen."
   activation:
@@ -303,7 +312,6 @@ de_formal:
   dashboard:
     rails_env_warning: "Ihr Server läuft im %{env}-Modus."
     host_names_warning: "Ihre config/database.yml-Datei verwendet localhost als Hostname. Tragen Sie hier den Hostnamen Ihrer Website ein."
-    gc_warning: 'Ihr Server verwendet die Standardparameter für Rubys Garbage-Collector, die nicht optimal sind. Lesen Sie dieses Thema über Performanzeinstellungen (en): <a href="https://meta.discourse.org/t/tuning-ruby-and-rails-for-discourse/4126" target="_blank">Tuning Ruby and Rails for Discourse</a>.'
     sidekiq_warning: 'Sidekiq läuft nicht. Viele Aufgaben, wie zum Beispiel das Versenden von E-Mails, werden asynchron durch Sidekiq ausgeführt. Bitte stellen Sie sicher, dass mindestens ein Sidekiq-Prozess läuft. <a href="https://github.com/mperham/sidekiq">Mehr über Sidekiq erfahren Sie hier (en)</a>.'
     queue_size_warning: "Eine hohe Anzahl an Aufgaben (%{queue_size}) befindet sich in der Warteschlange. Dies könnte auf ein Problem mit Sidekiq hinweisen oder Sie müssen zusätzliche Sidekiq Worker starten."
     memory_warning: "Ihr Server läuft mit weniger als 1 GB Hauptspeicher. Mindestens 1 GB Hauptspeicher werden empfohlen."
@@ -321,6 +329,7 @@ de_formal:
       other: "Beim Abrufen von E-Mails sind in den letzten 24 Stunden %{count} Fehler aufgetreten. Weitere Informationen finden Sie <a href='%{base_path}/logs' target='_blank'>im Fehlerprotokoll</a>."
     missing_mailgun_api_key: "Der Server ist so eingestellt, dass E-Mails über Mailgun versendet werden, aber Sie haben keinen API-Schlüssel angegeben, um Webhook-Nachrichten zu überprüfen."
     bad_favicon_url: "Das Favicon lässt sich nicht laden. Prüfen Sie die Favicon-Einstellung in den <a href='%{base_path}/admin/site_settings'>Einstellungen</a>."
+    update_mail_receiver: "Wir haben eine veraltete Version des mail-receivers festgestellt. Klicken Sie <a href='https://meta.discourse.org/t/-/133491'>hier</a>, um eine Update Anleitung zu erhalten. Nach dem Update kann es 24 Stunden dauern, bis dieser Hinweis verschwindet."
     poll_pop3_timeout: "Die Verbindung zum POP3-Server schlägt mit einer Zeitüberschreitung fehl. Eingehende E-Mails konnten nicht abgerufen werden. Überprüfen Sie Ihre <a href='%{base_path}/admin/site_settings/category/email'>POP3-Einstellungen</a>."
     poll_pop3_auth_error: "Die Verbindung zum POP3-Server schlägt mit einem Authentisierungsfehler fehl. Überprüfen Sie Ihre <a href='%{base_path}/admin/site_settings/category/email'>POP3-Einstellungen</a>."
     force_https_warning: "Ihre Webseite verwendet SSL, aber die `<a href='%{base_path}/admin/site_settings/category/all_results?filter=force_https'>force_https</a>` ist in den Website-Einstellungen noch nicht aktiviert."
@@ -349,7 +358,6 @@ de_formal:
     favicon: "Favicon für die Seite, siehe <a href='https://de.wikipedia.org/wiki/Favicon' target='_blank'>https://de.wikipedia.org/wiki/Favicon</a>. Damit es auch über eine CDN richtig funktioniert, muss es ein PNG sein. Wird auf eine Größe von 32x32 gesetzt. Falls leer, wird large_icon verwendet. "
     enforce_second_factor: "Zwingt die Benutzer, die Zwei-Faktor-Authentifizierung zu aktivieren. Wählen Sie \"alle\", um sie für alle Benutzer zu erzwingen. Wählen Sie \"Team\", um sie nur für Team Benutzer zu erzwingen."
     force_https: "Erzwingen Sie HTTPS für Ihre Seite. ACHTUNG: Aktivieren Sie dies nicht, bevor HTTPS nicht vollständig eingerichtet ist und auf jeden Fall überall funktioniert! Haben Sie alle CDN-Netzwerke, alle Logins über Soziale Netzwerke, alle externe Logos / Abhängigkeiten geprüft, um sicherzustellen, dass sie auch alle HTTPS-kompatibel sind?"
-    summary_likes_required: "Mindestanzahl an \"Gefällt mir\"-Angaben in einem Thema, bevor die \"Thema zusammenfassen\" Funktion aktiviert wird."
     summary_percent_filter: "Die besten (n)% der Beiträge eines Themas in der \"Thema zusammenfassen\"-Ansicht anzeigen."
     summary_max_results: "Maximale Anzahl der Beiträge bei 'dieses Thema zusammenfassen'"
     enable_personal_messages: "Benutzern mit der Vertrauensstufe 1 (konfigurierbar über die minimale Vertrauensstufe zum Senden von Nachrichten) erlauben, Nachrichten zu erstellen und auf Nachrichten zu antworten. Beachten Sie, dass das Team immer Nachrichten und Antworten senden kann."
@@ -413,6 +421,7 @@ de_formal:
     svg_icon_subset: "Fügen Sie zusätzliche Font Awesome 5 Icons hinzu, die Sie verfügbar machen möchten. Verwenden Sie das Präfix 'fa-' für Icons der Kategorie 'solid', 'far-' für die Kategorie 'regular' und 'fab-' für die Kategorie 'brand'."
     embed_any_origin: "Einbettbaren Inhalt ohne Berücksichtigung der Herkunft erlauben. Dies ist notwendig für mobile Applikationen mit statischem HTML."
     returning_user_notice_tl: "Minimale Vertrauensstufe, die für das Sehen von Beitrags Benachrichtigungen wiederkehrender Benutzer erforderlich ist."
+    default_email_level: "Setzen Sie die Standard E-Mail Benachrichtigungs-Stufe für reguläre Themen."
     default_email_messages_level: "Standard E-Mail Benachrichtigungs-Stufe, wenn jemand einem Benutzer Nachrichten schickt."
     default_other_new_topic_duration_minutes: "Zeit, wie lange ein Thema als \"Neu\" markiert werden soll. "
     default_other_auto_track_topics_after_msecs: "Zeit, bevor ein Thema automatisch verfolgt wird. "
@@ -587,76 +596,6 @@ de_formal:
       (Wenn Sie diesen Download *nicht* angefordert haben, sollten Sie in Sorge sein -- jemand hat Administrationszugriff auf Ihre Seite.)
     no_token: |
       Entschuldigung, der Backup-Download-Link wurde schon verwendet oder ist abgelaufen.
-  test_mailer:
-    text_body_template: |
-      Dies ist eine Test-E-Mail von
-
-      [**%{base_url}**][0]
-
-      E-Mail-Zustellbarkeit ist eine komplizierte Sache. Hier sind ein paar wichtige Dinge aufgeführt, die Sie am Anfang prüfen sollten:
-
-      - Stellen Sie *sicher*, dass Sie die `notification_email` (Absender von Benachrichtigungen) in den Einstellungen richtig gesetzt haben. **Die Domain in der "From"-Adresse der E-Mails, die Sie schicken, ist die Domain, gegen die Ihre E-Mail validiert wird**.
-
-      - Lernen Sie, wie Sie den Quelltext der E-Mail in Ihrem E-Mail-Programm anzeigen lassen können, damit Sie die E-Mail-Kopfzeilen auf wichtige Anhaltspunkte hin überprüfen können. In Google Mail ist dies die "Zeige Original"-Option in der Auswahlliste oben rechts von jeder E-Mail.
-
-      - **WICHTIG:** Hat Ihr Internetdienstanbieter (ISP) einen Reverse-DNS-Eintrag eingegeben, der die Domainnamen und die IP-Adressen verknüpft, von denen Sie E-Mails verschicken? [Überprüfen Sie Ihren Reverse PTR-Eintrag][2] hier. Wenn Ihr ISP den Reverse-DNS-Eintrag nicht richtig eingibt, ist es sehr unwahrscheinlich, dass eine Ihrer E-Mails zugestellt wird.
-
-      - Ist der [SPF-Eintrag][8] Ihrer Domain richtig? [Überprüfen Sie Ihren SPF-Eintrag][1] hier. Beachten Sie, dass TXT der richtige Eintragstyp für SPF ist.
-
-      - Ist der [DKIM-Eintrag][3] Ihrer Domain richtig? Dies wird die E-Mai-lZustellbarkeit signifikant verbessern. [Überprüfen Sie Ihren DKIM-Eintrag][7] hier.
-
-      - Wenn Sie Ihren eigenen E-Mail-Server betreiben, stellen Sie sicher, dass die IPs Ihrer E-Mail-Server [nicht auf irgendwelchen E-Mail-Blacklist][4] stehen. Überprüfen Sie auch, dass es definitiv einen vollqualifizierten Hostnamen in der HELO-Nachricht schickt, der in DNS auflöst. Wenn nicht, wird dies dazu führen, dass Ihre E-Mail von vielen E-Mail-Diensten abgelehnt wird.
-
-      - Wir empfehlen sehr, **eine Test-E-Mail an [mail-tester.com][mt]** zu schicken, um zu überprüfen, dass alles erwähnte korrekt funktioniert.
-
-      (Der *einfache* Weg besteht darin, ein kostenloses Konto bei [SendGrid][sg], [SparkPost][sp], [Mailgun][mg] oder [Mailjet][mj] anzulegen, die großzügige kostenlose E-Mail-Tarife haben und für kleine Communitys ausreichen werden. Sie werden allerdings dennoch die SPF- und DKIM-Einträge in Ihren DNS-Einstellungen eintragen müssen!)
-
-      Wir hoffen, dass Sie diesen Test der E-Mail-Zustellbarkeit erfolgreich erhalten haben!
-
-      Viel Erfolg,
-
-      Ihre Freunde von [Discourse](https://www.discourse.org)
-
-      [0]: %{base_url}
-      [1]: https://www.kitterman.com/spf/validate.html
-      [2]: https://mxtoolbox.com/ReverseLookup.aspx
-      [3]: http://www.dkim.org/
-      [4]: https://whatismyipaddress.com/blacklist-check
-      [7]: https://www.mail-tester.com/spf-dkim-check
-      [8]: http://www.openspf.org/SPF_Record_Syntax
-      [sg]: https://goo.gl/r1WMF6
-      [sp]: https://www.sparkpost.com/
-      [mg]: https://www.mailgun.com/
-      [mj]: https://www.mailjet.com/pricing
-      [mt]: https://www.mail-tester.com/
-  new_version_mailer:
-    text_body_template: |
-      Hurra, eine neue Version von [Discourse](https://www.discourse.org) ist verfügbar!
-
-      Ihre Version: %{installed_version}
-      Neue Version: **%{new_version}**
-
-      - Aktualisieren Sie mit unserem einfachen **[Ein-Klick-Browser-Upgrade](%{base_url}/admin/upgrade)**.
-
-      - Schauen Sie sich in den [Releasenotes](https://meta.discourse.org/tags/release-notes) an, was neu ist, oder rufen Sie das [technische GitHub-Changelog](https://github.com/discourse/discourse/commits/master) auf.
-
-      - Besuchen Sie [meta.discourse.org](https://meta.discourse.org) für Neuigkeiten, Diskussionen und Support für Discourse.
-  new_version_mailer_with_notes:
-    text_body_template: |
-      Hurra, eine neue Version von [Discourse](https://www.discourse.org) ist verfügbar!
-
-      Ihre Version: %{installed_version}
-      Neue Version: **%{new_version}**
-
-      - Aktualisieren Sie mit unserem einfachen **[Ein-Klick-Browser-Upgrade](%{base_url}/admin/upgrade)**.
-
-      - Schauen Sie sich in den [Releasenotes](https://meta.discourse.org/tags/release-notes) an, was neu ist, oder rufe das [technische GitHub-Changelog](https://github.com/discourse/discourse/commits/master) auf.
-
-      - Besuchen Sie [meta.discourse.org](https://meta.discourse.org) für Neuigkeiten, Diskussionen und Support für Discourse.
-
-      ### Releasenotes
-
-      %{notes}
   flag_reasons:
     off_topic: "Ihr Beitrag wurde als **Thema verfehlt** gemeldet: Die Community glaubt, dass er nicht zum Thema passt, wie es durch den Titel und den ersten Beitrag definiert wurde."
     inappropriate: "Ihr Beitrag wurde als **unangemessen** gemeldet: die Community glaubt, dass er anstößig oder beleidigend ist oder einen Verstoß gegen [die Community Richtlinien](%{base_path}/guidelines) darstellt."
@@ -788,15 +727,6 @@ de_formal:
         ``` text
         %{logs}
         ```
-    csv_export_succeeded:
-      text_body_template: |
-        Ihr Datenexport war erfolgreich! :dvd:
-
-        %{download_link}
-
-        Dieser Link wird 48 Stunden verfügbar sein.
-
-        Die Daten sind in ein .zip-Archiv komprimiert. Sollte das Archiv sich nicht selbst extrahieren, wenn Sie es öffnen, benutzen Sie zB. das hier empfohlene Tool: https://www.7-zip.org/
     csv_export_failed:
       text_body_template: "Es tut uns leid, aber Ihr Datenexport ist fehlgeschlagen. Bitte überprüfen Sie die Logs oder [kontaktieren Sie ein Team-Mitglied](%{base_url}/about)."
     email_reject_insufficient_trust_level:
