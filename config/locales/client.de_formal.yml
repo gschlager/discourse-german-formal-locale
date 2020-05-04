@@ -22,7 +22,6 @@ de_formal:
         bookmark: "Klicken Sie hier, um ein Lesezeichen auf den ersten Beitrag in diesem Thema zu setzen."
         unbookmark: "Klicken Sie hier, um alle Lesezeichen in diesem Thema zu entfernen."
     bookmarks:
-      created: "Lesezeichen zum Beitrag hinzugefügt"
       confirm_clear: "Sollen wirklich alle Lesezeichen in diesem Thema entfernt werden?"
       no_timezone: 'Sie haben noch keine Zeitzone ausgewählt. Sie werden keine Erinnerungen erstellen können. Stellen Sie eine <a href="%{basePath}/my/preferences/profile">in Ihrem Profil</a> ein.'
     drafts:
@@ -434,7 +433,6 @@ de_formal:
           "2_8": "Sie werden eine Anzahl neuer Antworten sehen, weil Sie diese Kategorie verfolgen."
           "2_4": "Sie werden eine Anzahl neuer Antworten sehen, weil Sie einen Beitrag in diesem Thema geschrieben haben."
           "2_2": "Sie werden eine Anzahl neuer Antworten sehen, weil Sie dieses Thema verfolgen."
-          "2": 'Sie werden eine Anzahl neuer Antworten sehen, weil Sie <a href="{{basePath}}/u/{{username}}/preferences">dieses Thema gelesen haben</a>.'
           "1_2": "Sie werden benachrichtigt, wenn jemand Ihren @Namen erwähnt oder auf Ihren Beitrag antwortet."
           "1": "Sie werden benachrichtigt, wenn jemand Ihren @Namen erwähnt oder auf Ihren Beitrag antwortet."
           "0_7": "Sie ignorieren alle Benachrichtigungen dieser Kategorie."
@@ -603,7 +601,6 @@ de_formal:
         help: "Themen, in denen Sie ein Lesezeichen gesetzt haben"
       top:
         other_periods: "angesagte Themen zeigen:"
-    browser_update: 'Leider <a href="https://www.discourse.org/faq/#browser">ist Ihr Browser zu alt</a>. Bitte <a href="https://browsehappy.com">aktualisieren Sie Ihren Browser</a>, damit diese Seite richtig funktioniert.'
     badges:
       allow_title: "Sie können dieses Abzeichen als Titel verwenden"
       multiple_grant: "Sie können dieses Abzeichen mehrmals verliehen bekommen"
