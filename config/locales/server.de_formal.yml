@@ -147,12 +147,6 @@ de_formal:
       Sie können Ihre letzte Antwort bearbeiten, um ein Zitat hinzuzufügen, indem Sie den Text auswählen und auf die erscheinende Schaltfläche <b>Zitat</a> klicken.
 
       Es ist für alle einfacher, Themen zu lesen, die wenige tiefgehende Antworten haben statt vielen kleinen und einzelnen Antworten.
-    dominating_topic: |
-      ### Lassen Sie auch andere die Konversation mitgestalten
-
-      Dieses Thema ist Ihnen eindeutig wichtig &ndash; Sie haben mehr als %{percent}% aller Antworten verfasst.
-
-      Es könnte noch besser sein, wenn Sie anderen Leuten ebenfalls Raum lassen, ihre Sichtweisen darzulegen. Bitte laden Sie sie dazu ein.
     get_a_room: |
       ### Ermutigen Sie jeden, bei dieser Konversation mitzumachen.
 
@@ -252,7 +246,6 @@ de_formal:
     already_done: "Entschuldigung, dieser Bestätigungs-Link ist nicht mehr gültig. Wurde vielleicht die E-Mail-Adresse bereits geändert?"
     authorizing_new:
       title: "Bestätigen Sie Ihre neue E-Mail Adresse"
-      description: "Bitte bestätigen Sie, dass Ihre E-Mail Adresse geändert wird auf:"
     authorizing_old:
       title: "Ändern Sie Ihre E-Mail Adresse"
       description: "Bitte bestätigen Sie die Änderung Ihrer E-Mail Adresse"
@@ -271,7 +264,6 @@ de_formal:
     off_topic:
       description: "Dieser Beitrag hat nichts mit dem Thema zu tun wie es im Titel und ersten Beitrag steht. Deshalb sollte er woandershin verschoben werden."
     notify_user:
-      title: "Schreiben Sie @{{username}} eine Nachricht"
       email_title: 'Ihr Beitrag in „%{title}“'
   user_activity:
     no_default:
@@ -815,11 +807,6 @@ de_formal:
         Es tut uns leid, aber Ihre E-Mail-Nachricht an %{destination} (Betreff: %{former_title}) hat nicht funktioniert.
 
         Der Antwort-Schlüssel in der E-Mail ist ungültig oder unbekannt, sodass wir nicht ermitteln können, worauf diese E-Mail antwortet. [Kontaktieren Sie ein Team-Mitglied](%{base_url}/about).
-    email_reject_bad_destination_address:
-      text_body_template: |
-        Es tut uns leid, aber Ihre E-Mail-Nachricht an %{destination} (mit dem Betreff %{former_title}) hat nicht funktioniert.
-
-        Keine der Empfängeradressen wurden erkannt oder der Message-ID-Header in der E-Mail ist verändert worden. Bitte stellen Sie sicher, dass Sie an die richtige E-Mail-Adresse schicken, die vom Team bekanntgegeben wurde.
     email_reject_old_destination:
       subject_template: "[%{email_prefix}] E-Mail-Problem -- Sie versuchen, auf eine alte Benachrichtigung zu antworten"
       text_body_template: |
@@ -1056,6 +1043,8 @@ de_formal:
     confirm_new_email:
       subject_template: "[%{email_prefix}] Bestätigen Sie Ihre neue E-Mail-Adresse"
     confirm_old_email:
+      subject_template: "[%{email_prefix}] Bestätigen Sie Ihre aktuelle E-Mail-Adresse"
+    confirm_old_email_add:
       subject_template: "[%{email_prefix}] Bestätigen Sie Ihre aktuelle E-Mail-Adresse"
     notify_old_email:
       subject_template: "[%{email_prefix}] Ihre E-Mail-Adresse wurde geändert"
@@ -1616,8 +1605,6 @@ de_formal:
       description: Hat je fünf "Gefällt mir"-Angaben auf 300 Beiträge erhalten
       long_description: |
         Das Abzeichen wird verliehen, wenn 300 Ihrer Beiträge mindestens 5 Likes erhalten. Wow! Die Community bewundert Ihre regelmäßigen, hochwertigen Beiträge zu den Dialogen!
-    crazy_in_love:
-      description: Hat 20-mal je 50 "Gefällt mir"-Angaben an einem Tag vergeben
     thank_you:
       description: Hat 20 "Gefällt mir"-Angaben für Beiträge erhalten und 10 "Gefällt mir"-Angaben vergeben
       long_description: |

@@ -53,14 +53,6 @@ de_formal:
       filtered_topic: "Sie haben nach zu prüfenden Inhalten in einem einzelnen Thema gefiltert."
       approval:
         description: "Wir haben Ihren neuen Beitrag erhalten. Er muss allerdings zunächst durch einen Moderator freigeschaltet werden. Bitte haben Sie etwas Geduld. "
-        pending_posts:
-          one: "Sie haben <strong>%{count}</strong> verbleibenden Beitrag."
-          other: "Sie haben <strong>{{count}}</strong> verbleibende Beiträge."
-    user_action:
-      you_posted_topic: "<a href=\"{{userUrl}}\">Sie</a> haben <a href=\"{{topicUrl}}\">das Thema</a> verfasst"
-      you_replied_to_post: "<a href='{{userUrl}}'>Sie</a> haben auf <a href='{{postUrl}}'>{{post_number}}</a> geantwortet "
-      you_replied_to_topic: "<a href='{{userUrl}}'>Sie</a> haben auf <a href='{{topicUrl}}'>das Thema</a> geantwortet"
-      you_mentioned_user: "<a href='{{user1Url}}'>Sie</a> haben <a href='{{user2Url}}'>{{another_user}}</a> erwähnt"
     groups:
       manage:
         delete_member_confirm: "„%{username}“ aus der Gruppe „%{group}“ entfernen?"
@@ -86,7 +78,6 @@ de_formal:
           description: "Sie werden benachrichtigt, wenn jemand Ihren @Namen erwähnt oder auf Ihren Beitrag antwortet."
         muted:
           description: "Sie erhalten keine Benachrichtigungen im Zusammenhang mit Nachrichten in dieser Gruppe."
-      flair_url_description: 'Quadratische Bilder verwenden, die nicht kleiner als 20x20 Pixel sind oder FontAwesome-Icons (akzeptierte Formate: "fa-icon", "far fa-icon" oder "fab fa-icon").'
     ip_lookup:
       confirm_delete_other_accounts: "Sollen diese Konten wirklich gelöscht werden?"
     user_fields:
@@ -116,7 +107,6 @@ de_formal:
       external_links_in_new_tab: "Alle externen Links in einem neuen Tab öffnen"
       enable_defer: "Verzögerung für das ungelesen Markieren von Themen aktivieren"
       mailing_list_mode:
-        many_per_day: "Mir für jeden neuen Beitrag eine E-Mail (etwa {{dailyEmailEstimate}} pro Tag) senden"
         few_per_day: "Mir für jeden neuen Beitrag eine E-Mail (etwa 2 pro Tag) senden"
       watched_tags_instructions: "Sie werden automatisch alle neuen Themen mit diesen Schlagwörtern beobachten. Sie werden über alle neuen Beiträge und Themen benachrichtigt und die Anzahl der neuen Antworten wird bei den betroffenen Themen angezeigt."
       tracked_tags_instructions: "Sie werden automatisch alle Themen mit diesen Schlagwörtern verfolgen. Die Anzahl der neuen Antworten wird bei den betroffenen Themen angezeigt."
@@ -137,8 +127,6 @@ de_formal:
         choose_new: "Ein neues Passwort wählen"
         choose: "Ein Passwort wählen"
       second_factor_backup:
-        manage: "Sicherungscodes verwalten. Sie haben noch <strong>{{count}}</strong> Sicherungscodes."
-        remaining_codes: "Sie haben noch <strong>{{count}}</strong> Wiederherstellungscodes übrig."
         use: "Benutzen Sie einen Backup-Code"
         enable_prerequisites: "Sie müssen vor dem Generieren von Sicherungscodes einen primären zweiten Faktor aktivieren."
         codes:
@@ -156,10 +144,7 @@ de_formal:
         oauth_enabled_warning: "Beachten Sie bitte, dass soziale Anmelde-Methoden deaktiviert werden, sobald die Zwei-Faktor-Authentifizierung für Ihr Konto aktiviert ist."
         use: "Benutzen Sie die Authentifizierungs-App"
         enforced_notice: "Sie müssen Zwei-Faktor-Authentifizierung aktivieren, bevor Sie auf diese Seite zugreifen können."
-        enable_security_key_description: "Wenn Sie Ihren physischen Sicherheitsschlüssel vorbereitet haben, klicken Sie unten auf die Schaltfläche Registrieren."
         security_key:
-          add: "Registrieren Sie den Sicherheitsschlüssel"
-          already_added_error: "Sie haben diesen Sicherheitsschlüssel bereits registriert. Sie müssen ihn nicht erneut registrieren.\e"
           edit: "Den Sicherheitsschlüssel bearbeiten"
       change_username:
         confirm: "Sind Sie sich sicher, dass Sie Ihren Benutzernamen ändern möchten?"
@@ -176,11 +161,7 @@ de_formal:
       email:
         ok: "Wir senden Ihnen zur Bestätigung eine E-Mail"
         invalid: "Bitte geben Sie eine gültige E-Mail-Adresse ein"
-        authenticated: "Ihre E-Mail-Adresse wurde von {{provider}} bestätigt"
         frequency_immediately: "Wir werden Ihnen sofort eine E-Mail senden, wenn Sie die betroffenen Inhalte noch nicht gelesen haben."
-        frequency:
-          one: "Wir werden Ihnen nur dann eine E-Mail senden, wenn wir Sie nicht innerhalb der letzten Minute gesehen haben."
-          other: "Wir werden Ihnen nur dann eine E-Mail senden, wenn wir Sie nicht innerhalb der letzten {{count}} Minuten gesehen haben."
       associated_accounts:
         confirm_description:
           account_specific: "Ihr %{provider} Konto '%{account_description}' wird für die Authentifizierung genutzt werden. "
@@ -191,7 +172,6 @@ de_formal:
         too_short: "Der Name ist zu kurz"
         ok: "Der Name sieht in Ordnung aus"
       username:
-        short_instructions: "Leute können Sie mit @{{username}} erwähnen"
         available: "Der Benutzername ist verfügbar"
         too_short: "Der Benutzername ist zu kurz"
         too_long: "Der Benutzername ist zu lang"
@@ -233,10 +213,7 @@ de_formal:
     private_message_info:
       invite: "Laden Sie andere ein"
       leave_message: "Nachricht wirklich verlassen?"
-      remove_allowed_user: "Soll {{name}} wirklich aus dieser Unterhaltung entfernt werden?"
-      remove_allowed_group: "Soll {{name}} wirklich aus dieser Unterhaltung entfernt werden? "
     create_account:
-      disclaimer: "Mit der Registrierung stimmen Sie <a href='{{privacy_link}}' target='blank'>privacy policy</a> und <a href='{{tos_link}}' target='blank'>terms of service</a> zu."
       failed: "Etwas ist fehlgeschlagen. Vielleicht ist diese E-Mail-Adresse bereits registriert. Versuchen Sie den 'Passwort vergessen'-Link."
     forgot_password:
       invite: "Geben SIe Ihren Benutzernamen oder Ihre E-Mail-Adresse ein. Wir senden Ihnen eine E-Mail zum Zurücksetzen des Passworts."
@@ -261,13 +238,11 @@ de_formal:
       awaiting_activation: "Ihr Konto ist noch nicht aktiviert. Verwenden Sie den 'Passwort vergessen'-Link, um eine weitere E-Mail mit Anweisungen zur Aktivierung zu erhalten."
       awaiting_approval: "Ihr Konto wurde noch nicht von einem Team-Mitglied genehmigt. Sie bekommen eine E-Mail, sobald das geschehen ist."
       requires_invite: "Entschuldigung, der Zugriff auf dieses Forum ist nur mit einer Einladung möglich."
-      not_activated: "Sie können sich noch nicht anmelden. Wir haben Ihnen schon eine E-Mail zur Aktivierung an <b>{{sentTo}}</b> geschickt. Bitte folgen Sie den Anweisungen in dieser E-Mail, um Ihr Benutzerkonto zu aktivieren."
       not_allowed_from_ip_address: "Von dieser IP-Adresse kann keine Anmeldung erfolgen."
       admin_not_allowed_from_ip_address: "Von dieser IP-Adresse kann keine Anmeldung als Administrator erfolgen."
       resend_activation_email: "Klicken Sie hier, um eine neue Aktivierungsmail zu schicken."
       omniauth_disallow_totp: "Für Ihr Benutzerkonto ist die Zwei-Faktor-Authentifizierung aktiviert. Bitte melden Sie sich mit Ihrem Passwort an."
       provide_new_email: "Geben Sie eine neue Adresse an und wir senden Ihre Bestätigungsmail erneut."
-      sent_activation_email_again: "Wir haben Ihnen eine weitere E-Mail zur Aktivierung an <b>{{currentEmail}}</b> geschickt. Es könnte ein paar Minuten dauern, bis diese ankommt; sehen SIe auch im Spam-Ordner nach."
       sent_activation_email_again_generic: "Wir haben eine weitere Aktivierungsmail verschickt. Es könnte ein paar Minuten dauern, bis diese ankommt; schauen Sie auch im Spam-Ordner nach."
       to_continue: "Melden Sie sich bitte an"
       preferences: "Sie müssen angemeldet sein, um Ihre Benutzereinstellungen bearbeiten zu können."
@@ -278,28 +253,12 @@ de_formal:
       your_email: "Die E-Mail-Adresse Ihres Benutzerkontos ist <b>%{email}</b>"
       success: "Ihr Konto wurde erstellt und Sie sind jetzt angemeldet."
       password_label: "ein Passwort wählen"
-    select_kit:
-      max_content_reached:
-        one: "Sie können nur einen Eintrag auswählen."
-        other: "Sie können nur {{count}} Einträge auswählen."
-      min_content_not_reached:
-        one: "mindestens einen Eintrag auswählen."
-        other: "Mindestens {{count}} Einträge auswählen."
     shared_drafts:
       confirm_publish: "Diese Vorlage veröffentlichen?"
     composer:
       posting_not_on_topic: "Auf welches Thema möchten Sie antworten?"
       similar_topics: "Ihr Thema hat Ähnlichkeit mit…"
-      group_mentioned_limit: "<b>Warnung!</b> Sie erwähnen <a href='{{group_link}}'>{{group}}</a>, aber diese Gruppe hat mehr Mitglieder als die maximale Anzahl {{max}} , die vom Administrator für die gleichzeitige Erwähnung festgelegt wurden. Keiner davon wird benachrichtigt."
-      group_mentioned:
-        one: "Indem Sie {{group}} erwähnen, sind Sie dabei, <a href='{{group_link}}'>eine Person</a> zu benachrichtigen – sind Sie sicher?"
-        other: "Indem Sie {{group}} erwähnen, sind SIe dabei, <a href='{{group_link}}'>{{count}} Personen</a> zu benachrichtigen – sind Sie sicher?"
-      cannot_see_mention:
-        category: "Sie haben {{username}} erwähnt, aber diese Person wird nicht benachrichtigt da sie keinen Zugriff auf diese Kategorie hat. Fügen Sie sie einer Gruppe hinzu, die Zugriff auf diese Kategorie hat."
-        private: "Sie haben {{username}} erwähnt, aber diese Person wird nicht benachrichtigt, da sie diese persönliche Nachricht nicht sehen kann. Laden Sie sie zu dieser PM ein."
-      duplicate_link: "Es sieht so aus als wäre Ihr Link auf <b>{{domain}}</b> in dem Thema bereits geschrieben worden von <b>@{{username}}</b> in <a href='{{post_url}}'>einer Antwort vor {{ago}}</a> – sind Sie sicher, dass Sie ihn noch einmal schreiben möchten?"
       error:
-        try_like: "Haben Sie schon die {{heart}}-Schaltfläche ausprobiert?"
         category_missing: "Sie müssen eine Kategorie auswählen"
         tags_missing: "Sie müssen mindestens %{count} Schlagwörter wählen."
         topic_template_not_modified: "Bitte fügen Sie Details und Spezifikationen zu Ihrem Thema hinzu, indem Sie die Themenvorlage anpassen."
@@ -339,24 +298,8 @@ de_formal:
     notifications:
       title: "Benachrichtigung über @Name-Erwähnungen, Antworten auf Ihre Beiträge und Themen, Nachrichten, usw."
       post_approved: "Ihr Beitrag wurde genehmigt."
-      liked_consolidated_description:
-        one: "gefällt {{count}} Ihrer Beiträge"
-        other: "gefallen {{count}} Ihrer Beiträge"
-      invitee_accepted: "<span>{{username}}</span> hat Ihre Einladung angenommen"
-      granted_badge: "Sie haben '{{description}}' verliehen bekommen"
-      group_message_summary:
-        one: "{{count}} Nachricht in Ihrem {{group_name}} Posteingang"
-        other: "{{count}} Nachrichten in Ihrem {{group_name}} Posteingang"
-      popup:
-        mentioned: '{{username}} hat Sie in "{{topic}}" - {{site_title}} erwähnt'
-        group_mentioned: '{{username}} hat Sie in "{{topic}}" - {{site_title}} erwähnt'
-        quoted: '{{username}} hat Sie in "{{topic}}" - {{site_title}} zitiert'
-        replied: '{{username}} hat Ihnen in "{{topic}}" - {{site_title}} geantwortet'
-        private_message: '{{username}} hat Ihnen eine Nachricht geschickt in „{{topic}}“ – {{site_title}}'
-        linked: '{{username}} hat in "{{topic}}" - {{site_title}} einen Beitrag von Ihnen verlinkt'
     upload_selector:
       local_tip: "wählen Sie auf Ihrem Gerät gespeicherte Bilder aus"
-      local_tip_with_attachments: "Wählen Sie Bilder oder Dateien von Ihrem Gerät aus {{authorized_extensions}}"
       hint: "(Sie können Dateien auch in den Editor ziehen, um sie hochzuladen)"
       hint_for_supported_browsers: "Sie können Bilder auch in den Editor ziehen oder sie aus der Zwischenablage einfügen"
     search:
@@ -369,9 +312,6 @@ de_formal:
     topics:
       bulk:
         select_all: "Alle auswählen"
-        selected:
-          one: "Sie haben <b>ein</b> Thema ausgewählt."
-          other: "Sie haben <b>{{count}}</b> Themen ausgewählt."
         choose_append_tags: "Neue Schlagwörter wählen, die diesen Themen hinzugefügt werden sollen:"
       none:
         unread: "Sie haben alle Themen gelesen."
@@ -395,19 +335,6 @@ de_formal:
         description: "Entschuldigung, wir konnten das Thema, wahrscheinlich wegen eines Verbindungsfehlers, nicht laden. Bitte versuchen Sie es erneut. Wenn das Problem bestehen bleibt, melden Sie es bitte."
       not_found:
         description: "Entschuldigung, wir konnten dieses Thema nicht finden. Wurde es vielleicht von einem Moderator entfernt?"
-      total_unread_posts:
-        one: "Sie haben einen ungelesenen Beitrag in diesem Thema"
-        other: "Sie haben {{count}} ungelesene Beiträge in diesem Thema"
-      unread_posts:
-        one: "Sie haben einen ungelesenen, alten Beitrag zu diesem Thema"
-        other: "Sie haben {{count}} ungelesene, alte Beiträge zu diesem Thema"
-      new_posts:
-        one: "Es gibt einen neuen Beitrag zu diesem Thema, seit Sie es das letzte Mal gelesen haben"
-        other: "Es gibt {{count}} neue Beiträge zu diesem Thema, seit Sie es das letzte Mal gelesen haben"
-      read_more_in_category: "Möchten Sie mehr lesen? Entdecken Sie andere Themen in {{catLink}} oder {{latestLink}}."
-      read_more: "Möchten Sie mehr lesen? {{catLink}} oder {{latestLink}}."
-      group_request: "Um dieses Thema zu sehen, müssen Sie die Mitgliedschaft der Gruppe `{{name}}` beantragen"
-      group_join: "Sie müssen der Gruppe `{{name}}` beitreten, um dieses Thema zu sehen"
       group_request_sent: "Ihr Mitgliedschafts-Antrag wurde gesendet. Sie bekommen eine Information, ob er akzepiert wurde."
       read_more_MF: "Sie {UNREAD, plural, =0 {} one {haben <a href='{basePath}/unread'>ein ungelesenes</a> Thema } other {haben<a href='{basePath}/unread'># ungelesene</a> Themen } } {NEW, plural, =0 {} one { {BOTH, select, true{und } false {haben} other{}} <a href='{basePath}/new'>ein neues</a> Thema} other { {BOTH, select, true{und } false {haben} other{}} <a href='{basePath}/new'># neue</a> Themen} }. Oder {CATEGORY, select, true {entdecken Sie andere Themen in {catLink}} false {{latestLink}} other {}}"
       suggest_create_topic: "Möchten Sie ein neues Thema erstellen?"
@@ -462,9 +389,6 @@ de_formal:
         success_message: "Sie haben dieses Thema erfolgreich gemeldet."
       make_public:
         choose_category: "Bitte wählen Sie eine Kategorie für das öffentliche Thema:"
-      feature_topic:
-        confirm_pin: "Es gibt bereits {{count}} angeheftete Themen. Zu viele angeheftete Themen könnten neue und unbekannte Benutzer leicht überwältigen. Wollen Sie wirklich noch ein weiteres Thema in dieser Kategorie anheften?"
-        confirm_pin_globally: "Es gibt bereits {{count}} global angeheftete Themen. Zu viele angeheftete Themen könnten neue und unbekannte Benutzer leicht überwältigen. Wollen Sie wirklich noch ein weiteres Thema global anheften?"
       invite_private:
         error: "Entschuldigung, es gab einen Fehler beim Einladen des Benutzers."
       invite_reply:
@@ -474,47 +398,19 @@ de_formal:
         to_topic_email: "Sie haben eine E-Mail-Adresse eingegeben. Wir werden eine Einladung versenden, die ein direktes Antworten auf dieses Thema ermöglicht."
         to_topic_username: "Sie haben einen Benutzernamen eingegeben. Wir werden eine Benachrichtigung versenden und mit einem Link zur Teilnahme an diesem Thema einladen."
         to_username: "Geben Sie den Benutzernamen der Person ein, die Sie einladen möchten Wir werden eine Benachrichtigung versenden und mit einem Link zur Teilnahme an diesem Thema einladen."
-        success_email: "Wir haben an <b>{{emailOrUsername}}</b> eine Einladung verschickt und werden Sie benachrichtigen, sobald die Einladung angenommen wurde. In Ihrem Benutzerprofil können Sie alle Ihre Einladungen überwachen."
-      split_topic:
-        instructions:
-          one: "Sie sind dabei, ein neues Thema zu erstellen und den ausgewählten Beitrag dorthin zu verschieben."
-          other: "Sie sind dabei, ein neues Thema zu erstellen und die <b>{{count}}</b> ausgewählten Beiträge dorthin zu verschieben."
-      merge_topic:
-        instructions:
-          one: "Bitte wählen Sie das Thema, in welches Sie den Beitrag verschieben möchten."
-          other: "Bitte wählen Sie das Thema, in welches Sie die <b>{{count}}</b> Beiträge verschieben möchten."
-      move_to_new_message:
-        instructions:
-          one: "Sie sind dabei, eine neue Nachricht zu erstellen und sie mit dem ausgewählten Beitrag zu befüllen."
-          other: "Sie sind dabei, eine neue Nachricht zu erstellen und sie mit den <b>{{count}}</b> ausgewählten Beiträgen zu befüllen."
-      move_to_existing_message:
-        instructions:
-          one: "Bitte wählen Sie die Nachricht, in welche Sie den Beitrag verschieben möchten."
-          other: "Bitte wählen Sie die Nachricht, in welche Sie die <b>{{count}}</b> verschieben möchten."
-      change_owner:
-        instructions:
-          one: "Bitte wählen Sie einen neuen Eigentümer für den Beitrag von <b>@{{old_user}}</b>"
-          other: "Bitte wählen Sie einen neuen Eigentümer für {{count}} Beiträge von <b>@{{old_user}}</b>"
       change_timestamp:
         instructions: "Wählen Sie bitte ein neues Erstelldatum für das Thema aus. Alle Beitrage im Thema werden unter Beibehaltung der Zeitdifferenz ebenfalls angepasst."
       multi_select:
         selected_post:
           title: "Klicken Sie, um den Beitrag aus der Auswahl zu entfernen"
-        description:
-          one: Sie haben <b>%{count}</b> Beitrag ausgewählt.
-          other: "Sie haben <b>{{count}}</b> Beiträge ausgewählt."
     post:
       has_likes_title_only_you: "Ihnen gefällt dieser Beitrag"
-      has_likes_title_you:
-        one: "Ihnen und einer weiteren Person gefällt dieser Beitrag"
-        other: "Ihnen und {{count}} weiteren Personen gefällt dieser Beitrag"
       errors:
         create: "Entschuldigung, es gab einen Fehler beim Anlegen des Beitrags. Bitte versuchen Sie es noch einmal."
         edit: "Entschuldigung, es gab einen Fehler beim Bearbeiten des Beitrags. Bitte versuchen Sie es noch einmal."
         upload: "Entschuldigung, es gab einen Fehler beim Hochladen der Datei. Bitte versuchen Sie es noch einmal."
         too_many_uploads: "Entschuldigung, Sie dürfen immer nur eine Datei hochladen."
-        too_many_dragged_and_dropped_files: "Entschuldigung, Sie können nur {{max}} Dateien auf einmal hochladen."
-        upload_not_authorized: "Entschuldigung, die Datei, die Sie hochladen möchten ist nicht erlaubt (erlaubte Dateiendungen sind: {{authorized_extensions}})."
+        upload_not_authorized: "Entschuldigung, die Datei, die Sie hochladen möchten ist nicht erlaubt (erlaubte Dateiendungen sind: %{authorized_extensions})."
         image_upload_not_allowed_for_new_user: "Entschuldigung, neue Benutzer dürfen keine Bilder hochladen."
         attachment_upload_not_allowed_for_new_user: "Entschuldigung, neue Benutzer dürfen keine Dateien hochladen."
         attachment_download_requires_login: "Entschuldigung, Sie müssen angemeldet sein, um Dateien herunterladen zu können."
@@ -536,14 +432,6 @@ de_formal:
           notify_moderators: "Sie haben dies den Moderatoren gemeldet"
           notify_user: "Sie haben diesem Benutzer eine Nachricht gesendet"
           bookmark: "Sie haben bei diesem Beitrag ein Lesezeichen gesetzt"
-      delete:
-        confirm:
-          one: "Möchten Sie wirklich diesen Beitrag löschen?"
-          other: "Möchten Sie wirklich diese {{count}} Beiträge löschen?"
-      merge:
-        confirm:
-          one: "Möchten Sie diese Beiträge wirklich zusammenführen?"
-          other: "Möchten Sie diese {{count}} Beiträge wirklich zusammenführen?"
     category:
       manage_tag_groups_link: "Schlagwort-Gruppen verwalten."
       allow_global_tags_label: "Auch andere Schlagwörter erlauben."
@@ -577,10 +465,6 @@ de_formal:
       delete_confirm_MF: "Sie werden {POSTS, plural, one {<b>einen</b> Beitrag} other {<b>#</b> Beiträge}} und {TOPICS, plural, one {<b>ein</b> Thema} other {<b>#</b> Themen}} von diesem Benutzer löschen, sein Konto entfernen, seine IP-Adresse <b>{ip_address}</b> für Neuanmeldungen sperren und die E-Mail-Adresse <b>{email}</b> auf eine permanente Sperrliste setzen. Sind Sie sicher, dass dieser Benutzer wirklich ein Spammer ist?"
       cant: "Entschuldigung, Sie können diesen Beitrag derzeit nicht melden."
       custom_placeholder_notify_moderators: "Bitte lassen Sie uns wissen, was genau Sie beunruhigt. Verweisen Sie, wenn möglich, auf relevante Links und Beispiele."
-      custom_message:
-        at_least:
-          one: "geben Sie mindestens ein Zeichen ein"
-          other: "geben Sie mindestens {{count}} Zeichen ein"
     flagging_topic:
       title: "Danke für Ihre Mithilfe!"
     topic_statuses:
@@ -599,8 +483,6 @@ de_formal:
         help: "Themen, zu denen Sie beigetragen haben"
       bookmarks:
         help: "Themen, in denen Sie ein Lesezeichen gesetzt haben"
-      top:
-        other_periods: "angesagte Themen zeigen:"
     badges:
       allow_title: "Sie können dieses Abzeichen als Titel verwenden"
       multiple_grant: "Sie können dieses Abzeichen mehrmals verliehen bekommen"
@@ -613,12 +495,7 @@ de_formal:
       add_synonyms_failed: "Die folgenden Schlagwörter konnten nicht als Synonyme hinzugefügt werden: <b>%{tag_names}</b>. Stellen Sie sicher, dass nicht bereits Synonyme und keine Synonyme eines anderen Schlagwortes da sind."
       delete_synonym_confirm: 'Wollen Sie das Synonym "%{tag_name}" wirklich entfernen?'
       delete_tag: "Schlagwort löschen"
-      delete_confirm:
-        one: "Sind Sie sicher, dass Sie dieses Schlagwort löschen und von einem zugeordneten Thema entfernen möchten?"
-        other: "Sind Sie sicher, dass Sie dieses Schlagwort löschen und von {{count}} zugeordneten Themen entfernen möchten?"
       delete_confirm_no_topics: "Sind Sie sicher, dass Sie dieses Schlagwort löschen möchten?"
-      delete_confirm_synonyms:
-        other: "{{count}} weitere Synonyme werden ebenfalls gelöscht."
       upload_description: "Laden Sie eine CSV-Datei hoch, um mehrere Schlagwörter auf einmal zu erstellen"
       notifications:
         watching:
@@ -691,7 +568,6 @@ de_formal:
           enable:
             confirm: "Möchten Sie wirklich den Nur-Lesen-Modus aktivieren?"
         operations:
-          failed: "Der Vorgang '{{operation}}' ist fehlgeschlagen. Bitte überprüfen Sie die Logs."
           cancel:
             confirm: "Möchten Sie wirklich den aktuellen Vorgang abbrechen?"
           backup:
