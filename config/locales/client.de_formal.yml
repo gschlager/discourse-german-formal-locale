@@ -219,6 +219,7 @@ de_formal:
       invite: "Geben SIe Ihren Benutzernamen oder Ihre E-Mail-Adresse ein. Wir senden Ihnen eine E-Mail zum Zurücksetzen des Passworts."
       complete_username: "Wenn ein Benutzerkonto dem Benutzernamen <b>%{username}</b> entspricht, sollten Sie in Kürze eine E-Mail mit Anweisungen zum Zurücksetzen Ihres Passwortes erhalten."
       complete_email: "Wenn ein Benutzerkonto der E-Mail <b>%{email}</b> entspricht, sollten Sie in Kürze eine E-Mail mit Anweisungen zum Zurücksetzen Ihres Passwortes erhalten."
+      complete_email_found: "Wir haben ein zu <b>%{email}</b> gehörendes Benutzerkonto gefunden. Sie sollten in Kürze eine E-Mail mit Anweisungen zum Zurücksetzen Ihres Passwortes erhalten."
       help: "E-Mail nicht angekommen? Bitte prüfen Sie zuerst Ihren Spam-Ordner. <p>Nicht sicher, welche E-Mail-Adresse Sie verwendet haben? Geben Sie eine E-Mail-Adresse ein und wir werden Ihnen sagen, ob sie hier existiert.</p><p>Falls Sie keinen Zugriff mehr auf die hinterlegte E-Mail-Adresse Ihres Kontos haben, kontaktieren Sie bitte <a href='%{basePath}/about'>unser hilfsbereites Team. </a></p>"
     email_login:
       complete_username: "Sofern ein Benutzerkonto mit dem Benutzernamen <b>%{username}</b> existiert, sollten Sie in Kürze eine E-Mail mit einem Anmeldelink erhalten."
@@ -236,7 +237,6 @@ de_formal:
       blank_username: "Bitte geben Sie Ihre E-Mail-Adresse oder Ihren Benutzernamen ein."
       blank_username_or_password: "Bitte geben Sie Ihre E-Mail-Adresse oder Ihren Benutzernamen und Ihr Passwort ein."
       awaiting_activation: "Ihr Konto ist noch nicht aktiviert. Verwenden Sie den 'Passwort vergessen'-Link, um eine weitere E-Mail mit Anweisungen zur Aktivierung zu erhalten."
-      awaiting_approval: "Ihr Konto wurde noch nicht von einem Team-Mitglied genehmigt. Sie bekommen eine E-Mail, sobald das geschehen ist."
       requires_invite: "Entschuldigung, der Zugriff auf dieses Forum ist nur mit einer Einladung möglich."
       not_allowed_from_ip_address: "Von dieser IP-Adresse kann keine Anmeldung erfolgen."
       admin_not_allowed_from_ip_address: "Von dieser IP-Adresse kann keine Anmeldung als Administrator erfolgen."
@@ -584,7 +584,6 @@ de_formal:
       customize:
         delete_confirm: 'Möchten Sie wirklich "%{theme_name}" löschen? '
         email_templates:
-          none_selected: "Eine E-Mail-Vorlage auswählen, um sie zu bearbeiten."
           revert_confirm: "Möchten Sie wirklich Ihre Änderungen verwerfen?"
         theme:
           themes_intro: "Ein bestehendes Theme wählen oder ein neues installieren, um anzufangen"
@@ -636,7 +635,6 @@ de_formal:
             unsilence_user: "Benutzer nicht mehr stummschaltenG"
             api_key_destroy: "Api Schlüssel vernichten"
         screened_ips:
-          description: 'IP-Adressen die beobachtet werden. Benutzen Sie „Erlauben“, um IP-Adressen auf die Whitelist zu setzen.'
           delete_confirm: "Möchten Sie wirklich die Regel für %{ip_address} entfernen?"
           roll_up_confirm: "Möchten Sie wirklich die häufig gefilterten IP-Adressen zu Subnetzen zusammenfassen?"
       watched_words:
@@ -708,14 +706,10 @@ de_formal:
         sample: "Benutzen Sie den folgenden HTML Code für Ihre Seite, um Discourse Beiträge zu erstellen und einzubetten. Ersetzen Sie <b>REPLACE_ME</b> mit der URL der Seite, in die Sie sie einbetten möchten."
         crawling_description: "Wenn Discourse Themen für Ihre Beiträge erstellt, wird es, falls kein RSS/ATOM-Feed verfügbar ist, versuchen, den Inhalt aus dem HTML-Code zu extrahieren. Dies ist teilweise schwierig, weshalb hier CSS-Regeln angegeben werden können, die die Extraktion erleichtern."
         embed_truncate: "Die eingebetteten Beiträge kürzen"
-        embed_classname_whitelist: "CSS-Klassen erlauben"
       permalink:
         delete_confirm: "Möchten Sie wirklich diesen Permanentlink löschen?"
   wizard_js:
     wizard:
       upload_error: "Entschuldigung, es gab einen Fehler beim Hochladen der Datei. Bitte versuchen Sie es noch einmal."
-      staff_count:
-        one: "Ihre Community hat ein Team-Mitglied (Sie)."
-        other: "Ihre Community hat %{count} Team-Mitglieder, einschließlich Ihnen."
       invites:
         none_added: "Sie haben bisher kein Team eingeladen. Möchten Sie wirklich fortfahren?"

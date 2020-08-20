@@ -7,7 +7,20 @@
 
 de_formal:
   date:
-    month_names: [~, Januar, Februar, März, April, Mai, Juni, Juli, August, September, Oktober, November, Dezember]
+    month_names:
+    - null
+    - Januar
+    - Februar
+    - März
+    - April
+    - Mai
+    - Juni
+    - Juli
+    - August
+    - September
+    - Oktober
+    - November
+    - Dezember
   redirect_warning: "Wir konnten nicht überprüfen, dass der ausgewählte Link tatsächlich im Forum geschrieben wurde. Wenn Sie trotzdem fortfahren möchten, wählen Sie den Link unten aus."
   themes:
     import_error:
@@ -34,9 +47,6 @@ de_formal:
       s3_backup_requires_s3_settings: "Sie können S3 nicht als Backup-Ort verwenden, solange Sie die Einstellung '%{setting_name}' nicht angegeben haben."
       s3_bucket_reused: "Sie können nicht den gleichen Bucket für 's3_upload_bucket' und 's3_backup_bucket' verwenden. Bitte verwenden Sie einen anderen Bucket oder verwenden Sie für jeden Bucket einen anderen Pfad."
     conflicting_google_user_id: 'Die Google-Konto-ID für dieses Konto hat sich geändert; das Einschreiten des Teams ist aus Sicherheitsgründen erforderlich. Bitte kontaktieren Sie das Team und verweisen Sie es auf <br><a href="https://meta.discourse.org/t/76575">https://meta.discourse.org/t/76575</a>'
-  activemodel:
-    errors:
-      <<: *errors
   invite:
     not_found: "Ihr Einladungstoken ist ungültig. Bitte <a href='%{base_url}/about'>kontaktieren Sie das Team</a>."
     not_found_json: "Ihr Einladungstoken ist ungültig. Bitte kontaktieren Sie das Team. "
@@ -72,10 +82,6 @@ de_formal:
   too_many_mentions:
     one: "Entschuldigung, Sie können nur einen anderen Benutzer in einem Beitrag erwähnen."
     other: "Entschuldigung, Sie können nur %{count} Benutzer in einem Beitrag erwähnen."
-  no_images_allowed_trust: "Entschuldige, Se können keine Bilder in einen Beitrag einfügen."
-  too_many_images:
-    one: "Entschuldigung, neue Benutzer können Beiträgen höchstens ein Bild hinzufügen."
-    other: "Entschuldigung, neue Benutzer können Beiträgen höchstens %{count} Bilder hinzufügen."
   no_attachments_allowed: "Entschuldigung, neue Benutzer können Beiträgen keine Dateien hinzufügen."
   too_many_attachments:
     one: "Entschuldigung, neue Benutzer können Beiträgen höchstens eine Datei hinzufügen."
@@ -139,14 +145,6 @@ de_formal:
       Haben Sie schon erwogen **[Ihr Benutzerprofil zu besuchen](%{profile_path})** und ein Bild hochzuladen, das Sie repräsentiert?
 
       Es ist einfacher, Diskussionen zu folgen und in Unterhaltungen interessante Personen zu finden, wenn jeder ein einzigartiges Profilbild hat!
-    sequential_replies: |
-      ### Erwägen Sie, auf mehrere Beiträge gleichzeitig zu antworten
-
-      Statt mehrere aufeinanderfolgende Antworten zu einem Thema zu schreiben, erwägen Sie bitte, eine einzige Antwort zu schreiben, die Zitate mehrerer vorheriger Beiträge oder mehrere Erwähnungen wie @name enthält.
-
-      Sie können Ihre letzte Antwort bearbeiten, um ein Zitat hinzuzufügen, indem Sie den Text auswählen und auf die erscheinende Schaltfläche <b>Zitat</a> klicken.
-
-      Es ist für alle einfacher, Themen zu lesen, die wenige tiefgehende Antworten haben statt vielen kleinen und einzelnen Antworten.
     get_a_room: |
       ### Ermutigen Sie jeden, bei dieser Konversation mitzumachen.
 
@@ -161,15 +159,8 @@ de_formal:
       Entschuldigung, aber neue Benutzer sind vorübergehend auf %{newuser_max_replies_per_topic} Antworten im gleichen Thema beschränkt.
 
       Anstatt eine weitere Antwort hinzuzufügen, erwägen Sie bitte, Ihre vorherigen Antworten zu bearbeiten oder andere Themen zu besuchen.
-    reviving_old_topic: |
-      ### Thema neu beleben?
-
-      Die letzte Antwort in diesem Thema war **%{time_ago}**. Ihre Antwort wird das Thema wieder an den Anfang der Liste schieben und jeden benachrichtigen, der sich zuvor an der Unterhaltung beteiligt hat.
-
-      Sind Sie sicher, dass Sie diese alte Unterhaltung fortsetzen möchten?
   activerecord:
     errors:
-      <<: *errors
       models:
         topic:
           attributes:
@@ -191,6 +182,7 @@ de_formal:
               same_as_password: "entspricht Ihrem Passwort."
             name:
               same_as_password: "entspricht Ihrem Passwort."
+      <<: *errors
   discourse_welcome_topic:
     body: |2
 
@@ -328,7 +320,6 @@ de_formal:
     watched_word_regexp_error: "Der reguläre Ausdruck für %{action} beobachtete Wörter ist ungültig. Bitte prüfen Sie Ihre <a href='%{base_path}/admin/logs/watched_words'> Einstellungen für beobachtete Wörter</a>, oder deaktivieren Sie die 'reguläre Ausdrücke beobachteter Wörter' Seiteneinstellung."
   site_settings:
     default_locale: "Die Standardsprache dieser Discourse Instanz. Sie können die Texte der system-generierten Kategorien und Themen auf  <a href='%{base_path}/admin/customize/site_texts' target='_blank'>Customize / Text</a> anpassen."
-    set_locale_from_accept_language_header: "Sprache der Benutzeroberfläche für anonyme Benutzer anhand der Spracheinstellung ihres Browsers wählen (EXPERIMENTELL, funktioniert nicht mit Caches für anonyme Benutzer)"
     show_topic_featured_link_in_digest: "Hervorgehobene Themen Link in der E-Mail Zusammenfassung zeigen."
     search_tokenize_chinese_japanese_korean: "Zwinge die Suche, Chinesisch, Japanisch und Koreanisch zu erkennen, auch wenn die Site keine dieser Sprachen nutzt"
     search_prefer_recent_posts: "Wenn das Durchsuchen Ihres großen Forums langsam ist, dann versucht diese Option zuerst einen Index der letzten Beiträge."
@@ -356,7 +347,6 @@ de_formal:
     enable_system_message_replies: "Benutzern erlauben, auf Systemnachrichten zu antworten, auch wenn Nachrichten deaktiviert sind"
     long_polling_base_url: "Basis-URL für Long Polling (wenn zum Ausliefern von dynamischen Inhalten ein CDN verwendet wird, setzen Sie es auf Origin Pull), z. B. http://origin.site.com"
     pending_users_reminder_delay: "Die Moderatoren benachrichtigen, falls neue Benutzer mehr als so viele Stunden auf ihre Genehmigung gewartet haben. Stellen Sie -1 ein, um diese Benachrichtigungen zu deaktivieren."
-    blacklisted_crawler_user_agents: "Eindeutiges Wort in der Browserkennung (Groß-/Kleinschreibung wird ignoriert) zur Identifizierung von Suchmaschinen, die keinen Zugriff auf die Seite haben sollen. Wird ignoriert, wenn eine Positivliste definiert wird."
     allow_index_in_robots_txt: "Legen Sie in der robots.txt fest, dass diese Seite gestattet von Web-Suchmaschinen indiziert zu werden. In außergewöhnlichen Fällen können Sie dauerhaft <a href='%{base_path}/admin/customize/robots'>robots.txt überschreiben</a>."
     hide_email_address_taken: "Benutzern während der Registrierung und beim „Passwort vergessen“-Formular nicht mitteilen, wenn ein Konto mit der angegebenen E-Mail-Adresse existiert."
     new_version_emails: "Sende eine E-Mail an die contact_email Adresse, wenn eine neue Version von Discourse verfügbar ist."
@@ -366,9 +356,6 @@ de_formal:
     enable_sso: "Aktiviere Single Sign-on über eine externe Site (WARNUNG: DIE E-MAIL-ADRESSE DES BENUTZERS *MUSS* VON DER EXTERNEN SEITE VERIFIZIERT WERDEN)."
     sso_provider_secrets: "Eine Liste mit Domain-Secret-Paaren, die Discourse als SSO-Provider verwenden. Stellen Sie sicher, dass SSO-Secrets mindestens 10 Zeichen lang sind. Das Wildcard-Symbol * kann verwendet werden, um jede Domain oder nur einen Teil davon auszuwählen (z.B. *.example.com). "
     sso_overrides_groups: "Synchronisiert alle manuellen Gruppenmitgliedschaften mit den Gruppen, die im SSO-Attribut „groups“ angegeben ist (WARNUNG: wenn Sie keine Gruppen angeben, werden alle Gruppenmitgliedschaften des Benutzers aufgehoben)"
-    sso_overrides_email: "Überschreibt lokale E-Mail mit E-Mail der externen Seite aus dem SSO-Payload (WARNUNG: Diskrepanzen können aufgrund der Normalisierung lokaler E-Mail-Adressen auftreten.)"
-    sso_overrides_username: "Überschreibt lokalen Benutzernamen mit dem Benutzernamen der externen Seite aus dem SSO-Payload (WARNUNG: Diskrepanzen können aufgrund von Normalisierung von lokalen Benutzernamen auftreten)"
-    sso_overrides_name: "Überschreibt den vollen Namen des Benutzers mit den Daten von der externen Seite aus dem SSO-Payload bei jedem Login. Außerdem werden lokale Änderungen verhindert."
     enable_local_logins: "Aktiviert lokale Konten mit Anmeldung über Benutzername und Passwort. Dies muss aktiviert sein, damit Einladungen funktionieren. WARNUNG: Wenn deaktiviert, können Sie sich möglicherweise nicht mehr anmelden, wenn Sie nicht vorher mindestens eine alternative Login-Methode konfiguriert haben."
     google_oauth2_client_id: "Client-ID Ihrer Google-Anwendung."
     google_oauth2_client_secret: "Client-Secret Ihrer Google-Anwendung."
@@ -431,7 +418,6 @@ de_formal:
       email_polling_disabled: "Sie müssen entweder manuelles oder POP3 polling aktivieren, bevor per E-Mail antworten aktiviert wird"
       user_locale_not_enabled: "'allow user locale' muss aktiviert werden, bevor Sie dies aktivieren können"
       email_editable_enabled: "Die Einstellung 'email editable' muss deaktiviert werden, bevor diese Einstellung aktiviert werden kann."
-      enable_sso_disabled: "Die Einstellung 'enable sso' muss aktiv sein, bevor diese Einstellung aktiviert werden kann."
       staged_users_disabled: "'vorbereitete Benutzer' muss aktiv sein, bevor diese Einstellung aktiviert werden kann."
       reply_by_email_disabled: "'Antwort per E-Mail' muss aktiv sein, bevor diese Einstellung aktiviert werden kann."
       sso_url_is_empty: "Eine 'SSO URL' muss angegeben sein, bevor diese Einstellung aktivierbar ist."
@@ -904,15 +890,6 @@ de_formal:
         Bitte [überprüfen Sie die Meldungen](%{base_url}/admin/flags). Wenn %{username} fälschlich stummgeschaltet wurde, so klicken Sie die „Stummschaltung aufheben“-Schaltfläche auf der [Administrationsseite dieses Benutzers](%{user_url}).
 
         Der Schwellenwert kann über die Einstellung `silence_new_user` geändert werden.
-    spam_post_blocked:
-      text_body_template: |
-        Dies ist eine automatisierte Nachricht.
-
-        Der neue Benutzer [%{username}](%{user_url}) hat versucht, mehrere Beiträge mit Links zur Domain %{domains} zu erstellen, aber diese Beiträge wuden blockiert, um Spam zu vermeiden. Der Benutzer kann weiter neue Beiträge erstellen, die nicht auf %{domains} verlinken.
-
-        Bitte [überprüfen Sie den Benutzer](%{user_url}).
-
-        Dies kann über die Einstellungen `newuser_spam_host_threshold` und `white_listed_spam_host_domains` geändert werden. Erwäge, %{domains}in die Ausnahmeliste aufzunehmen.
     unsilenced:
       text_body_template: |
         Hallo,
@@ -1668,7 +1645,6 @@ de_formal:
         disabled: "<p>Wir konnten kein Thema mit dem Titel „%{topic_title}” finden</p>. <ul> <li>Wenn Sie den Titel geändert haben, bearbeiten Sie das Thema, um den Begrüßungstext Ihrer Seite zu bearbeiten.</li> <li>Wenn Sie das Thema gelöscht haben, erstellen Sie einfach ein neues Thema mit dem Titel „%{topic_title}”. Der Inhalt des ersten Beitrags wird dann als Begrüßungstext Ihrer Seite verwendet.</li> </ul>"
         fields:
           welcome:
-            description: "<p>Wie würden Sie Ihre Community einem Fremden im Fahrstuhl in etwa 1 Minute beschreiben?</p> <ul> <li>An wen richten sich die Diskussionen?</li> <li>Was kann ich hier finden?</li> <li>Warum lohnt es sich, vorbeizuschauen?</li> </ul> <p>Ihr Willkommen-Thema ist die erste Sache, die neue Besucher sehen werden. Betrachten Sie es als Ihren 'Fahrstuhl-Vorstellungsgespräch' oder als 'Leitbild'. </p>"
             one_paragraph: "Bitte begrenzen Sie Ihre Willkommensnachricht auf einen Absatz."
       privacy:
         description: "<p>Ist Ihre Community für jeden offen oder ist sie auf Mitgliedschaft, Einladung oder Genehmigung beschränkt? Wenn Sie es vorziehen, die Dinge privat einzurichten, dann schalten Sie später auf öffentlich um.</p>"
@@ -1680,8 +1656,6 @@ de_formal:
             description: "Allgemeines Kontaktformular für Sie oder Ihre Organisation. Wird angezeigt auf <a href='%{base_path}/about' target='_blank'>der „Über uns“-Seite</a>."
       corporate:
         description: "Diese Informationen werden einfügt in Ihre <a href='%{base_path}/tos' target='blank'>Nutzungsbedingungen</a>. Dies ist ein Thema, das Sie in der Team-Kategorie bearbeiten können. Wenn Sie keine Firma haben, können Sie diesen Schritt einfach überspringen. "
-      themes_further_reading:
-        description: "Möchten Sie Ihr Discourse individuell anpassen? Nutzen Sie unser vielseitiges Theming-System: <ul> <li><a href='https://meta.discourse.org/t/63682' target='_blank'>Wie installiere ich ein Theme oder eine Theme Komponente?</a></li> <li><a href='https://meta.discourse.org/t/110448' target='_blank'>Theme Entwickler Kurzreferenz</a></li> </ul> Beliebte Theme Komponenten (für weitere, rufen Sie <a href='https://meta.discourse.org/c/theme/l/latest' target='_blank'>#theme</a> auf)"
       logos:
         fields:
           logo:
@@ -1738,3 +1712,6 @@ de_formal:
     html_missing_placeholder: "Die HTML Vorlage muss %{placeholder} beinhalten"
   discord:
     not_in_allowed_guild: "Authentifizierung fehlgeschlagen. Sie sind kein Mitglied einer erlaubten Discord Gilde."
+  activemodel:
+    errors:
+      <<: *errors
