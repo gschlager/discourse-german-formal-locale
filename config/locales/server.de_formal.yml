@@ -29,6 +29,8 @@ de_formal:
       unknown_file_type: "Die Datei, die Sie hochgeladen haben, scheint kein gültiges Discourse-Theme zu sein."
       not_allowed_theme: "`%{repo}` ist nicht in der Liste der zulässigen Themes (überprüfen Sie die globale Einstellung `allowed_theme_repos`)."
   emails:
+    incoming:
+      show_trimmed_content: "Zeigt gekürzten Inhalt"
     secure_media_placeholder: "Geschwärzt: Auf dieser Website sind sichere Medien aktiviert, besuchen Sie das Thema oder klicken Sie auf „Medien anzeigen“, um die angehängten Medien zu sehen."
   errors: &errors
     messages:
@@ -282,7 +284,7 @@ de_formal:
       wait_or_different_admin: "Sie müssen %{time_left} warten, bevor Sie diesen Beitrag endgültig löschen können, oder ein anderer Administrator muss dies tun."
   rate_limiter:
     slow_down: "Sie haben diese Aktion zu oft durchgeführt. Bitte versuchen Sie es später noch einmal."
-    too_many_requests: "Sei haben diese Aktion zu oft durchgeführt. Bitte warten Sie %{time_left}, ehe Sie es erneut versuchen."
+    too_many_requests: "Sie haben diese Aktion zu oft durchgeführt. Bitte warten Sie %{time_left}, ehe Sie es erneut versuchen."
     by_type:
       first_day_replies_per_day: "Wir schätzen Ihren Enthusiasmus, machen Sie weiter so! Um die Sicherheit unserer Community zu gewährleisten, haben wir jedoch ein Limit festgelegt – Sie habendie maximale Anzahl an Antworten erreicht, die ein neuer Benutzer an seinem ersten Tag erstellen kann. Bitte warten Sie %{time_left}, dann können Sie weitere Antworten verfassen."
       first_day_topics_per_day: "Wir schätzen Ihren Enthusiasmus! Um die Sicherheit unserer Community zu gewährleisten, haben wir jedoch ein Limit festgelegt – Sie haben die maximale Anzahl an Themen erreicht, die ein neuer Benutzer an seinem ersten Tag erstellen kann. Bitte warten Sie %{time_left}, dann können Sie weitere Themen verfassen."
@@ -403,14 +405,20 @@ de_formal:
   site_settings:
     allow_bulk_invite: "Masseneinladungen durch Hochladen einer CSV-Datei erlauben"
     default_locale: "Die Standardsprache dieser Discourse-Instanz. Sie können den Text der vom System generierten Kategorien und Themen unter <a href='%{base_path}/admin/customize/site_texts' target='_blank'>Anpassen/Text</a> ersetzen."
+    allow_user_locale: "Erlaubt Benutzern, ihre eigene Oberflächensprache zu wählen"
+    support_mixed_text_direction: "Unterstützt die Vermischung von rechtsläufigem und linksläufigem Text"
     topic_featured_link_enabled: "Beitrag mit Link zu hervorgehobenen Themen erlauben"
     show_topic_featured_link_in_digest: "Hervorgehobene Themen Link in der E-Mail Zusammenfassung zeigen."
     allow_uncategorized_topics: "Erlaubt Themen ohne Kategorie zu erstellen. ACHTUNG: Falls es unkategorisierte Themen gibt, müssen Sie sie neu kategorisieren, bevor Sie diese Option abschalten."
+    allow_duplicate_topic_titles: "Erlaubt Themen mit identischen und doppelten Titeln."
+    educate_until_posts: "Zeigt das Hilfe-Panel im Editor, wenn ein Benutzer einen seiner ersten (n) Beiträge zu schreiben beginnt."
     site_description: "Beschreiben Sie diese Website in einem Satz. Wird für das „description“-Meta-Tag verwendet."
     edit_history_visible_to_public: "Erlaubt jedem, vorherige Versionen eines bearbeiteten Beitrags zu sehen. Wenn deaktiviert, sind diese nur für Team-Mitglieder sichtbar."
     responsive_post_image_sizes: "Ändert die Größe der Vorschau Bilder um auf hochauflösenden Bildschirmen die folgenden Pixel Ratios zu erlauben. Alle Werte entfernen, um schnelle Bilder zu deaktivieren."
     add_rel_nofollow_to_user_content: 'Füge mit Ausnahme interner Links (schließt übergeordnete Domains ein) allen benutzergenerierten Inhalten ''rel nofollow'' hinzu. Die Änderung dieser Einstellung erfordert, dass Sie sämtliche Markdown-Beiträge aktualisieren: "rake posts:rebake"'
     exclude_rel_nofollow_domains: "Eine Liste von Domains, bei denen nofollow bei Links nicht hinzugefügt werden soll. Example.com wird automatisch auch Subdomains wie sub.example.com erlauben. Sie sollten zumindest die Domain dieser Seite hinzufügen, um Web-Crawlern zu helfen, alle Inhalte zu finden. Wenn andere Teile der Seite auf anderen Domains liegen, fügen Sie auch diese hinzu."
+    show_pinned_excerpt_mobile: "Zeigt einen Auszug angehefteter Themen in der mobilen Ansicht."
+    show_pinned_excerpt_desktop: "Zeigt einen Auszug angehefteter Themen in der Desktop-Ansicht."
     block_onebox_on_redirect: "Blockiert Onebox für URLs, die umleiten."
     enable_inline_onebox_on_all_domains: "Ignoriert die Website-Einstellung `inline_onebox_domain_allowlist` und erlaubt Inline-Oneboxen für alle Domains"
     facebook_app_access_token: "Ein Token, das aus Ihrer Facebook-App-ID und Ihrem Geheimnis generiert wird. Wird verwendet, um Instagram-Oneboxes zu generieren."
@@ -444,12 +452,17 @@ de_formal:
     content_security_policy_frame_ancestors: "Schränkt ein, wer diese Website in iframes über CSP einbetten kann. Kontrollieren Sie erlaubte Hosts unter <a href='%{base_path}/admin/customize/embedding'>Einbettung</a>"
     send_welcome_message: "Sendet allen neuen Benutzern eine Begrüßungsnachricht mit einer Kurzanleitung."
     send_tl2_promotion_message: "Sendet neuen Benutzern der Vertrauensstufe 2 eine Nachricht über die Beförderung."
+    suppress_reply_directly_below: "Zeigt die erweiterbare Anzahl der Antworten auf einen Beitrag nicht, falls die einzige Antwort direkt darunter folgt."
     suppress_reply_directly_above: "Zeigt das erweiterbare Element „In Antwort auf“ bei einem Beitrag nicht an, wenn es nur eine einzige Antwort direkt über diesem Beitrag gibt."
+    suppress_reply_when_quoting: "Zeigt das erweiterbare Element „In Antwort auf“ bei einem Beitrag nicht an, wenn der Beitrag den beantworteten Beitrag zitiert."
     redirect_users_to_top_page: "Verweist neue und länger abwesende Benutzer automatisch zur Seite „Angesagt“."
     moderators_view_emails: "Erlaubt Moderatoren, Benutzer-E-Mails einzusehen."
+    prioritize_username_in_ux: "Zeigt den Benutzernamen auf der Benutzerseite, der Benutzerkarte und in Beiträgen an erster Stelle (wenn deaktiviert, wird der Name an erster Stelle angezeigt)"
+    enable_whispers: "Erlaubt dem Team private Kommunikation innerhalb von Themen."
     allow_index_in_robots_txt: "Legt in der robots.txt fest, dass diese Website von Websuchmaschinen indiziert werden darf. In Ausnahmefällen können Sie die <a href='%{base_path}/admin/customize/robots'>robots.txt dauerhaft überschreiben</a>."
     normalize_emails: "Überprüft, ob normalisierte E-Mails eindeutig sind. Normalisierte E-Mail entfernt alle Punkte aus dem Benutzernamen und alles zwischen + und @ Symbolen."
     hide_email_address_taken: "Informiert Benutzer beim Anmelden oder Passwort-Zurücksetzen nicht über ein bereits bestehendes Konto mit dieser E-Mail-Adresse. Benötigt die Angabe vollständiger E-Mail-Adressen zum Passwort-Zurücksetzen."
+    version_checks: "Kontaktiert den Discourse Hub zur Überprüfung auf neue Versionen und zeige Benachrichtigungen über neue Versionen im <a href='%{base_path}/admin' target='_blank'>/admin</a>-Dashboard an."
     new_version_emails: "Sendet eine E-Mail an die contact_email-Adresse, wenn eine neue Version von Discourse verfügbar ist."
     block_common_passwords: "Erlaubt keine Passwörter, die zu den 10.000 häufigsten Passwörtern zählen."
     auth_skip_create_confirm: "Überspringt bei der Registrierung über externe Authentifizierung das „Konto erstellen“-Pop-up. Am besten verwendet neben auth_overrides_email, auth_overrides_username und auth_overrides_name."
@@ -461,18 +474,21 @@ de_formal:
     discourse_connect_overrides_groups: "Synchronisiert alle manuellen Gruppenmitgliedschaften mit den Gruppen, die im Attribut „groups“ angegeben sind (WARNUNG: Wenn Sie keine Gruppen angeben, werden alle manuellen Gruppenmitgliedschaften des Benutzers aufgehoben)"
     enable_local_logins: "Aktiviert lokale Konten mit Anmeldung über Benutzername und Passwort. WARNUNG: Wenn deaktiviert, können Sie sich möglicherweise nicht mehr anmelden, wenn Sie nicht vorher mindestens eine alternative Anmeldemethode konfiguriert haben."
     enable_local_logins_via_email: "Erlaubt Benutzern, einen Ein-Klick-Anmelde-Link anzufordern, der ihnen per E-Mail zugeschickt wird."
+    allow_new_registrations: "Erlaubt das Registrieren neuer Benutzerkonten. Wird dies deaktiviert, so kann niemand mehr ein neues Konto erstellen."
     enable_signup_cta: "Zeigt einen Hinweis für wiederkehrende anonyme Benutzer an, der sie auffordert, sich für ein Konto zu registrieren."
     google_oauth2_client_id: "Client-ID Ihrer Google-Anwendung."
     google_oauth2_client_secret: "Client-Geheimnis Ihrer Google-Anwendung."
     enable_github_logins: "Aktiviert die GitHub-Authentifizierung, erfordert github_client_id und github_client_secret. Siehe <a href='https://meta.discourse.org/t/13745' target='_blank'>GitHub-Anmeldung für Discourse konfigurieren</a>."
     discord_client_id: 'Discord-Client-ID (Haben Sie noch keine? Besuchen Sie <a href="https://discordapp.com/developers/applications/me">das Discord-Entwickler-Portal</a>)'
     discord_trusted_guilds: 'Das Anmelden per Discord nur Mitgliedern dieser Discord-Gilden gestatten. Verwendt die numerische ID der Gilde. Lesen Sie die Anleitung <a href="https://meta.discourse.org/t/configuring-discord-login-for-discourse/127129">hier</a>, um mehr zu erfahren. Leer lassen, um jede Gilde zuzulassen.'
+    enable_backups: "Erlaubt Administratoren, Backups des Forums zu erstellen"
     allow_restore: "Wiederherstellung zulassen, die ALLE Site-Daten ersetzen kann! Lassen Sie es deaktiviert, es sei denn, Sie möchten ein Backup wiederherstellen."
     s3_backup_bucket: "Der entfernte Bucket, in dem Backups gespeichert werden. WARNUNG: Achten Sie darauf, dass es ein privater Bucket ist."
     s3_configure_tombstone_policy: "Aktiviert die automatische Löschregel für Uploads im Papierkorb. WICHTIG: Wenn deaktiviert, wird kein Speicherplatz freigegeben, wenn Uploads gelöscht werden."
     s3_disable_cleanup: "Verhindert das Entfernen von alten Backups aus S3, wenn es mehr Backups als das erlaubte Maximum gibt."
     enable_s3_inventory: "Erstellt Berichte und überprüft Uploads mit Amazon-S3-Bestand. WICHTIG: Benötigt gültige S3-Anmeldedaten (sowohl „access key id“ als auch „secret access key“)."
     enable_safe_mode: "Erlaubt Benutzern, den abgesicherten Modus zu betreten, um Plug-ins zu debuggen."
+    limit_suggested_to_category: "Zeigt nur Themen der aktuellen Kategorie in vorgeschlagenen Themen."
     clean_up_uploads: "Löscht verwaiste Uploads, um illegales Hosting zu vermeiden. ACHTUNG: Sie sollten ein Backup Ihres /uploads-Verzeichnisses erstellen, bevor Sie diese Einstellung aktivieren."
     enable_s3_uploads: "Speichert hochgeladene Dateien auf Amazon S3. WICHTIG: Benötigt gültige S3-Anmeldedaten (sowohl „access key id“ als auch „secret access key“)."
     s3_use_iam_profile: 'Verwendet ein <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">AWS-EC2-Instanz-Profil</a>, um Zugriff auf den S3-Bucket zu gewähren. BEACHTE: Das Aktivieren setzt voraus, dass Discourse in einer entsprechend konfigurierten EC2-Instanz läuft, und überschreibt die Einstellungen „s3 access key id“ und „s3 secret access key“.'
@@ -481,9 +497,12 @@ de_formal:
     external_emoji_url: "URL des externen Dienstes für Emoji-Bilder. Lassen Sie das Feld leer, um dies zu deaktivieren."
     use_site_small_logo_as_system_avatar: "Verwendet das kleine Logo der Website anstelle des Avatars des Systembenutzers. Das Logo muss vorhanden sein."
     selectable_avatars_mode: "Erlaubt es den Nutzern, einen Avatar aus der Liste selectable_avatars auszuwählen, und beschränkt benutzerdefinierte Avatar-Uploads auf die ausgewählte Vertrauensstufe."
+    allow_all_attachments_for_group_messages: "Erlaubt alle E-Mail-Anhänge für Gruppen-Nachrichten."
     allow_staff_to_upload_any_file_in_pm: "Erlaubt Team-Mitgliedern, in privaten Nachrichten alle Dateien hochzuladen."
     default_trust_level: "Standardwert für die Vertrauensstufe für alle neuen Benutzer (0–4). ACHTUNG! Wenn Sie dies ändern, setzen Sie sich einem ernsthaften Risiko für Spam aus."
     tl3_requires_days_visited: "Die Mindestanzahl an Tagen, an denen ein Benutzer die Website in den letzten (tl3 time period) Tagen besucht haben muss, um sich für eine Beförderung auf Vertrauensstufe 3 zu qualifizieren. Setzen Sie den Wert höher als „tl3 time period“, um die Beförderung auf VS3 zu deaktivieren. (0 oder höher)"
+    trusted_users_can_edit_others: "Erlaubt Benutzern mit hohen Vertrauensstufen, Inhalte von anderen Benutzern zu bearbeiten."
+    enable_mentions: "Erlaubt Benutzern, andere Benutzer zu erwähnen."
     email_time_window_mins: "Wartet (n) Minuten, bevor eine E-Mail-Benachrichtigung geschickt wird, um Benutzern Gelegenheit zu geben, ihre Beiträge abschließend bearbeiten zu können."
     personal_email_time_window_seconds: "Wartet (n) Sekunden, bevor E-Mail-Benachrichtigungen zu persönlichen Nachrichten verschickt werden, um Benutzern die Gelegenheit zu geben, ihre Nachrichten abschließend bearbeiten zu können."
     title_fancy_entities: "Konvertiert in Thementiteln gewöhnliche ASCII-Zeichen in schicke HTML-Entities gemäß SmartyPants <a href='https://daringfireball.net/projects/smartypants/' target='_blank'>https://daringfireball.net/projects/smartypants/</a>"
@@ -494,9 +513,12 @@ de_formal:
     min_ban_entries_for_roll_up: "Wenn Sie auf die Schaltfläche „Zusammenfassen“ klicken, wird ein neuer Subnetz-Block-Eintrag erstellt, wenn es mindestens (N) Einträge gibt."
     min_first_post_typing_time: "Zeit, die ein Benutzer mindestens aufwenden muss, um einen Beitrag zu schreiben. Wenn diese Zeit unterschritten wird, wird der Beitrag automatisch in die Warteschlange für freizuschaltende Beiträge verschoben. Setzen Sie diesen Wert auf 0, um dieses Verhalten zu deaktivieren (nicht empfohlen)."
     auto_silence_first_post_regex: "Regex ohne Berücksichtigung der Groß-/Kleinschreibung, die bei Erfolg dazu führt, dass der erste Beitrag des Benutzers stummgeschaltet und an die Genehmigungswarteschlange gesendet wird. Beispiel: wüten|a[bc]a wird dazu führen, dass alle Beiträge, die „wüten“ oder „aba“ oder „aca“ enthalten, stummgeschaltet werden. Gilt nur für den ersten Beitrag. VERALTET: Verwenden Sie stattdessen „Beobachtete Wörter stummschalten“."
+    reviewable_default_topics: "Zeigt überprüfbaren Inhalt standardmäßig nach Themen gruppiert."
+    reviewable_default_visibility: "Zeigt überprüfbare Elemente nicht, solange sie diese Priorität nicht haben"
     reply_by_email_enabled: "Aktiviert Antworten auf Themen per E-Mail."
     incoming_email_prefer_html: "Verwendet HTML statt Text für eingehende E-Mails."
     disable_emails: "Discourse daran hindern, jegliche E-Mails zu versenden. Wählen Sie „yes“, um E-Mails für alle Benutzer zu deaktivieren. Wählen Sie „non-staff“, um E-Mails für alle Benutzer außer den Team-Mitgliedern zu deaktivieren."
+    display_name_on_email_from: "Zeigt vollständige Namen im Absender-Feld von E-Mails"
     unsubscribe_via_email: "Erlaubt es Benutzern, eine E-Mail mit dem Betreff oder Text „unsubscribe“ zum Abbestellen der E-Mails zu senden."
     unsubscribe_via_email_footer: "Fügt einen „mailto:“-Link zum Abbestellen per E-Mail in der Fußzeile ausgehender E-Mails hinzu"
     delete_email_logs_after_days: "Löscht E-Mail-Protokolle nach (N) Tagen. Wählen Sie 0, um sie für immer zu behalten."
@@ -521,6 +543,8 @@ de_formal:
     group_in_subject: "Setzt %%{optional_pm} im E-Mail-Betreff auf den Namen der ersten Gruppe in der privaten Nachricht, siehe: <a href='https://meta.discourse.org/t/customize-subject-format-for-standard-emails/20801' target='_blank'>Betreffformat für Standard-E-Mails anpassen</a>"
     anonymous_account_duration_minutes: "Erzeugt alle N Minuten ein neues anonymes Konto je Benutzer, um die Anonymität zu gewährleisten. Beispiel: Ein Wert von 600 sorgt dafür, dass ein neues anonymes Konto erzeugt wird, wenn ein Benutzer in den anonymen Modus wechselt UND mindestens 600 Minuten seit dem letzten Beitrag dieses Benutzers vergangen sind."
     allow_featured_topic_on_user_profiles: "Erlaubt Benutzern, ihrer Benutzerkarte und ihrem Profil einen Link zu einem Thema hinzuzufügen."
+    show_inactive_accounts: "Erlaubt angemeldeten Benutzern, die Profile inaktiver Benutzer anzuschauen."
+    hide_suspension_reasons: "Zeigt Sperrgründe nicht öffentlich auf Benutzerprofilen an."
     log_personal_messages_views: "Protokolliert Aufrufe persönlicher Nachrichten durch Administratoren für andere Benutzer/Gruppen."
     ignored_users_count_message_threshold: "Benachrichtigt die Moderatoren, wenn ein bestimmter Benutzer von so vielen anderen Benutzern ignoriert wird."
     enable_mobile_theme: "Mobilgeräte verwenden eine mobile Darstellung mit der Möglichkeit, zur vollständigen Website zu wechseln. Deaktivieren Sie diese Option, wenn Sie ein eigenes Fully-Responsive-Stylesheet verwenden möchten."
@@ -543,10 +567,13 @@ de_formal:
     default_other_dynamic_favicon: "Zeigt standardmäßig die Anzahl der neuen/aktualisierten Themen im Browser-Symbol an."
     default_other_skip_new_user_tips: "Überspringt Tipps und Abzeichen für das Onboarding neuer Benutzer."
     mute_all_categories_by_default: "Setzt die Standard-Benachrichtigungsstufe für alle Kategorien auf stumm. Erfordert die Aktivierung der Kategorien durch die Benutzer, damit sie auf den Seiten „Aktuell“ und „Kategorien“ erscheinen. Wenn Sie die Standardeinstellungen für anonyme Benutzer ändern möchten, bearbeiten Sie die „default_categories_“-Einstellungen."
+    allow_user_api_keys: "Erlaubt das Generieren von Benutzer-API-Schlüsseln"
+    tags_sort_alphabetically: "Zeigt Schlagwörter in alphabetischer Reihenfolge. Standardmäßig werden sie nach Beliebtheit sortiert."
     tags_listed_by_group: "Zeigt Schlagwörter auf der <a href='%{base_path}/tags' target='_blank'>Schlagwort-Seite</a> geordnet nach Schlagwortgruppe an."
     pm_tags_allowed_for_groups: "Erlaubt den Mitgliedern der einbezogenen Gruppe(n), jede persönliche Nachricht zu markieren"
     shared_drafts_category: "Aktiviert die Funktion „Gemeinsame Entwürfe“, indem Sie eine Kategorie für Themenentwürfe bestimmen. Themen in dieser Kategorie werden in den Themenlisten für Team-Mitglieder unterdrückt."
     shared_drafts_min_trust_level: "Erlaubt Benutzern, gemeinsame Entwürfe einzusehen und zu bearbeiten."
+    push_notifications_prompt: "Zeigt eine Aufforderung zur Benutzerzustimmung an."
     enable_sitemap: "Generiert eine Sitemap für Ihre Website und fügt sie in die robots.txt-Datei ein."
     dashboard_hidden_reports: "Erlaubt das Ausblenden der angegebenen Berichte im Dashboard."
     dashboard_visible_tabs: "Wählen Sie aus, welche Dashboard-Registerkarten sichtbar sind."
@@ -554,6 +581,7 @@ de_formal:
     share_quote_buttons: "Legen Sie fest, welche Elemente im Widget zum Teilen von Zitaten erscheinen und in welcher Reihenfolge."
     share_quote_visibility: "Bestimmen Sie, wann die Schaltflächen zum Teilen von Zitaten angezeigt werden sollen: nie, nur für anonyme Benutzer oder für alle Benutzer. "
     create_revision_on_bulk_topic_moves: "Erstellt eine Überarbeitung für die ersten Beiträge, wenn Themen massenweise in eine neue Kategorie verschoben werden."
+    allow_changing_staged_user_tracking: "Erlaubt, dass die Kategorie- und Tag-Benachrichtigungseinstellungen eines bereitgestellten Benutzers von einem Administratorbenutzer geändert werden."
     use_name_for_username_suggestions: "Verwendet den vollen Namen eines Benutzers, wenn Sie Benutzernamen vorschlagen."
     suggest_weekends_in_date_pickers: "Bezieht die Wochenenden (Samstag und Sonntag) in die Datumsvorschläge mit ein (deaktivieren Sie dies, wenn Sie Discourse nur an Wochentagen von Montag bis Freitag benutzen)."
     errors:
@@ -649,7 +677,7 @@ de_formal:
   unsubscribe_mailer:
     subject_template: "Bitte bestätigen Sie, dass Sie keine E-Mail-Updates mehr von %{site_title} erhalten möchten."
     text_body_template: |
-      Jemand (womöglich Sie?) hat angefordert, nicht mehr länger E-Mail-Updates von %{site_domain_name} unter dieser Adresse zu erhalten.
+      Jemand (womöglich Sie?) hat angefordert, nicht mehr länger E-Mail-Updates von %{site_domain_name} an dieser Adresse zu erhalten.
       Wenn Sie dies bestätigen möchten, klicken Sie bitte auf diesen Link:
 
       %{confirm_unsubscribe_link}
@@ -1364,7 +1392,7 @@ de_formal:
       preheader: "Eine kurze Zusammenfassung seit Ihrem letzten Besuch am %{last_seen_at}"
     forgot_password:
       text_body_template: |
-        Jemand hat angefordert, Ihr Passwort zurückzusetzen auf [%{site_name}](%{base_url}).
+        Jemand hat angefordert, Ihr Passwort auf [%{site_name}](%{base_url}) zurückzusetzen .
 
         Wenn Sie diese Anfrage nicht gestellt haben, können Sie diese E-Mail einfach ignorieren.
 
@@ -1380,7 +1408,7 @@ de_formal:
         %{base_url}/session/email-login/%{email_token}
     set_password:
       text_body_template: |
-        Jemand hat angefordert, ein Passwort hinzuzufügen zu Ihrem Konto auf [%{site_name}](%{base_url}). Alternativ können Sie sich mit jedem unterstützten Online-Service (Google, Facebook, etc) anmelden, der mit dieser validierten E-Mail-Adresse verknüpft ist.
+        Jemand hat angefordert, ein Passwort zu Ihrem Konto auf [%{site_name}](%{base_url}) hinzuzufügen. Alternativ können Sie sich mit jedem unterstützten Online-Service (Google, Facebook, etc) anmelden, der mit dieser validierten E-Mail-Adresse verknüpft ist.
 
         Wenn Sie diese Anfrage nicht gestellt haben, können Sie diese E-Mail einfach ignorieren.
 
@@ -1388,7 +1416,7 @@ de_formal:
         %{base_url}/u/password-reset/%{email_token}
     admin_login:
       text_body_template: |
-        Jemand hat versucht, sich bei Ihrem Konto auf [%{site_name}](%{base_url}) anzumelden.
+        Jemand hat versucht, sich auf [%{site_name}](%{base_url}) bei Ihrem Konto anzumelden.
 
         Wenn Sie diese Anfrage nicht gestellt haben, können SIe diese E-Mail getrost ignorieren.
 

@@ -30,7 +30,9 @@ de_formal:
         unbookmark_with_reminder: "Klicken Sie, um alle Lesezeichen und Erinnerungen in diesem Thema zu entfernen."
     bookmarks:
       created: "Sie haben diesen Beitrag mit einem Lesezeichen versehen. %{name}"
+      created_generic: "Sie haben dies mit einem Lesezeichen versehen: %{name}"
       created_with_reminder: "Sie werden %{date} an dieses Lesezeichen erinnert. %{name}"
+      created_with_reminder_generic: "Sie werden %{date} an dieses Lesezeichen erinnert. %{name}"
       confirm_delete: "Möchten Sie dieses Lesezeichen wirklich löschen? Die Erinnerung wird ebenfalls gelöscht."
       confirm_clear: "Möchten Sie wirklich alle ihre Lesezeichen in diesem Thema löschen?"
       no_timezone: 'Sie haben noch keine Zeitzone ausgewählt und werden deswegen keine Erinnerungen erstellen können. Wählen Sie Ihre Zeitzone <a href="%{basePath}/my/preferences/profile">in Ihrem Profil</a> aus.'
@@ -41,10 +43,22 @@ de_formal:
         label: "Nachdem Sie benachrichtigst wurden."
       reminders:
         existing_reminder: "Sie werden %{at_date_time} an dieses Lesezeichen erinnert."
+    copy_codeblock:
+      fullscreen: "zeigt Code im Vollbildmodus"
     drafts:
       remove_confirmation: "Sind Sie sicher, dass Sie diesen Entwurf löschen möchten?"
       abandon:
         confirm: "Sie haben einen Entwurf für dieses Thema in Arbeit. Was würden Sie gerne damit machen?"
+    topic_count_categories:
+      other: "Zeigt %{count} neue oder aktualisierte Themen"
+    topic_count_latest:
+      other: "Zeigt %{count} neue oder aktualisierte Themen"
+    topic_count_unseen:
+      other: "Zeigt %{count} neue oder aktualisierte Themen"
+    topic_count_unread:
+      other: "Zeigt %{count} ungelesene Themen"
+    topic_count_new:
+      other: "Zeigt %{count} neue Themen"
     pwa:
       install_banner: "Möchten Sie <a href>%{title} auf diesem Gerät installieren?</a>"
     choose_topic:
@@ -64,6 +78,8 @@ de_formal:
         claimed_by_you: "Dieses Element ist reserviert und kann überprüft werden."
       view_pending: "verbleibende zeigen"
       filtered_topic: "Sie haben nach zu prüfenden Inhalten in einem einzelnen Thema gefiltert."
+      conversation:
+        view_full: "zeigt vollständige Unterhaltung"
       approval:
         description: "Wir haben Ihren neuen Beitrag erhalten. Dieser muss jedoch von einem Moderator genehmigt werden, bevor er angezeigt wird. Bitte haben Sie etwas Geduld."
         pending_posts:
@@ -171,6 +187,7 @@ de_formal:
       no_notifications_page_body: >
         Sie werden über für Sie direkt relevante Aktivitäten benachrichtigt, einschließlich Antworten auf Ihre Themen und Beiträge, wenn Sie jemand mit <b>@</b> erwähnt oder zitiert und wenn jemand auf Themen antwortet, die Sie beobachten. Benachrichtigungen werden auch an Ihre E-Mail-Adresse gesendet, wenn Sie sich eine Weile nicht eingeloggt haben. <br><br> Suchen Sie nach %{icon}, um zu entscheiden, bei welchen Themen, Kategorien und Schlagwörtern Sie benachrichtigt werden möchten. Weiteres finden Sie in den <a href='%{preferencesUrl}'>Benachrichtigungseinstellungen</a>.
       first_notification: "Ihre erste Benachrichtigung! Wählen Sie sie aus um fortzufahren."
+      dynamic_favicon: "Zeigt Anzahl im Browser-Icon"
       skip_new_user_tips:
         not_first_time: "Nicht Ihr erstes Mal?"
         skip_link: "Überspringen Sie diese Tipps"
@@ -289,6 +306,8 @@ de_formal:
       email_level:
         title: "Sendet mir eine E-Mail, wenn ich zitiert werde, wenn auf mich geantwortet wird, wenn mein @Nutzername erwähnt wird oder wenn es neue Aktivitäten in meinen beobachteten Kategorien, Tags oder Themen gibt"
       invited:
+        truncated:
+          other: "Zeigt die ersten %{count} Einladungen."
         reinvite_all_confirm: "Sind Sie sicher, dass Sie alle Einladungen erneut versenden möchten?"
         link_generated: "Hier ist Ihr Einladungslink!"
         invite:
@@ -308,6 +327,8 @@ de_formal:
         instructions: "erscheint nach Ihrem Benutzernamen"
       flair:
         instructions: "neben Ihrem Profilbild angezeigtes Symbol"
+    user_status:
+      what_are_you_doing: "Was machen SIe da?"
     errors:
       desc:
         network: "Bitte überprüfen Sie Ihre Netzwerkverbindung."
@@ -315,6 +336,12 @@ de_formal:
     logout: "Sie wurden abgemeldet."
     read_only_mode:
       enabled: "Diese Website befindet sich im Nur-Lesen-Modus. Sie können weiterhin Inhalte lesen, aber das Erstellen von Beiträgen, Vergeben von „Gefällt mir“ und Durchführen einiger weiterer Aktionen ist derzeit nicht möglich."
+    too_few_topics_and_posts_notice_MF: >-
+      Lassen SIe <a href="https://blog.discourse.org/2014/08/building-a-discourse-community/">die Diskussion beginnen!</a> Es {currentTopics, plural, one {ist <strong>#</strong> Thema} other {sind <strong>#</strong> Themen}} und {currentPosts, plural, one {<strong>#</strong> Beitrag} other {<strong>#</strong> Beiträge}} vorhanden. Besucher brauchen mehr zum Lesen und Beantworten – wir empfehlen mindestens {requiredTopics, plural, one {<strong>#</strong> Thema} other {<strong>#</strong> Themen}} und {requiredPosts, plural, one {<strong>#</strong> Beitrag} other {<strong>#</strong> Beiträge}}. Dieser Hinweis wird nur Team-Mitgliedern angezeigt.
+    too_few_topics_notice_MF: >-
+      Lassen Sie <a href="https://blog.discourse.org/2014/08/building-a-discourse-community/">die Diskussion beginnen!</a> Es {currentTopics, plural, one {ist <strong>#</strong> Thema} other {sind <strong>#</strong> Themen}} vorhanden. Besucher brauchen mehr zum Lesen und Beantworten – wir empfehlen mindestens {requiredTopics, plural, one {<strong>#</strong> Thema} other {<strong>#</strong> Themen}}. Dieser Hinweis wird nur Team-Mitgliedern angezeigt.
+    too_few_posts_notice_MF: >-
+      Lassen Sie <a href="https://blog.discourse.org/2014/08/building-a-discourse-community/">die Diskussion beginnen!</a> Es {currentPosts, plural, one {ist <strong>#</strong> Beitrag} other {sind <strong>#</strong> Beiträge}} vorhanden. Besucher brauchen mehr zum Lesen und Beantworten – wir empfehlen mindestens {requiredPosts, plural, one {<strong>#</strong> Beitrag} other {<strong>#</strong> Beiträge}}. Dieser Hinweis wird nur Team-Mitgliedern angezeigt.
     signup_cta:
       hide_session: "Mich morgen erinnern"
       hidden_for_session: "In Ordnung, wir fragen Sie morgen wieder. Sie können sich auch jederzeit unter „Anmelden“ ein Benutzerkonto erstellen."
@@ -500,6 +527,7 @@ de_formal:
       unread_posts:
         one: "Sie haben %{count} ungelesenen Beitrag in diesem Thema"
         other: "Sie haben %{count} ungelesene Beiträge in diesem Thema"
+      show_links: "zeigt Links innerhalb dieses Themas"
       read_more_in_category: "Möchten Sie mehr lesen? Entdecken Sie andere Themen in %{catLink} oder %{latestLink}."
       read_more: "Möchten Sie mehr lesen? %{catLink} oder %{latestLink}."
       read_more_MF: "Sie {UNREAD, plural, =0 {} one {haben <a href='{basePath}/unread'>ein ungelesenes</a> Thema } other {haben<a href='{basePath}/unread'># ungelesene</a> Themen } } {NEW, plural, =0 {} one { {BOTH, select, true{und } false {haben} other{}} <a href='{basePath}/new'>ein neues</a> Thema} other { {BOTH, select, true{und } false {haben} other{}} <a href='{basePath}/new'># neue</a> Themen} }. Oder {CATEGORY, select, true {entdecken Sie andere Themen in {catLink}} false {{latestLink}} other {}}"
@@ -608,10 +636,13 @@ de_formal:
       confirm_delete: "Möchten Sie diesen Beitrag wirklich löschen?"
       quote_reply_shortcut: "Oder drücken Sie q"
       quote_edit_shortcut: "Oder drücken Sie e"
+      show_full: "Zeigt ganzen Beitrag"
       has_likes_title_only_you: "Ihnen gefällt dieser Beitrag"
       has_likes_title_you:
         one: "Ihnen und %{count} weiteren Person gefällt dieser Beitrag"
         other: "Ihnen und %{count} weiteren Personen gefällt dieser Beitrag"
+      filtered_replies_viewing:
+        other: "Zeigt %{count} Antworten an"
       errors:
         create: "Entschuldigung, es gab einen Fehler beim Anlegen des Beitrags. Bitte versuchen Sie es noch einmal."
         edit: "Entschuldigung, es gab einen Fehler beim Bearbeiten des Beitrags. Bitte versuchen Sie es noch einmal."
@@ -655,8 +686,20 @@ de_formal:
           other: "Möchten Sie diese %{count} Beiträge wirklich zusammenführen?"
       revisions:
         displays:
+          inline:
+            title: "Zeigt die Änderungen inline an"
+          side_by_side:
+            title: "Zeigt die Änderungen nebeneinander an"
           side_by_side_markdown:
             title: "Zeigt die Quelltexte zum Vergleich nebeneinander an"
+      raw_email:
+        displays:
+          raw:
+            title: "Zeigt den Quelltext der E-Mail"
+          text_part:
+            title: "Zeigt den Text-Teil der E-Mail"
+          html_part:
+            title: "Zeigt den HTML-Teil der E-Mail"
       bookmarks:
         actions:
           delete_bookmark:
@@ -667,7 +710,10 @@ de_formal:
             description: "Löscht das Datum und die Uhrzeit der Erinnerung"
           unpin_bookmark:
             description: "Lösen Sie das Lesezeichen los. Es wird nicht mehr oben in Ihrer Lesezeichenliste angezeigt."
+      filtered_replies:
+        viewing_posts_by: "Zeigt %{post_count} Beiträge von"
     category:
+      view: "Zeigt Themen in Kategorie"
       allow_global_tags_label: "Auch andere Schlagwörter erlauben."
       topic_featured_link_allowed: "Hervorgehobene Links in dieser Kategorie erlauben"
       delete_confirm: "Möchten Sie wirklich diese Kategorie löschen?"
@@ -708,6 +754,7 @@ de_formal:
           details: "Erreicht den Meldungsschwellenwert und sperrt den Benutzer"
       delete_confirm_MF: "Sie werden {POSTS, plural, one {<b>einen</b> Beitrag} other {<b>#</b> Beiträge}} und {TOPICS, plural, one {<b>ein</b> Thema} other {<b>#</b> Themen}} von diesem Benutzer löschen, sein Konto entfernen, seine IP-Adresse <b>{ip_address}</b> für Neuanmeldungen sperren und die E-Mail-Adresse <b>{email}</b> auf eine permanente Sperrliste setzen. Sind Sie sicher, dass dieser Benutzer wirklich ein Spammer ist?"
       cant: "Entschuldigung, Sie können diesen Beitrag derzeit nicht melden."
+      custom_placeholder_notify_user: "Seien Sie konkret, konstruktiv und immer freundlich."
       custom_placeholder_notify_moderators: "Bitte lassen Sie uns wissen, was genau Sie beunruhigt. Verweisen Sie, wenn möglich, auf relevante Links und Beispiele."
       custom_message:
         at_least:
@@ -813,6 +860,7 @@ de_formal:
         stale_data: "Es wurde schon länger nicht nach Updates gesucht. Bitte stellen Sie sicher, dass sidekiq läuft."
         version_check_pending: "Sieht so aus, als hätten Sie vor Kurzem aktualisiert. Großartig!"
         problems_found: "Ein paar Empfehlungen basierend auf Ihren aktuellen Website-Einstellungen"
+        show_traffic_report: "Zeigt detaillierten Traffic-Bericht"
         timeout_error: "Entschuldigung, die Abfrage dauert zu lange, bitte wählen Sie ein kürzeres Intervall"
         exception_error: "Entschuldigung, ein Fehler ist beim Ausführen der Abfrage aufgetreten"
         too_many_requests: "Sie haben diese Aktion zu oft ausgeführt. Bitte warten Sie, bevor Sie es erneut probieren."
@@ -950,8 +998,13 @@ de_formal:
         screened_ips:
           delete_confirm: "Möchten Sie wirklich die Regel für %{ip_address} entfernen?"
       watched_words:
+        show_words:
+          other: "zeigt %{count} Wörter"
         clear_all_confirm: "Sind Sie sicher, dass Sie alle beobachteten Wörter für die Aktion %{action} löschen möchten?"
         regex_warning: '<a href="%{basePath}/admin/site_settings/category/all_results?filter=watched%20words%20regular%20expressions%20">Beobachtete Wörter sind reguläre Ausdrücke</a> und sie schließen nicht automatisch Wortgrenzen ein. Wenn Sie möchten, dass der reguläre Ausdruck ganze Wörter erfasst, fügen Sie <code>\b</code> am Anfang und Ende Ihres regulären Ausdrucks ein.'
+        action_descriptions:
+          censor: "Erlaubt Beiträge mit diesen Wörtern, aber ersetzt sie mit Zeichen, die die zensierten Wörter verstecken."
+          flag: "Erlaubt Beiträge mit diesen Wörtern, aber markiert sie als unangemessen, damit Moderatoren sie überprüfen können."
         test:
           description: "Fügen Sie unten Text ein, um auf Übereinstimmungen mit beobachteten Wörtern zu prüfen"
       impersonate:
@@ -967,6 +1020,7 @@ de_formal:
         silence_reason_label: "Warum schalten Sie diesen Benutzer/diese Benutzerin stumm?"
         penalty_post_actions: "Was möchten Sie mit dem zugehörigen Beitrag machen?"
         delete_all_posts_confirm_MF: "Sie werden {POSTS, plural, one {# Beitrag} other {# Beiträge}} und {TOPICS, plural, one {# Thema} other {# Themen}} löschen. Sind Sie sich sicher?"
+        show_public_profile: "Zeigt öffentliches Profil"
         grant_admin_confirm: "Wir haben Ihnen eine E-Mail geschickt, um den neuen Administrator zu überprüfen. Bitte öffnen Sie sie und folgen Sie den Anweisungen."
         warnings_list_warning: |
           Als Moderator können Sie unter Umständen nicht alle diese Themen sehen. Falls nötig, bitte einen Administrator oder den ausstellenden Moderator, <b>@Moderatoren</b> Zugriff auf die Nachricht gewähren.
@@ -1021,6 +1075,7 @@ de_formal:
         delete_confirm: "Möchten Sie wirklich dieses Abzeichen löschen?"
         revoke_confirm: "Möchten Sie wirklich dieses Abzeichen entziehen?"
         none_selected: "Ein Abzeichen auswählen, um loszulegen"
+        listable: Zeigt Abzeichen auf der öffentlichen Abzeichenseite an
         icon_help: "Geben Sie einen „Font Awesome“-Symbolnamen ein (benutzen Sie für reguläre Symbole das Präfix „far-“ und für Markensymbole „fab-“)"
         upload_an_image: "Laden Sie ein Bild hoch"
         preview:
