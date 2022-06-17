@@ -460,8 +460,6 @@ de_formal:
         reply_as_new_topic:
           desc: "Neues Thema erstellen, das auf dieses Thema verweist"
           confirm: "Sie haben einen neuen Themen-Entwurf gespeichert. Wenn Sie ein verknüpftes Thema erstellen, wird er überschrieben."
-        reply_as_private_message:
-          desc: Erstellen Sie eine neue persönliche Nachricht
         reply_to_topic:
           desc: "Auf das Thema, nicht auf einen bestimmten Beitrag antworten"
     notifications:
@@ -850,6 +848,10 @@ de_formal:
       no_read_topics_body: "Sobald Sie mit dem Lesen von Diskussionen beginnen, sehen Sie hier eine Liste. Zum Lesen suchen Sie nach Themen, die Sie in <a href='%{topUrl}'>Top</a> oder <a href='%{categoriesUrl}'>Kategorien</a> oder suchen Sie nach dem Stichwort %{searchIcon}"
     sidebar:
       sections:
+        tags:
+          no_tracked_tags: "Sie verfolgen keine Schlagwörter (tags)."
+        categories:
+          no_tracked_categories: "Sie verfolgen keine Kategorien."
         topics:
           header_link_title: "Startseite"
   admin_js:

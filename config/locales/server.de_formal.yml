@@ -279,6 +279,10 @@ de_formal:
   trust_levels:
     change_failed_explanation: "Sie wollten %{user_name} auf '%{new_trust_level}' zurückstufen. Die Vertrauensstufe ist jedoch bereits '%{current_trust_level}'. %{user_name} verbleibt auf '%{current_trust_level}'. Wenn Sie den Benutzer zurückstufen möchten, müssen Sie zuerst seine Vertrauensstufe sperren."
   post:
+    image_placeholder:
+      blocked_hotlinked_title: "Das Bild befindet sich auf einer anderen Website. Klicken SIe es an, um es in einem neuen Tab zu öffnen."
+    media_placeholder:
+      blocked_hotlinked_title: "Die Medien werden auf einer anderen Website gehostet. Klicken Sie sie an, um diese in einem neuen Tab zu öffnen."
     cannot_permanently_delete:
       many_posts: "Sie können dieses Thema nicht dauerhaft löschen, da es andere Beiträge gibt."
       wait_or_different_admin: "Sie müssen %{time_left} warten, bevor Sie diesen Beitrag endgültig löschen können, oder ein anderer Administrator muss dies tun."
@@ -413,6 +417,8 @@ de_formal:
     allow_duplicate_topic_titles: "Erlaubt Themen mit identischen und doppelten Titeln."
     educate_until_posts: "Zeigt das Hilfe-Panel im Editor, wenn ein Benutzer einen seiner ersten (n) Beiträge zu schreiben beginnt."
     site_description: "Beschreiben Sie diese Website in einem Satz. Wird für das „description“-Meta-Tag verwendet."
+    download_remote_images_to_local: "Konvertieren Sie entfernte (mit Hotlinks versehene) Bilder in lokale Bilder, indem Sie diese herunterladen; so bleibt der Inhalt erhalten, auch wenn die Bilder in Zukunft von der entfernten Seite entfernt werden."
+    block_hotlinked_media_exceptions: "Eine Liste von Basis-URLs, die von der Einstellung block_hotlinked_media ausgenommen sind. Fügen Sie das Protokoll hinzu (z.B. https://example.com)."
     edit_history_visible_to_public: "Erlaubt jedem, vorherige Versionen eines bearbeiteten Beitrags zu sehen. Wenn deaktiviert, sind diese nur für Team-Mitglieder sichtbar."
     responsive_post_image_sizes: "Ändert die Größe der Vorschau Bilder um auf hochauflösenden Bildschirmen die folgenden Pixel Ratios zu erlauben. Alle Werte entfernen, um schnelle Bilder zu deaktivieren."
     add_rel_nofollow_to_user_content: 'Füge mit Ausnahme interner Links (schließt übergeordnete Domains ein) allen benutzergenerierten Inhalten ''rel nofollow'' hinzu. Die Änderung dieser Einstellung erfordert, dass Sie sämtliche Markdown-Beiträge aktualisieren: "rake posts:rebake"'
