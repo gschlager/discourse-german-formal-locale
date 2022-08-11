@@ -298,7 +298,7 @@ de_formal:
       public_group_membership: "Sie wechseln die Gruppenzugehörigkeit etwas zu häufig. Bitte warte Sie %{time_left}, bevor Sie es erneut versuchen."
       topics_per_day: "Sie haben die maximal erlaubte Anzahl an neuen Themen pro Tag erreicht. Sie können mehr neue Themen in %{time_left} erstellen."
       pms_per_day: "Sie haben die maximal erlaubte Anzahl an neuen Nachrichten pro Tag erreicht. Sie können mehr neue Nachrichten in %{time_left} erstellen."
-      create_like: "Wow! Sie haben eine Menge Liebe geteilt! Sie haben die maximale Anzahl an täglichen „Gefällt mir“ für heute erreicht, aber je höher Ihre Vertrauensstufe, desto mehr „Gefällt mir“ stehen Ihnen täglich zur Verfügung. In %{time_left} kännen Sie wieder Beiträge „liken“."
+      create_like: "Wow! Sie haben eine Menge Liebe geteilt! Sie haben die maximale Anzahl an „Gefällt mir“ innerhalb von 24 Stunden erreicht, aber je höher Ihre Vertrauensstufe, desto mehr „Gefällt mir“ stehen Ihnen täglich zur Verfügung. In %{time_left} können Sie wieder Beiträge mit „Gefällt mir“ markieren."
       create_bookmark: "Sie haben die maximale Anzahl an täglichen Lesezeichen erreicht. Sie können mehr Lesezeichen in %{time_left} erstellen."
       edit_post: "Sie haben die maximale Anzahl an täglichen Bearbeitungen erreicht. Sie können in %{time_left} mehr Bearbeitungen einreichen."
       live_post_counts: "Sie fordern die Live-Anzahl der Antworten zu schnell neu an. Bitte warten Sie %{time_left}, bis Sie es wieder versuchen."
@@ -417,7 +417,8 @@ de_formal:
     allow_duplicate_topic_titles: "Erlaubt Themen mit identischen und doppelten Titeln."
     educate_until_posts: "Zeigt das Hilfe-Panel im Editor, wenn ein Benutzer einen seiner ersten (n) Beiträge zu schreiben beginnt."
     site_description: "Beschreiben Sie diese Website in einem Satz. Wird für das „description“-Meta-Tag verwendet."
-    download_remote_images_to_local: "Konvertieren Sie entfernte (mit Hotlinks versehene) Bilder in lokale Bilder, indem Sie diese herunterladen; so bleibt der Inhalt erhalten, auch wenn die Bilder in Zukunft von der entfernten Seite entfernt werden."
+    download_remote_images_to_local: "Konvertieren Sie externe (mit Hotlinks versehene) Bilder in lokale Bilder, indem Sie diese herunterladen; so bleibt der Inhalt erhalten, auch wenn die Bilder in Zukunft von der verlinkten Seite entfernt werden."
+    block_hotlinked_media: "Verhindert, dass Benutzer externe (Hotlinked) Medien in ihren Beiträgen einfügen. Externe Medien, die nicht über 'download_remote_images_to_local' heruntergeladen werden, werden durch einen Platzhalter-Link ersetzt."
     block_hotlinked_media_exceptions: "Eine Liste von Basis-URLs, die von der Einstellung block_hotlinked_media ausgenommen sind. Fügen Sie das Protokoll hinzu (z.B. https://example.com)."
     edit_history_visible_to_public: "Erlaubt jedem, vorherige Versionen eines bearbeiteten Beitrags zu sehen. Wenn deaktiviert, sind diese nur für Team-Mitglieder sichtbar."
     responsive_post_image_sizes: "Ändert die Größe der Vorschau Bilder um auf hochauflösenden Bildschirmen die folgenden Pixel Ratios zu erlauben. Alle Werte entfernen, um schnelle Bilder zu deaktivieren."
@@ -465,6 +466,7 @@ de_formal:
     moderators_view_emails: "Erlaubt Moderatoren, Benutzer-E-Mails einzusehen."
     prioritize_username_in_ux: "Zeigt den Benutzernamen auf der Benutzerseite, der Benutzerkarte und in Beiträgen an erster Stelle (wenn deaktiviert, wird der Name an erster Stelle angezeigt)"
     enable_whispers: "Erlaubt dem Team private Kommunikation innerhalb von Themen."
+    whispers_allowed_groups: "Erlaubt private Kommunikation innerhalb von Themen für Mitglieder bestimmter Gruppen."
     allow_index_in_robots_txt: "Legt in der robots.txt fest, dass diese Website von Websuchmaschinen indiziert werden darf. In Ausnahmefällen können Sie die <a href='%{base_path}/admin/customize/robots'>robots.txt dauerhaft überschreiben</a>."
     normalize_emails: "Überprüft, ob normalisierte E-Mails eindeutig sind. Normalisierte E-Mail entfernt alle Punkte aus dem Benutzernamen und alles zwischen + und @ Symbolen."
     hide_email_address_taken: "Informiert Benutzer beim Anmelden oder Passwort-Zurücksetzen nicht über ein bereits bestehendes Konto mit dieser E-Mail-Adresse. Benötigt die Angabe vollständiger E-Mail-Adressen zum Passwort-Zurücksetzen."
@@ -1529,15 +1531,15 @@ de_formal:
       text_body_template: |
         Hallo,
 
-        Wir haben festgestellt, dass Sie sich von einem anderen Gerät oder Ort als üblich angemeldet haben. Waren Sie das?
+        wir haben festgestellt, dass Sie sich von einem anderen Gerät oder Ort als üblich angemeldet haben. Waren Sie das?
 
          - Ort: %{location} (%{client_ip})
          - Browser: %{browser}
          - Gerät: %{device} – %{os}
 
-        Wenn Sie das waren, hervorragend! Dann gibt es nichts zu tun.
+        Wenn Sie das waren – hervorragend! Sie müssen nichts weiter tun.
 
-        Wenn Sie das nicht gewesen sind, [überprüfen Sie bitte Ihre aktiven Sitzungen](%{base_url}/my/preferences/account) und erwägen Sie, Ihr Passwort zu ändern.
+        Wenn Sie das nicht gewesen sind, [überprüfen Sie bitte alle Ihre aktiven Sitzungen](%{base_url}/my/preferences/security) und erwägen Sie, Ihr Passwort zu ändern.
     post_approved:
       subject_template: "[%{site_name}] Ihr Beitrag wurde genehmigt"
       text_body_template: |
@@ -2125,51 +2127,36 @@ de_formal:
     must_select: "Sie müssen mindestens eine Option auswählen, um den abgesicherten Modus zu betreten."
   wizard:
     step:
-      locale:
-        title: "Willkommen zu Discourse!"
-        fields:
-          default_locale:
-            description: "Was ist die Standardsprache für Ihre Community?"
-      forum_title:
-        description: "Der Name ist ein Zeichen, das aus der Ferne sichtbar ist, wahrscheinlich die <i>erste</i> Sache, die mögliche Besucher über Ihre Community bemerken werden Was sagt Ihr Name und Titel über Ihre Community aus?"
-        fields:
-          title:
-            label: "Name Ihrer Community"
-          site_description:
-            label: "Beschreiben SIe Ihre Community in einem kurzen Satz (wird in Suchergebnissen und sozialen Medien verwendet)"
-          short_site_description:
-            label: "Beschreiben Sie Ihre Community in wenigen Worten (wird für den Homepage-Titel verwendet)"
       introduction:
-        disabled: "<p>Wir konnten kein Thema mit dem Titel „%{topic_title}” finden</p>. <ul> <li>Wenn Sie den Titel geändert haben, bearbeiten Sie das Thema, um den Begrüßungstext Ihrer Seite zu bearbeiten.</li> <li>Wenn Sie das Thema gelöscht haben, erstellen Sie einfach ein neues Thema mit dem Titel „%{topic_title}”. Der Inhalt des ersten Beitrags wird dann als Begrüßungstext Ihrer Seite verwendet.</li> </ul>"
+        title: "Erzählen SIe uns von Ihrer Community"
         fields:
-          welcome:
-            description: "<p>Wie würden Sie Ihre Community einem Fremden im Fahrstuhl in etwa 1 Minute beschreiben?</p> <ul> <li>An wen richten sich die Diskussionen?</li> <li>Was kann ich hier finden?</li> <li>Warum lohnt es sich, vorbeizuschauen?</li> </ul> <p>Ihr Willkommen-Thema ist die erste Sache, die neue Besucher sehen werden. Betrachten Sie es als Ihren 'Fahrstuhl-Vorstellungsgespräch' oder als 'Leitbild'. </p>"
-            one_paragraph: "Bitte begrenzen Sie Ihre Willkommensnachricht auf einen Absatz."
-            extra_description: "Wenn Sie sich nicht sicher sind, können Sie diesen Schritt überspringen und Ihr Willkommen-Thema später bearbeiten."
-      privacy:
-        description: "<p>Ist Ihre Community für jeden offen oder ist sie auf Mitgliedschaft, Einladung oder Genehmigung beschränkt? Wenn Sie es vorziehen, die Dinge privat einzurichten, dann schalten Sie später auf öffentlich um.</p>"
-      contact:
-        fields:
-          contact_email:
-            description: "E-Mail-Adresse der verantwortlichen Person oder Gruppe für diese Community. Wird verwendet für kritische Benachrichtigungen wie unbehandelte Meldungen, Sicherheitsaktualisierungen sowie auf <a href='%{base_path}/about' target='_blank'>der „Über uns“-Seite</a> für dringenden Community-Kontakt."
-          contact_url:
-            description: "Allgemeines Kontaktformular für Sie oder Ihre Organisation. Wird angezeigt auf <a href='%{base_path}/about' target='_blank'>der „Über uns“-Seite</a>."
-          site_contact:
-            description: "Alle automatischen Discourse-Nachrichten werden von diesem Benutzer geschickt, wie zum Beispiel Warnungen zu Meldungen und Benachrichtigungen über den Abschluss von Sicherungen."
-      corporate:
-        description: "Diese Informationen werden einfügt in Ihre <a href='%{base_path}/tos' target='blank'>Nutzungsbedingungen</a>. Dies ist ein Thema, das Sie in der Team-Kategorie bearbeiten können. Wenn Sie keine Firma haben, können Sie diesen Schritt einfach überspringen. "
-      logos:
+          site_description:
+            label: "Beschreiben Sie Ihre Community in einem Satz"
+      ready:
+        title: "Ihr Discourse ist bereit!"
+        description: "Das war's! Sie habendie Grundlagen für die Einrichtung Ihrer Community geschaffen. Jetzt können Sie sich umsehen, ein Willkommensthema schreiben und Einladungen verschicken!<br><br>Viel Spaß!"
+      branding:
         fields:
           logo:
             description: "Das Logo oben links auf Ihrer Seite. Verwenden Sie ein breites rechteckiges Bild mit einer Höhe von 120 Pixeln und einem Seitenverhältnis von mindestens 3:1."
           logo_small:
-            description: "Eine quadratische Version Ihres Logos. Es wird beim Scrollen in der oberen linke Ecke Ihrer Seite gezeigt, im Browser und beim Teilen auf sozialen Netzwerken. Idealerweise größer als 512 x 512."
-      icons:
-        fields:
+            description: "Eine quadratische Version Ihres Logos. Es wird beim Scrollen in der oben links angezeigt und beim Teilen auf sozialen Netzwerken. Idealerweise größer als 512 x 512."
           favicon:
-            description: "Icon, um Ihre Seite in Browsern zu repräsentieren, das in kleinen Größen gut aussieht. Empfohlene Formate sind PNG oder JPG. Wir werden standardmäßig das quadratische Logo verwenden."
+            description: "Ein Icon, das Ihre Website in Webbrowsern darstellt und auch bei kleinen Größen gut aussieht. PNG oder JPG wird empfohlen. Standardmäßig wird ein quadratisches Logo verwendet."
           large_icon:
-            description: "Icon, um Ihre Seite auf modernen Geräten zu repräsentieren, das in größeren Größen gut aussieht. Idealerweise größer als 512 x 512. Wir werden standardmäßig das quadratische Logo verwenden. "
+            description: "Ein Icon, das Ihre Website auf mobilen Geräten darstellt und auch bei größeren Größen gut aussieht. Idealerweise größer als 512x512. Standardmäßig wird ein quadratisches Logo verwendet."
+      corporate:
+        fields:
+          company_name:
+            description: "Eingetragen auf Ihrer Seite mit den Nutzungsbedingungen. Wenn es kein Unternehmen gibt, können Sie es überspringen."
+          governing_law:
+            description: "Eingetragen auf Ihrer Seite mit den Nutzungsbedingungen. Wenn es kein Unternehmen gibt, können Sie es überspringen."
+          contact_url:
+            description: "Allgemeines Kontaktformular für Sie oder Ihre Organisation. Wird angezeigt auf <a href='%{base_path}/about' target='_blank'>der „Über uns“-Seite</a>."
+          city_for_disputes:
+            description: "Eingetragen auf Ihrer Seite mit den Nutzungsbedingungen. Wenn es kein Unternehmen gibt, können Sie es überspringen."
+          site_contact:
+            description: "Alle automatischen Discourse-Nachrichten werden von diesem Benutzer geschickt, wie zum Beispiel Warnungen zu Meldungen und Benachrichtigungen über den Abschluss von Sicherungen."
       invites:
         description: "Sie haben es fast geschafft! Lassen Sie uns ein paar Leute einladen, die dabei helfen <a href='https://blog.discourse.org/2014/08/building-a-discourse-community/' target='blank'>Ihre Diskussionen anzuregen</a> mit interessanten Themen und Beiträgen, um Ihre Community zu starten."
         disabled: "Lokale Anmeldungen sind deaktiviert. Daher ist es nicht möglich, Einladungen zu verschicken. Bitte fahren Sie mit dem nächsten Schritt fort."

@@ -174,6 +174,7 @@ de_formal:
         perm_denied_expl: "Sie haben das Anzeigen von Benachrichtigungen verboten. Aktivieren Sie die Benachrichtigungen über Ihre Browser-Einstellungen."
         each_browser_note: 'Hinweis: Sie müssen diese Einstellung in jedem von Ihnen verwendeten Browser ändern. Alle Benachrichtigungen werden deaktiviert, wenn der „Nicht stören“-Modus verwendet wird, unabhängig von dieser Einstellung.'
         consent_prompt: "Möchten Sie Live-Benachrichtigungen erhalten, wenn jemand auf Ihre Beiträge antwortet?"
+      dismiss_bookmarks_tooltip: "Markiert alle ungelesenen Lesezeichen-Erinnerungen als gelesen"
       no_messages_title: "Sie haben keine Nachrichten"
       no_messages_body: >
         Benötigen Sie ein direktes persönliches Gespräch mit jemandem außerhalb des normalen Gesprächsflusses? Senden Sie der Person eine Nachricht, indem Sie deren Avatar auswählen und die Schaltfläche %{icon} verwenden.<br><br> Wenn Sie Hilfe benötigen, können Sie eine <a href='%{aboutUrl}'>Nachricht an ein Team-Mitglied senden</a>.
@@ -343,10 +344,9 @@ de_formal:
     too_few_posts_notice_MF: >-
       Lassen Sie <a href="https://blog.discourse.org/2014/08/building-a-discourse-community/">die Diskussion beginnen!</a> Es {currentPosts, plural, one {ist <strong>#</strong> Beitrag} other {sind <strong>#</strong> Beiträge}} vorhanden. Besucher brauchen mehr zum Lesen und Beantworten – wir empfehlen mindestens {requiredPosts, plural, one {<strong>#</strong> Beitrag} other {<strong>#</strong> Beiträge}}. Dieser Hinweis wird nur Team-Mitgliedern angezeigt.
     signup_cta:
-      hide_session: "Mich morgen erinnern"
       hidden_for_session: "In Ordnung, wir fragen Sie morgen wieder. Sie können sich auch jederzeit unter „Anmelden“ ein Benutzerkonto erstellen."
       intro: "Hallo! Es sieht so aus, als ob Ihnen diese Diskussion gefällt, aber Sie haben bislang noch kein Konto angelegt."
-      value_prop: "Wenn Sie ein Benutzerkonto anlegen, merken wir uns, was Sie gelesen haben, damit Sie immer dort fortsetzen können, wo Sie aufgehört haben. Sie können auch Benachrichtigungen – hier oder per E-Mail – erhalten, wenn jemand auf Ihre Beiträge antwortet. Beiträge, die Ihnen gefallen, können Sie mit einem „Gefällt mir“ versehen und diese Freude mit allen teilen. :heartpulse:"
+      value_prop: "Haben Sie es satt, sich durch die gleichen Beiträge zu scrollen? Wenn Sie ein Konto erstellen, kommen Sie immer wieder dorthin zurück, wo Sie aufgehört haben. Mit einem Konto können Sie auch über neue Antworten benachrichtigt werden, Lesezeichen speichern und anderen mit Likes danken. Wir können alle zusammenarbeiten, um diese Gemeinschaft großartig zu machen. :heart:"
     summary:
       enabled_description: "Sie sehen gerade eine Zusammenfassung des Themas: die interessantesten Beiträge, die von der Community bestimmt wurden."
     private_message_info:
@@ -469,11 +469,16 @@ de_formal:
         one: "gefällt %{count} Ihrer Beiträge"
         other: "gefallen %{count} Ihrer Beiträge"
       invitee_accepted: "<span>%{username}</span> hat Ihre Einladung angenommen"
+      invitee_accepted_your_invitation: "hat Ihre Einladung angenommen"
       granted_badge: "Sie haben „%{description}“ verliehen bekommen"
       dismiss_confirmation:
         body:
-          one: "Sind Sie sicher? Sie haben %{count} wichtige Benachrichtigung."
-          other: "Sind Sie sicher? Sie haben  %{count} wichtige Benachrichtigungen."
+          default:
+            one: "Sind Sie sicher? Sie haben %{count} wichtige Benachrichtigung."
+            other: "Sind Sie sicher? Sie haben %{count} wichtige Benachrichtigungen."
+          bookmarks:
+            one: "Sind Sie sicher? Sie haben %{count} ungelesene Lesezeichen Erinnerung."
+            other: "Sind Sie sicher? Sie haben %{count} ungelesene Lesezeichen-Erinnerungen."
       group_message_summary:
         one: "%{count} Nachricht in Ihrem „%{group_name}“-Posteingang"
         other: "%{count} Nachrichten in Ihrem „%{group_name}“-Posteingang"
@@ -778,7 +783,7 @@ de_formal:
         help: "Themen, zu denen Sie beigetragen haben"
       bookmarks:
         help: "Themen, die Sie mit einem Lesezeichen versehen haben."
-    browser_update: 'Leider ist <a href="https://www.discourse.org/faq/#browser">Ihr Browser zu alt, um auf dieser Website zu funktionieren</a>. Bitte <a href="https://browsehappy.com">aktualisieren Sie Ihren Browser</a>, um Inhalte korrekt anzuzeigen, sich anzumelden und zu antworten.'
+    browser_update: 'Leider wird <a href="https://www.discourse.org/faq/#browser">Ihr Browser nicht unterstützt</a>. Bitte <a href="https://browsehappy.com">wechseln Sie zu einem unterstützten Browser</a> , um die Inhalte zu sehen, sich anzumelden und zu antworten.'
     cannot_render_video: "Dieses Video kann nicht gerendert werden, da Ihr Browser den Codec nicht unterstützt."
     badges:
       allow_title: "Sie können dieses Abzeichen als Titel verwenden"
@@ -844,16 +849,18 @@ de_formal:
       no_likes_title: "Sie haben noch keine Themen mit \"gefällt mir\" markiert."
       no_likes_body: "Eine großartige Möglichkeit einzusteigen und Beiträge zu leisten, besteht darin, bereits stattgefundene Konversationen zu lesen und die %{heartIcon} bei Beiträgen auszuwählen, die Ihnen gefallen!"
       no_topics_title: "Sie haben noch keine Themen begonnen"
+      no_topics_body: "Es ist immer am besten, <a href='%{searchUrl}'></a> nach bestehenden Themen zu suchen, bevor Sie ein neues Thema eröffnen. Wenn Sie sich aber sicher sind, dass es das gewünschte Thema noch nicht gibt, können Sie auch einfach ein neues Thema erstellen. Suchen Sie nach der Schaltfläche <kbd>+ Neues Thema</kbd> oben rechts in der Themenliste, der Kategorie oder dem Tag, um ein neues Thema in diesem Bereich zu erstellen."
       no_read_topics_title: "Sie haben noch keine Themen gelesen"
       no_read_topics_body: "Sobald Sie mit dem Lesen von Diskussionen beginnen, sehen Sie hier eine Liste. Zum Lesen suchen Sie nach Themen, die Sie in <a href='%{topUrl}'>Top</a> oder <a href='%{categoriesUrl}'>Kategorien</a> oder suchen Sie nach dem Stichwort %{searchIcon}"
     sidebar:
       sections:
         tags:
-          no_tracked_tags: "Sie verfolgen keine Schlagwörter (tags)."
+          none: "Sie haben keine Schlagwörter hinzugefügt."
+          header_action_title: "Bearbeiten Sie Ihre Seitenleisten-Schlagwörter"
         categories:
-          no_tracked_categories: "Sie verfolgen keine Kategorien."
-        topics:
-          header_link_title: "Startseite"
+          none: "Sie haben keine Kategorien hinzugefügt."
+          click_to_get_started: "Klicken Sie hier, um zu starten."
+          header_action_title: "Bearbeiten Sie Ihre Seitenleisten-Kategorien"
   admin_js:
     admin:
       dashboard:
@@ -1031,7 +1038,7 @@ de_formal:
           confirmation:
             title: "Löscht alle Beiträge von @%{username}"
             description: |
-              <p>Sind Sie sicher, dass Sie <b>%{post_count}</b> Beiträge von @%{username}löschen möchten?
+              <p>Sind Sie sicher, dass Sie <b>%{post_count}</b> Beiträge von @%{username} löschen möchten?
 
               <p><b>Dies kann nicht rückgängig gemacht werden!</b></p>
 
@@ -1108,6 +1115,7 @@ de_formal:
         delete_confirm: "Möchten Sie wirklich diesen Permanentlink löschen?"
   wizard_js:
     wizard:
+      jump_in: "Springen Sie rein!"
       upload_error: "Entschuldigung, es gab einen Fehler beim Hochladen der Datei. Bitte versuchen Sie es noch einmal."
       staff_count:
         one: "Ihre Community hat %{count}Team-Mitglied (Sie)"
