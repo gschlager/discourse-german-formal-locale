@@ -4,7 +4,7 @@
 require 'bundler/inline'
 
 gemfile(true) do
-  gem 'translations-manager', git: 'https://github.com/discourse/translations-manager.git'
+  gem 'translations-manager', git: 'https://github.com/gschlager/translations-manager.git'
 end
 
 require 'translations_manager'
@@ -15,9 +15,34 @@ YML_DIRS = ['../../config/locales'].map { |d| File.expand_path(d, __FILE__) }
 YML_FILE_PREFIXES = ['client', 'server']
 TRANSIFEX_LOCALE = 'de_DE'
 DISCOURSE_LOCALE = 'de_formal'
-LOCALES = ['de_DE', 'de']
+LOCALES = ['de_DE']
+
+class SourceDownloader
+  include TranslationsManager::Common
+
+  def download
+    execute_tx_command('tx pull --source')
+    modify_files
+  end
+
+  def modify_files
+    puts '', 'Cleaning up YML files...'
+
+    YML_DIRS.each do |dir|
+      YML_FILE_PREFIXES.each do |prefix|
+        path = File.join(dir, "#{prefix}.de.yml")
+        next if !File.exist?(path)
+
+        TranslationsManager::CharacterReplacer.replace_in_file!(path)
+        TranslationsManager::LocaleFileCleaner.new(path).clean!
+      end
+    end
+  end
+end
 
 def remove_duplicates
+  SourceDownloader.new.download
+
   YML_DIRS.each do |dir|
     YML_FILE_PREFIXES.each do |prefix|
       source_filename = File.join(dir, "#{prefix}.de.yml")
