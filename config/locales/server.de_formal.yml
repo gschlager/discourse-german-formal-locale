@@ -531,6 +531,7 @@ de_formal:
     unsubscribe_via_email_footer: "Fügt einen „mailto:“-Link zum Abbestellen per E-Mail in der Fußzeile ausgehender E-Mails hinzu"
     delete_email_logs_after_days: "Löscht E-Mail-Protokolle nach (N) Tagen. Wählen Sie 0, um sie für immer zu behalten."
     disallow_reply_by_email_after_days: "Verbietet Antworten per E-Mail nach (N) Tagen. 0 für unbegrenzte Zeit"
+    maximum_recipients_per_new_group_email: "Blockiert eingehende E-Mails mit zu vielen Empfängern."
     trim_incoming_emails: "Schneidet einen Teil der eingehenden E-Mails ab, der nicht relevant ist."
     private_email: "Fügt keine Inhalte von Beiträgen oder Themen in den E-Mail-Titel oder den E-Mail-Text ein. HINWEIS: Deaktiviert auch die E-Mail-Zusammenfassungen."
     post_excerpts_in_emails: "Sendet in Benachrichtigungs-E-Mails immer Auszüge anstelle von ganzen Beiträgen"
@@ -1168,6 +1169,13 @@ de_formal:
         Sie haben auf eine E-Mail-Zusammenfassung geantwortet, was nicht zulässig ist.
 
         Wenn Sie denken, dass dies ein Fehler ist, [kontaktieren Sie ein Team-Mitglied](%{base_url}/about).
+    email_reject_too_many_recipients:
+      text_body_template: |
+        Es tut uns leid, aber Ihre E-Mail-Nachricht an %{destination} (mit dem Titel %{former_title}) hat nicht funktioniert.
+
+        Sie haben versucht, an mehr als %{max_recipients_count} Personen zu schreiben und unser System hat Ihre E-Mail automatisch als Spam markiert.
+
+        Wenn Sie glauben, dass dies ein Fehler ist, [kontaktieren SIe einen Mitarbeiter](%{base_url}/about).
     email_error_notification:
       text_body_template: |
         Leider gab es einen Authentifizierungsfehler beim Abrufen von E-Mails vom POP-Server.
@@ -2123,7 +2131,7 @@ de_formal:
     resend_email:
       title: "Aktivierungsmail erneut senden"
   safe_mode:
-    description: "Der abgesicherte Modus ermöglicht es Ihnen, Ihre Seite zu testen, ohne Plugins oder Seiten-Anpassungen zu laden."
+    description: "Der abgesicherte Modus ermöglicht es Ihnen, Ihre Website zu testen, ohne Plugins oder Themes zu laden."
     must_select: "Sie müssen mindestens eine Option auswählen, um den abgesicherten Modus zu betreten."
   wizard:
     step:

@@ -7,7 +7,6 @@
 
 de_formal:
   js:
-    wizard_required: "Willkommen bei Ihrem neuen Discourse! Lassen Sie uns mit dem <a href='%{url}' data-auto-route='true'>Setup-Assistenten</a> ✨ starten"
     software_update_prompt:
       message: "Wir haben ein Update dieser Website durchgeführt. <span>Bitte aktualisieren Sie</span>, da es sonst zu unerwartetem Verhalten kommen kann."
     bootstrap_mode_enabled:
@@ -175,6 +174,7 @@ de_formal:
         each_browser_note: 'Hinweis: Sie müssen diese Einstellung in jedem von Ihnen verwendeten Browser ändern. Alle Benachrichtigungen werden deaktiviert, wenn der „Nicht stören“-Modus verwendet wird, unabhängig von dieser Einstellung.'
         consent_prompt: "Möchten Sie Live-Benachrichtigungen erhalten, wenn jemand auf Ihre Beiträge antwortet?"
       dismiss_bookmarks_tooltip: "Markiert alle ungelesenen Lesezeichen-Erinnerungen als gelesen"
+      dismiss_messages_tooltip: "Markiert alle ungelesenen persönlichen Nachrichten als gelesen"
       no_messages_title: "Sie haben keine Nachrichten"
       no_messages_body: >
         Benötigen Sie ein direktes persönliches Gespräch mit jemandem außerhalb des normalen Gesprächsflusses? Senden Sie der Person eine Nachricht, indem Sie deren Avatar auswählen und die Schaltfläche %{icon} verwenden.<br><br> Wenn Sie Hilfe benötigen, können Sie eine <a href='%{aboutUrl}'>Nachricht an ein Team-Mitglied senden</a>.
@@ -448,6 +448,7 @@ de_formal:
       link_url_placeholder: "Fügen Sie eine URL ein oder tippen Sie, um die Themen zu durchsuchen"
       paste_code_text: "Code hier eintippen oder -fügen"
       upload_description: "geben Sie hier eine Beschreibung des Uploads ein"
+      exit_fullscreen_prompt: "Drücken Sie <kbd>ESC</kbd> um den Vollbildmodus zu verlassen."
       cant_send_pm: "Entschuldigung, aber Sie können keine Nachricht an %{username} senden."
       yourself_confirm:
         title: "Haben Sie vergessen, Empfänger hinzuzufügen?"
@@ -479,6 +480,9 @@ de_formal:
           bookmarks:
             one: "Sind Sie sicher? Sie haben %{count} ungelesene Lesezeichen Erinnerung."
             other: "Sind Sie sicher? Sie haben %{count} ungelesene Lesezeichen-Erinnerungen."
+          messages:
+            one: "Sind Sie sicher? Sie haben %{count} ungelesene persönliche Nachricht."
+            other: "Sind Sie sicher? Sie haben %{count} ungelesene persönliche Nachrichten."
       group_message_summary:
         one: "%{count} Nachricht in Ihrem „%{group_name}“-Posteingang"
         other: "%{count} Nachrichten in Ihrem „%{group_name}“-Posteingang"
@@ -844,6 +848,7 @@ de_formal:
     user_activity:
       no_activity_body: "Willkommen in unserer Community! Sie sind ganz neu hier und haben noch nicht an Diskussionen teilgenommen. Besuchen Sie als ersten Schritt <a href='%{topUrl}'>Top</a> oder <a href='%{categoriesUrl}'>Kategorien</a> und fangen Sie einfach an zu lesen! Wählen Sie %{heartIcon} bei Beiträgen aus, die Ihnen gefallen oder über die Sie mehr erfahren möchten. Wenn Sie teilnehmen, wird Ihre Aktivität hier aufgelistet."
       no_replies_title: "Sie haben noch keine Themen beantwortet"
+      no_replies_body: "Wenn Sie <a href='%{searchUrl}'>eine interessante Unterhaltung entdecken</a>, zu der Sie etwas beitragen möchten, klicken Sie auf die Schaltfläche <kbd>Antworten</kbd> direkt unter einem Beitrag, um auf diesen Beitrag zu antworten. Wenn Sie lieber auf das allgemeine Thema, als auf einen einzelnen Beitrag oder eine Person antworten möchten, finden SIe die Schaltfläche <kbd>Antworten</kbd> ganz unten im Thema oder unter der Zeitleiste des Themas."
       no_drafts_title: "Sie haben noch keine Entwürfe begonnen"
       no_drafts_body: "Noch nicht ganz bereit? Wir speichern automatisch einen neuen Entwurf und listen ihn hier auf, wenn Sie ein Thema, eine Antwort oder eine persönliche Nachricht verfassen. Wählen Sie die Abbrechen-Schaltfläche, um Ihren Entwurf zu verwerfen, zu speichern oder um später fortzufahren."
       no_likes_title: "Sie haben noch keine Themen mit \"gefällt mir\" markiert."
@@ -861,6 +866,9 @@ de_formal:
           none: "Sie haben keine Kategorien hinzugefügt."
           click_to_get_started: "Klicken Sie hier, um zu starten."
           header_action_title: "Bearbeiten Sie Ihre Seitenleisten-Kategorien"
+    welcome_topic_banner:
+      title: "Erstellen Sie Ihr Willkommensthema"
+      description: 'Ihr Willkommensthema ist das erste, was Neuankömmlinge lesen werden. Sehen Sie es als Ihren einseitigen "Elevator Pitch" oder Ihr "Mission Statement" an.'
   admin_js:
     admin:
       dashboard:
@@ -961,6 +969,7 @@ de_formal:
           public_key: "Dem folgenden öffentlichen Schlüssel Zugriff auf das Repository gewähren:"
           install_upload: "Von Ihrem Gerät"
           duplicate_remote_theme: "Die Theme-Komponente „%{name}“ ist bereits installiert. Möchten Sie wirklich eine weitere Kopie installieren?"
+          force_install: "Das Theme kann nicht installiert werden, weil auf das Git-Repository nicht zugegriffen werden kann. Sind Sie sicher, dass Sie die Installation fortsetzen wollen?"
           remote_theme_edits: "Wenn Sie dieses Theme bearbeiten möchten, müssen Sie <a href='%{repoURL}' target='_blank'>eine Änderung in seinem Repository einreichen</a>"
           scss:
             title: "Geben Sie benutzerdefiniertes CSS ein, wir akzeptieren alle gültigen CSS- und SCSS-Styles"
