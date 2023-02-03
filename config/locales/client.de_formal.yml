@@ -13,8 +13,8 @@ de_formal:
       one: "Damit Sie mit Ihrer Website einfacher loslegen kannst, befinden Sie sich im Starthilfe-Modus. Alle neuen Benutzer erhalten die Vertrauensstufe 1 und bekommen eine tägliche E-Mail-Zusammenfassung. Der Modus wird automatisch deaktiviert, sobald sich mehr als %{count} Benutzer registriert hat."
       other: "Damit Sie mit Ihrer Seite einfacher loslegen können, befinden Sie sich im Starthilfe-Modus. Alle neuen Benutzer erhalten die Vertrauensstufe 1 und bekommen eine tägliche E-Mail-Zusammenfassung. Der Modus wird automatisch deaktiviert, sobald die Gesamtanzahl der Benutzer den Wert %{count} überschreitet."
     themes:
-      broken_theme_alert: "Ihre  Website funktioniert vielleicht nicht, weil ein Thema / eine Komponente Fehler hat."
-      error_caused_by: "Verursacht durch '%{name}'. <a target='blank' href='%{path}'>Klicken Sie hier</a> , um die Funktion zu aktualisieren, neu zu konfigurieren oder zu deaktivieren."
+      broken_theme_alert: "Ihre Website funktioniert vielleicht nicht, weil ein Theme/eine Komponente Fehler hat."
+      error_caused_by: "Verursacht durch „%{name}“. <a target='blank' href='%{path}'>Klicken Sie hier</a> , um die Funktion zu aktualisieren, neu zu konfigurieren oder zu deaktivieren."
     broken_decorator_alert: "Beiträge werden möglicherweise nicht richtig angezeigt, weil einer der Beitragsausstatter auf Ihrer Website einen Fehler ausgelöst hat."
     not_implemented: "Entschuldigung, diese Funktion wurde noch nicht implementiert!"
     about:
@@ -22,16 +22,13 @@ de_formal:
       contact_info: "Im Falle eines kritischen Problems oder einer dringenden Angelegenheit, die diese Website betrifft, kontaktieren Sie uns bitte unter %{contact_info}."
     bookmarked:
       help:
-        bookmark: "Klicken Sie hier, um ein Lesezeichen auf den ersten Beitrag in diesem Thema zu setzen."
-        edit_bookmark: "Klicken Sie, um das Lesezeichen zu diesem Thema zu bearbeiten"
         edit_bookmark_for_topic: "Klicken Sie, um das Lesezeichen für dieses Thema zu bearbeiten"
         unbookmark: "Klicken Sie hier, um alle Lesezeichen in diesem Thema zu entfernen."
-        unbookmark_with_reminder: "Klicken Sie, um alle Lesezeichen und Erinnerungen in diesem Thema zu entfernen."
     bookmarks:
       created: "Sie haben diesen Beitrag mit einem Lesezeichen versehen. %{name}"
       created_generic: "Sie haben dies mit einem Lesezeichen versehen: %{name}"
       created_with_reminder: "Sie werden %{date} an dieses Lesezeichen erinnert. %{name}"
-      created_with_reminder_generic: "Sie werden %{date} an dieses Lesezeichen erinnert. %{name}"
+      created_with_reminder_generic: "Sie werden am %{date} an dieses Lesezeichen erinnert. %{name}"
       confirm_delete: "Möchten Sie dieses Lesezeichen wirklich löschen? Die Erinnerung wird ebenfalls gelöscht."
       confirm_clear: "Möchten Sie wirklich alle ihre Lesezeichen in diesem Thema löschen?"
       no_timezone: 'Sie haben noch keine Zeitzone ausgewählt und werden deswegen keine Erinnerungen erstellen können. Wählen Sie Ihre Zeitzone <a href="%{basePath}/my/preferences/profile">in Ihrem Profil</a> aus.'
@@ -39,11 +36,9 @@ de_formal:
       list_permission_denied: "Sie haben keine Berechtigung, die Lesezeichen dieses Benutzers anzuzeigen."
       no_user_bookmarks: "Sie haben keine Beiträge mit Lesezeichen; Lesezeichen erlauben Ihnen einen schnelleren Zugriff  zu einem bestimmten Beitrag."
       auto_delete_preference:
-        label: "Nachdem Sie benachrichtigst wurden."
+        label: "Nachdem Sie benachrichtigt wurden"
       reminders:
         existing_reminder: "Sie werden %{at_date_time} an dieses Lesezeichen erinnert."
-    copy_codeblock:
-      fullscreen: "zeigt Code im Vollbildmodus"
     drafts:
       remove_confirmation: "Sind Sie sicher, dass Sie diesen Entwurf löschen möchten?"
       abandon:
@@ -150,6 +145,7 @@ de_formal:
     user_fields:
       none: "(eine Option auswählen)"
       required: 'Bitte geben Sie einen Wert für „%{name}“ ein'
+      same_as_password: "Ihr Passwort sollte nicht in anderen Feldern wiederholt werden."
     user:
       download_archive:
         confirm: "Möchten Sie wirklich Ihre Beiträge herunterladen?"
@@ -171,7 +167,6 @@ de_formal:
           warning: "Sind Sie sicher, dass Sie Ihr hervorgehobenes Thema löschen wollen?"
       desktop_notifications:
         perm_denied_expl: "Sie haben das Anzeigen von Benachrichtigungen verboten. Aktivieren Sie die Benachrichtigungen über Ihre Browser-Einstellungen."
-        each_browser_note: 'Hinweis: Sie müssen diese Einstellung in jedem von Ihnen verwendeten Browser ändern. Alle Benachrichtigungen werden deaktiviert, wenn der „Nicht stören“-Modus verwendet wird, unabhängig von dieser Einstellung.'
         consent_prompt: "Möchten Sie Live-Benachrichtigungen erhalten, wenn jemand auf Ihre Beiträge antwortet?"
       dismiss_bookmarks_tooltip: "Markiert alle ungelesenen Lesezeichen-Erinnerungen als gelesen"
       dismiss_messages_tooltip: "Markiert alle ungelesenen persönlichen Nachrichten als gelesen"
@@ -184,14 +179,13 @@ de_formal:
       no_notifications_title: "Sie haben noch keine Benachrichtigungen"
       no_notifications_body: >
         Sie werden in diesem Panel über für Sie direkt relevante Aktivitäten benachrichtigt, einschließlich Antworten auf Ihre Themen und Beiträge, wenn Sie jemand mit <b>@</b> erwähnt oder zitiert und wenn jemand auf Themen antwortet, die Sie beobachten. Benachrichtigungen werden auch an Ihre E-Mail-Adresse gesendet, wenn Sie sich eine Weile nicht eingeloggt haben. <br><br> Suchen Sie nach %{icon}, um zu entscheiden, bei welchen Themen, Kategorien und Schlagwörtern Sie benachrichtigt werden möchten. Weiteres finden Sie in den <a href='%{preferencesUrl}'>Benachrichtigungseinstellungen</a>.
+      no_other_notifications_title: "Sie haben noch keine anderen Benachrichtigungen"
+      no_other_notifications_body: >
+        In diesem Bereich werden Sie über andere Aktivitäten benachrichtigt, die für Sie relevant sein könnten – zum Beispiel, wenn jemand einen Ihrer Beiträge verlinkt oder bearbeitet.
       no_notifications_page_title: "Sie haben noch keine Benachrichtigungen"
       no_notifications_page_body: >
         Sie werden über für Sie direkt relevante Aktivitäten benachrichtigt, einschließlich Antworten auf Ihre Themen und Beiträge, wenn Sie jemand mit <b>@</b> erwähnt oder zitiert und wenn jemand auf Themen antwortet, die Sie beobachten. Benachrichtigungen werden auch an Ihre E-Mail-Adresse gesendet, wenn Sie sich eine Weile nicht eingeloggt haben. <br><br> Suchen Sie nach %{icon}, um zu entscheiden, bei welchen Themen, Kategorien und Schlagwörtern Sie benachrichtigt werden möchten. Weiteres finden Sie in den <a href='%{preferencesUrl}'>Benachrichtigungseinstellungen</a>.
-      first_notification: "Ihre erste Benachrichtigung! Wählen Sie sie aus um fortzufahren."
       dynamic_favicon: "Zeigt Anzahl im Browser-Icon"
-      skip_new_user_tips:
-        not_first_time: "Nicht Ihr erstes Mal?"
-        skip_link: "Überspringen Sie diese Tipps"
       color_schemes:
         dark_instructions: "Sie könnendas dunkle Farbschema ausprobieren, indem Sie den dunklen Modus auf Ihrem Gerät einschalten."
       external_links_in_new_tab: "Alle externen Links in einem neuen Tab öffnen"
@@ -215,7 +209,7 @@ de_formal:
       save_to_change_theme: 'Das Theme wird aktualisiert, nachdem Sie auf „%{save_text}“ geklickt haben.'
       messages:
         read_more_in_group: "Möchten Sie mehr lesen? Entdecken Sie andere Nachrichten in %{groupLink}."
-        read_more: "Möchten SIe mehr lesen? Durchsuchen Sie andere Nachrichten in <a href='%{basePath}/u/%{username}/messages'>persönliche Nachrichten</a>."
+        read_more: "Möchten Sie mehr lesen? Durchsuchen Sie andere Nachrichten in <a href='%{basePath}/u/%{username}/messages'>persönliche Nachrichten</a>."
       change_password:
         action: "Eine E-Mail zum Zurücksetzen des Passworts senden"
         choose_new: "Ein neues Passwort wählen"
@@ -244,13 +238,10 @@ de_formal:
         oauth_enabled_warning: "Beachten Sie bitte, dass soziale Anmelde-Methoden deaktiviert werden, sobald die Zwei-Faktor-Authentifizierung für Ihr Konto aktiviert ist."
         use: "Benutzen Sie die Authentifizierungs-App"
         enforced_notice: "Sie müssen die Zwei-Faktor-Authentifizierung aktivieren, um auf die Website zugreifen zu können."
-        enable_security_key_description: |
-          Wenn Sie Ihren<a href="https://www.google.com/search?q=hardware+security+key" target="_blank">Hardware-Sicherheitsschlüssel</a> vorbereitet haben, klicken Sie unten auf „Registrieren“.
         totp:
           name_and_code_required_error: "Sie müssen einen Namen und den Code aus Ihrer Authentifikator-App angeben."
         security_key:
           already_added_error: "Sie haben diesen Sicherheitsschlüssel bereits registriert. Sie müssen ihn nicht erneut registrieren."
-          edit: "Den Sicherheitsschlüssel bearbeiten"
           name_required_error: "Sie müssen einen Namen für Ihren Sicherheitsschlüssel angeben."
       change_username:
         confirm: "Sind Sie sich sicher, dass Sie Ihren Benutzernamen ändern möchten?"
@@ -274,13 +265,13 @@ de_formal:
         authenticated: "Ihre E-Mail wurde von %{provider} authentifiziert."
         invite_auth_email_invalid: "Ihre Einladungs-E-Mail stimmt nicht mit der von %{provider} authentifizierten E-Mail überein."
         authenticated_by_invite: "Ihre E-Mail wurde durch die Einladung authentifiziert."
-        frequency_immediately: "Wir werden Ihnen sofort eine E-Mail senden, wenn Sie die betroffenen Inhalte noch nicht gelesen haben."
         frequency:
           one: "Wir werden Ihnen nur dann eine E-Mail senden, wenn wir Sie nicht innerhalb der letzten Minute gesehen haben."
           other: "Wir werden Ihnen nur dann eine E-Mail senden, wenn wir Sie nicht innerhalb der letzten %{count} Minuten gesehen haben."
       associated_accounts:
         confirm_modal_title: "Verbinden Sie „%{provider}“-Konto"
         confirm_description:
+          disconnect: "Ihr bestehendes %{provider}-Konto „%{account_description}“ wird getrennt."
           account_specific: "Ihr „%{provider}“-Konto „%{account_description}“ wird für die Authentifizierung genutzt."
           generic: "Ihr „%{provider}“-Konto wird für die Authentifizierung genutzt."
       name:
@@ -304,15 +295,13 @@ de_formal:
       hide_profile_and_presence: "Mein öffentliches Profil und Anwesenheitsfunktionen ausblenden"
       email_previous_replies:
         title: "Vorherige Beiträge ans Ende von E-Mails anfügen"
-      email_level:
-        title: "Sendet mir eine E-Mail, wenn ich zitiert werde, wenn auf mich geantwortet wird, wenn mein @Nutzername erwähnt wird oder wenn es neue Aktivitäten in meinen beobachteten Kategorien, Tags oder Themen gibt"
       invited:
         truncated:
           other: "Zeigt die ersten %{count} Einladungen."
         reinvite_all_confirm: "Sind Sie sicher, dass Sie alle Einladungen erneut versenden möchten?"
         link_generated: "Hier ist Ihr Einladungslink!"
         invite:
-          instructions: "Teilen Sie diesen Link, um sofort Zugriff auf folgende Seite zu gewähren:"
+          instructions: "Teilen Sie diesen Link, um sofort Zugriff auf diese Website zu gewähren:"
         bulk_invite:
           instructions: |
             <p>Laden Sie eine Liste von Benutzern ein, um Ihre Community schnell in Gang zu bringen. Bereiten Sie eine <a href="https://de.wikipedia.org/wiki/CSV_(Dateiformat)" target="_blank">CSV-Datei</a> mit mindestens einer Zeile pro E-Mail-Adresse vor, die Sie einladen möchten. Die folgenden kommaseparierten Informationen können zur Verfügung gestellt werden, wenn Sie Personen zu Gruppen hinzufügen oder sie bei der ersten Anmeldung an ein bestimmtes Thema senden möchten.</p>
@@ -329,7 +318,7 @@ de_formal:
       flair:
         instructions: "neben Ihrem Profilbild angezeigtes Symbol"
     user_status:
-      what_are_you_doing: "Was machen SIe da?"
+      what_are_you_doing: "Was machen Sie gerade?"
     errors:
       desc:
         network: "Bitte überprüfen Sie Ihre Netzwerkverbindung."
@@ -337,16 +326,12 @@ de_formal:
     logout: "Sie wurden abgemeldet."
     read_only_mode:
       enabled: "Diese Website befindet sich im Nur-Lesen-Modus. Sie können weiterhin Inhalte lesen, aber das Erstellen von Beiträgen, Vergeben von „Gefällt mir“ und Durchführen einiger weiterer Aktionen ist derzeit nicht möglich."
-    too_few_topics_and_posts_notice_MF: >-
-      Lassen SIe <a href="https://blog.discourse.org/2014/08/building-a-discourse-community/">die Diskussion beginnen!</a> Es {currentTopics, plural, one {ist <strong>#</strong> Thema} other {sind <strong>#</strong> Themen}} und {currentPosts, plural, one {<strong>#</strong> Beitrag} other {<strong>#</strong> Beiträge}} vorhanden. Besucher brauchen mehr zum Lesen und Beantworten – wir empfehlen mindestens {requiredTopics, plural, one {<strong>#</strong> Thema} other {<strong>#</strong> Themen}} und {requiredPosts, plural, one {<strong>#</strong> Beitrag} other {<strong>#</strong> Beiträge}}. Dieser Hinweis wird nur Team-Mitgliedern angezeigt.
-    too_few_topics_notice_MF: >-
-      Lassen Sie <a href="https://blog.discourse.org/2014/08/building-a-discourse-community/">die Diskussion beginnen!</a> Es {currentTopics, plural, one {ist <strong>#</strong> Thema} other {sind <strong>#</strong> Themen}} vorhanden. Besucher brauchen mehr zum Lesen und Beantworten – wir empfehlen mindestens {requiredTopics, plural, one {<strong>#</strong> Thema} other {<strong>#</strong> Themen}}. Dieser Hinweis wird nur Team-Mitgliedern angezeigt.
-    too_few_posts_notice_MF: >-
-      Lassen Sie <a href="https://blog.discourse.org/2014/08/building-a-discourse-community/">die Diskussion beginnen!</a> Es {currentPosts, plural, one {ist <strong>#</strong> Beitrag} other {sind <strong>#</strong> Beiträge}} vorhanden. Besucher brauchen mehr zum Lesen und Beantworten – wir empfehlen mindestens {requiredPosts, plural, one {<strong>#</strong> Beitrag} other {<strong>#</strong> Beiträge}}. Dieser Hinweis wird nur Team-Mitgliedern angezeigt.
+    staff_writes_only_mode:
+      enabled: "Diese Website befindet sich im Nur-Team-Modus. Sie können weiterhin Inhalte lesen, aber das Antworten, Vergeben von „Gefällt mir“ und Durchführen einiger weiterer Aktionen ist derzeit nur für Team-Mitglieder möglich."
     signup_cta:
       hidden_for_session: "In Ordnung, wir fragen Sie morgen wieder. Sie können sich auch jederzeit unter „Anmelden“ ein Benutzerkonto erstellen."
       intro: "Hallo! Es sieht so aus, als ob Ihnen diese Diskussion gefällt, aber Sie haben bislang noch kein Konto angelegt."
-      value_prop: "Haben Sie es satt, sich durch die gleichen Beiträge zu scrollen? Wenn Sie ein Konto erstellen, kommen Sie immer wieder dorthin zurück, wo Sie aufgehört haben. Mit einem Konto können Sie auch über neue Antworten benachrichtigt werden, Lesezeichen speichern und anderen mit Likes danken. Wir können alle zusammenarbeiten, um diese Gemeinschaft großartig zu machen. :heart:"
+      value_prop: "Haben Sie es satt, sich durch die gleichen Beiträge zu scrollen? Wenn Sie ein Konto erstellen, kommen Sie immer wieder dorthin zurück, wo Sie aufgehört haben. Mit einem Konto können Sie auch über neue Antworten benachrichtigt werden, Lesezeichen speichern und anderen mit „Gefällt mir“ danken. Wir können alle zusammenarbeiten, um diese Community zu etwas Großartigem zu machen. :heart:"
     summary:
       enabled_description: "Sie sehen gerade eine Zusammenfassung des Themas: die interessantesten Beiträge, die von der Community bestimmt wurden."
     private_message_info:
@@ -359,7 +344,7 @@ de_formal:
       disclaimer: "Mit der Registrierung stimmen Sie der <a href='%{privacy_link}' target='blank'>Datenschutzerklärung</a> und den <a href='%{tos_link}' target='blank'>Nutzungsbedingungen</a> zu."
       title: "Erstellen Sie Ihr Konto"
       failed: "Etwas ist schiefgelaufen. Vielleicht ist diese E-Mail-Adresse bereits registriert. Versuchen Sie es mit dem „Passwort vergessen“-Link."
-      associate: "Haben Sie bereits ein Konto? <a href='%{associate_link}'>Loggen Sie sich ein</a> um Ihr %{provider} -Konto zu verknüpfen."
+      associate: "Haben SIe bereits ein Konto? <a href='%{associate_link}'>Loggen Sie sich ein</a>, um Ihr %{provider}-Konto zu verknüpfen."
     forgot_password:
       invite: "Geben SIe Ihren Benutzernamen oder Ihre E-Mail-Adresse ein. Wir senden Ihnen eine E-Mail zum Zurücksetzen des Passworts."
       invite_no_username: "Geben Sie Ihre E-Mail-Adresse ein. Dann senden wir Ihnen eine E-Mail zum Zurücksetzen des Passworts."
@@ -377,7 +362,6 @@ de_formal:
       subheader_title: "Bei Ihrem Konto anmelden"
       second_factor_description: "Bitte geben Sie den Authentifizierungscode aus Ihrer App ein:"
       second_factor_backup_description: "Bitte geben Sie einen Ihrer Wiederherstellungs-Codes ein:"
-      security_key_description: "Wenn Sie Ihren physischen Sicherheitsschlüssel vorbereitet haben, klicken Sie unten auf die Schaltfläche \"Mit Sicherheitsschlüssel authentifizieren\"."
       security_key_alternative: "Versuchen Sie einen anderen Weg"
       security_key_support_missing_error: "Ihr aktuelles Gerät oder Browser unterstützt die Verwendung von Sicherheitsschlüsseln nicht. Bitte verwenden Sie eine andere Methode."
       cookies_error: "Ihr Browser scheint Cookies deaktiviert zu haben. Sie können sich möglicherweise nicht anmelden, ohne diese zuerst zu aktivieren."
@@ -422,13 +406,7 @@ de_formal:
         one: "Indem Sie %{group} erwähnen, sind Sie dabei, <a href='%{group_link}'>%{count} Person</a> zu benachrichtigen – sind Sie sich  sicher?"
         other: "Indem Sie %{group} erwähnen, sind Sie dabei, <a href='%{group_link}'>%{count} Personen</a> zu benachrichtigen – sind Sie sich sicher?"
       cannot_see_mention:
-        category: "Sie haben @%{username} erwähnt, aber diese Personen werden nicht benachrichtigt, da sie keinen Zugriff auf diese Kategorie haben. Fügen Sie sie einer Gruppe hinzu, die Zugriff auf diese Kategorie hat."
-        private: "Sie haben @%{username} erwähnt, aber diese Personen werden nicht benachrichtigt, da sie diese persönliche Nachricht nicht sehen können. Laden Sie sie zu dieser persönlichen Nachricht ein."
-        muted_topic: "Sie haben @%{username} erwähnt, aber sie werden nicht benachrichtigt, weil sie dieses Thema stumm geschaltet haben."
-        not_allowed: "Sie haben @%{username} erwähnt, aber sie werden nicht benachrichtigt, weil sie nicht zu diesem Thema eingeladen wurden."
-      here_mention:
-        one: "Indem Sie <b>@%{here}</b>erwähnen, sind Sie dabei, %{count} Benutzer zu benachrichtigen - sind Sie sicher?"
-        other: "Indem Sie <b>@%{here}</b>erwähnen, benachrichtigen Sie  %{count} Benutzer - sind Sie sicher?"
+        category: "Sie haben @%{username} erwähnt, aber diese Person wird nicht benachrichtigt, da sie keinen Zugriff auf diese Kategorie hat. Fügen Sie sie einer Gruppe hinzu, die Zugriff auf diese Kategorie hat."
       duplicate_link: "Es sieht so aus, als ob Ihr Link zu <b>%{domain}</b> bereits im Thema von <b>@%{username}</b> in <a href='%{post_url}'>einer Antwort vor %{ago}</a> geteilt wurde – sind Sie sicher, dass Sie ihn noch einmal teilen möchten?"
       error:
         try_like: "Haben Sie schon die %{heart}-Schaltfläche ausprobiert?"
@@ -437,7 +415,6 @@ de_formal:
           one: "Sie müssen mindestens %{count} Schlagwort wählen."
           other: "Sie müssen mindestens %{count} Schlagwörter wählen."
         topic_template_not_modified: "Bitte fügen Sie Details und Spezifikationen zu Ihrem Thema hinzu, indem Sie die Themenvorlage anpassen."
-      title: "Oder drücken Sie %{modifier} Eingabetaste"
       title_placeholder: "Um was geht es in dieser Diskussion? Schreiben Sie einen kurzen Satz."
       title_or_link_placeholder: "Geben Sie einen Titel ein oder fügen Sie einen Link ein"
       reply_placeholder: "Hier schreiben. Verwenden Sie Markdown, BBCode oder HTML zur Formatierung. Bilder können eingefügt oder hereingezogen werden."
@@ -448,7 +425,6 @@ de_formal:
       link_url_placeholder: "Fügen Sie eine URL ein oder tippen Sie, um die Themen zu durchsuchen"
       paste_code_text: "Code hier eintippen oder -fügen"
       upload_description: "geben Sie hier eine Beschreibung des Uploads ein"
-      exit_fullscreen_prompt: "Drücken Sie <kbd>ESC</kbd> um den Vollbildmodus zu verlassen."
       cant_send_pm: "Entschuldigung, aber Sie können keine Nachricht an %{username} senden."
       yourself_confirm:
         title: "Haben Sie vergessen, Empfänger hinzuzufügen?"
@@ -477,9 +453,6 @@ de_formal:
           default:
             one: "Sind Sie sicher? Sie haben %{count} wichtige Benachrichtigung."
             other: "Sind Sie sicher? Sie haben %{count} wichtige Benachrichtigungen."
-          bookmarks:
-            one: "Sind Sie sicher? Sie haben %{count} ungelesene Lesezeichen Erinnerung."
-            other: "Sind Sie sicher? Sie haben %{count} ungelesene Lesezeichen-Erinnerungen."
           messages:
             one: "Sind Sie sicher? Sie haben %{count} ungelesene persönliche Nachricht."
             other: "Sind Sie sicher? Sie haben %{count} ungelesene persönliche Nachrichten."
@@ -535,9 +508,6 @@ de_formal:
         one: "Sie haben %{count} ungelesenen Beitrag in diesem Thema"
         other: "Sie haben %{count} ungelesene Beiträge in diesem Thema"
       show_links: "zeigt Links innerhalb dieses Themas"
-      read_more_in_category: "Möchten Sie mehr lesen? Entdecken Sie andere Themen in %{catLink} oder %{latestLink}."
-      read_more: "Möchten Sie mehr lesen? %{catLink} oder %{latestLink}."
-      read_more_MF: "Sie {UNREAD, plural, =0 {} one {haben <a href='{basePath}/unread'>ein ungelesenes</a> Thema } other {haben<a href='{basePath}/unread'># ungelesene</a> Themen } } {NEW, plural, =0 {} one { {BOTH, select, true{und } false {haben} other{}} <a href='{basePath}/new'>ein neues</a> Thema} other { {BOTH, select, true{und } false {haben} other{}} <a href='{basePath}/new'># neue</a> Themen} }. Oder {CATEGORY, select, true {entdecken Sie andere Themen in {catLink}} false {{latestLink}} other {}}"
       slow_mode_notice:
         duration: "Bitte warten Sie zwischen dem Verfassen von Beiträgen in diesem Thema %{duration}."
       topic_status_update:
@@ -655,8 +625,6 @@ de_formal:
         edit: "Entschuldigung, es gab einen Fehler beim Bearbeiten des Beitrags. Bitte versuchen Sie es noch einmal."
         upload: "Entschuldigung, es gab einen Fehler beim Hochladen der Datei. Bitte versuchen Sie es noch einmal."
         file_too_large: "Entschuldigung, die Datei ist zu groß (die maximale Größe beträgt %{max_size_kb} KB). Wie wäre es, die Datei bei einem Cloud-Sharing-Service hochzuladen und dann den Link einzufügen?"
-        file_size_zero: "Es tut uns leid, es sieht so aus, als ob etwas schief gelaufen ist. Die Datei, die Sie hochzuladen versuchen, hat 0 Bytes. Bitte versuchen Sie es erneut."
-        file_too_large_humanized: "Entschuldigung, die Datei ist zu groß (die maximale Größe beträgt %{max_size}). Wie wäre es, die Datei bei einem Cloud-Sharing-Service hochzuladen und dann den Link einzufügen?"
         too_many_uploads: "Entschuldigung, Sie dürfen immer nur eine Datei hochladen."
         upload_not_authorized: "Es tut uns leid, die Datei, die Sie hochladen möchten ist nicht erlaubt (erlaubte Dateiendungen sind: %{authorized_extensions})."
         image_upload_not_allowed_for_new_user: "Entschuldigung, neue Benutzer dürfen keine Bilder hochladen."
@@ -670,7 +638,6 @@ de_formal:
         edit_anonymous: "Entschuldigung, Sie müssen angemeldet sein, um diesen Beitrag zu bearbeiten."
         delete_replies:
           confirm: "Möchten Sie auch die Antworten auf diesen Beitrag löschen?"
-        permanently_delete_confirmation: "Sind Sie sicher, dass Sie diesen Beitrag dauerhaft löschen möchten? Sie werden ihn nicht wiederherstellen können."
         delete_topic_disallowed_modal: "Sie haben keine Berechtigung, dieses Thema zu löschen. Wenn Sie wirklich möchten, dass es gelöscht wird, melden Sie es mit einer Begründung, um einen Moderator darauf aufmerksam zu machen."
         delete_topic_disallowed: "Sie haben keine Berechtigung, dieses Thema zu löschen"
         delete_topic_confirm_modal:
@@ -713,8 +680,6 @@ de_formal:
             description: "Entfernt das Lesezeichen aus Ihrem Profil und stoppt alle Erinnerungen für dieses Lesezeichen."
           edit_bookmark:
             description: "Ändert den Namen des Lesezeichens oder den Erinnerungszeitpunkt."
-          clear_bookmark_reminder:
-            description: "Löscht das Datum und die Uhrzeit der Erinnerung"
           unpin_bookmark:
             description: "Lösen Sie das Lesezeichen los. Es wird nicht mehr oben in Ihrer Lesezeichenliste angezeigt."
       filtered_replies:
@@ -738,11 +703,8 @@ de_formal:
       allow_badges_label: "Das Verleihen von Abzeichen in dieser Kategorie erlauben."
       require_topic_approval: "Moderator-Genehmigung für alle neuen Themen erforderlich"
       require_reply_approval: "Moderator-Genehmigung für alle neuen Antworten erforderlich"
-      position_disabled_click: 'aktivieren Sie die Einstellung „fixed category positions“.'
-      default_slow_mode: 'Aktiviert den "Slow Mode" für neue Themen in dieser Kategorie.'
       navigate_to_first_post_after_read: "Zum ersten Beitrag gehen, nachdem Themen gelesen wurden"
       notifications:
-        title: "ändert Benachrichtigungsstufe für diese Kategorie"
         watching:
           description: "Sie werden automatisch alle Themen in dieser Kategorie beobachten. Sie werden über alle neuen Beiträge in allen Themen benachrichtigt und die Anzahl der neuen Antworten wird angezeigt."
         watching_first_post:
@@ -759,7 +721,6 @@ de_formal:
       take_action_options:
         suspend:
           details: "Erreicht den Meldungsschwellenwert und sperrt den Benutzer"
-      delete_confirm_MF: "Sie werden {POSTS, plural, one {<b>einen</b> Beitrag} other {<b>#</b> Beiträge}} und {TOPICS, plural, one {<b>ein</b> Thema} other {<b>#</b> Themen}} von diesem Benutzer löschen, sein Konto entfernen, seine IP-Adresse <b>{ip_address}</b> für Neuanmeldungen sperren und die E-Mail-Adresse <b>{email}</b> auf eine permanente Sperrliste setzen. Sind Sie sicher, dass dieser Benutzer wirklich ein Spammer ist?"
       cant: "Entschuldigung, Sie können diesen Beitrag derzeit nicht melden."
       custom_placeholder_notify_user: "Seien Sie konkret, konstruktiv und immer freundlich."
       custom_placeholder_notify_moderators: "Bitte lassen Sie uns wissen, was genau Sie beunruhigt. Verweisen Sie, wenn möglich, auf relevante Links und Beispiele."
@@ -787,7 +748,6 @@ de_formal:
         help: "Themen, zu denen Sie beigetragen haben"
       bookmarks:
         help: "Themen, die Sie mit einem Lesezeichen versehen haben."
-    browser_update: 'Leider wird <a href="https://www.discourse.org/faq/#browser">Ihr Browser nicht unterstützt</a>. Bitte <a href="https://browsehappy.com">wechseln Sie zu einem unterstützten Browser</a> , um die Inhalte zu sehen, sich anzumelden und zu antworten.'
     cannot_render_video: "Dieses Video kann nicht gerendert werden, da Ihr Browser den Codec nicht unterstützt."
     badges:
       allow_title: "Sie können dieses Abzeichen als Titel verwenden"
@@ -796,10 +756,8 @@ de_formal:
       favorite_max_reached: "Sie können keine weiteren Abzeichen favorisieren."
       favorite_max_not_reached: "Markieren Sie dieses Abzeichen als Favorit"
     download_calendar:
-      remember_explanation: "(Sie können diese Einstellung in Ihren Benutzereinstellungen ändern)"
       default_calendar_instruction: "Legt fest, welcher Kalender verwendet werden soll, wenn Daten gespeichert werden"
     tagging:
-      staff_info: "Um Einschränkungen hinzuzufügen, fügen Sie dieses Schlagwort in eine <a href=%{basePath}/tag_groups>Tag-Gruppe</a>ein."
       category_restricted: "Dieses Schlagwort ist auf Kategorien beschränkt, für die Sie keine Zugriffsberechtigung haben."
       add_synonyms_explanation:
         one: "Jede Stelle, die dieses Schlagwort aktuell verwendet, wird auf die Verwendung von <b>%{tag_name}</b> geändert. Sind Sie sicher, dass diese Änderung erfolgen soll?"
@@ -846,29 +804,22 @@ de_formal:
     pick_files_button:
       unsupported_file_picked: "Sie haben eine nicht unterstützte Datei ausgewählt. Unterstützte Dateitypen – %{types}."
     user_activity:
-      no_activity_body: "Willkommen in unserer Community! Sie sind ganz neu hier und haben noch nicht an Diskussionen teilgenommen. Besuchen Sie als ersten Schritt <a href='%{topUrl}'>Top</a> oder <a href='%{categoriesUrl}'>Kategorien</a> und fangen Sie einfach an zu lesen! Wählen Sie %{heartIcon} bei Beiträgen aus, die Ihnen gefallen oder über die Sie mehr erfahren möchten. Wenn Sie teilnehmen, wird Ihre Aktivität hier aufgelistet."
       no_replies_title: "Sie haben noch keine Themen beantwortet"
-      no_replies_body: "Wenn Sie <a href='%{searchUrl}'>eine interessante Unterhaltung entdecken</a>, zu der Sie etwas beitragen möchten, klicken Sie auf die Schaltfläche <kbd>Antworten</kbd> direkt unter einem Beitrag, um auf diesen Beitrag zu antworten. Wenn Sie lieber auf das allgemeine Thema, als auf einen einzelnen Beitrag oder eine Person antworten möchten, finden SIe die Schaltfläche <kbd>Antworten</kbd> ganz unten im Thema oder unter der Zeitleiste des Themas."
       no_drafts_title: "Sie haben noch keine Entwürfe begonnen"
-      no_drafts_body: "Noch nicht ganz bereit? Wir speichern automatisch einen neuen Entwurf und listen ihn hier auf, wenn Sie ein Thema, eine Antwort oder eine persönliche Nachricht verfassen. Wählen Sie die Abbrechen-Schaltfläche, um Ihren Entwurf zu verwerfen, zu speichern oder um später fortzufahren."
-      no_likes_title: "Sie haben noch keine Themen mit \"gefällt mir\" markiert."
-      no_likes_body: "Eine großartige Möglichkeit einzusteigen und Beiträge zu leisten, besteht darin, bereits stattgefundene Konversationen zu lesen und die %{heartIcon} bei Beiträgen auszuwählen, die Ihnen gefallen!"
       no_topics_title: "Sie haben noch keine Themen begonnen"
-      no_topics_body: "Es ist immer am besten, <a href='%{searchUrl}'></a> nach bestehenden Themen zu suchen, bevor Sie ein neues Thema eröffnen. Wenn Sie sich aber sicher sind, dass es das gewünschte Thema noch nicht gibt, können Sie auch einfach ein neues Thema erstellen. Suchen Sie nach der Schaltfläche <kbd>+ Neues Thema</kbd> oben rechts in der Themenliste, der Kategorie oder dem Tag, um ein neues Thema in diesem Bereich zu erstellen."
       no_read_topics_title: "Sie haben noch keine Themen gelesen"
-      no_read_topics_body: "Sobald Sie mit dem Lesen von Diskussionen beginnen, sehen Sie hier eine Liste. Zum Lesen suchen Sie nach Themen, die Sie in <a href='%{topUrl}'>Top</a> oder <a href='%{categoriesUrl}'>Kategorien</a> oder suchen Sie nach dem Stichwort %{searchIcon}"
     sidebar:
       sections:
         tags:
           none: "Sie haben keine Schlagwörter hinzugefügt."
+          click_to_get_started: "Hier klicken, um zu beginnen."
           header_action_title: "Bearbeiten Sie Ihre Seitenleisten-Schlagwörter"
         categories:
           none: "Sie haben keine Kategorien hinzugefügt."
-          click_to_get_started: "Klicken Sie hier, um zu starten."
+          click_to_get_started: "Hier klicken, um zu beginnen."
           header_action_title: "Bearbeiten Sie Ihre Seitenleisten-Kategorien"
     welcome_topic_banner:
       title: "Erstellen Sie Ihr Willkommensthema"
-      description: 'Ihr Willkommensthema ist das erste, was Neuankömmlinge lesen werden. Sehen Sie es als Ihren einseitigen "Elevator Pitch" oder Ihr "Mission Statement" an.'
   admin_js:
     admin:
       dashboard:
@@ -887,9 +838,6 @@ de_formal:
             disabled: 'Der Bericht über beliebte Suchen ist deaktiviert. Aktivieren Sie <a href="%{basePath}/admin/site_settings/category/all_results?filter=log%20search%20queries">Suchanfragen protokollieren</a>, um die Daten zu erheben.'
       groups:
         about: "Hier können Sie Gruppenzugehörigkeiten und Gruppennamen bearbeiten."
-        delete_with_messages_confirm:
-          one: "Wenn Sie diese Gruppe löschen, wird %{count} Nachricht verwaist sein, die Gruppenmitglieder haben keinen Zugriff mehr darauf.<br><br>Sind Sie sich sicher?"
-          other: "Wenn Sie diese Gruppe löschen, werden %{count} Nachrichten verwaist sein, die Gruppenmitglieder haben keinen Zugriff mehr darauf.<br><br>Sind Sie sich sicher?"
         none_selected: "Eine Gruppe wählen, um loszulegen"
         no_custom_groups: "Eine neue benutzerdefinierte Gruppe erstellen"
       api:
@@ -899,12 +847,9 @@ de_formal:
             Wenn Sie Bereiche verwenden, können Sie einen API-Schlüssel auf einen bestimmten Satz von Endpunkten beschränken.
             Sie können auch definieren, welche Parameter erlaubt sind. Verwenden Sie Kommas, um mehrere Werte zu trennen.
           descriptions:
-            global:
-              read: Schränkt den API-Schlüssel auf schreibgeschützte Endpunkte ein.
             topics:
               read: Lesen Sie ein Thema oder einen bestimmten Beitrag darin. RSS wird ebenfalls unterstützt.
               write: Erstellen Sie ein neues Thema oder schreiben Sie einen Beitrag zu einem bestehenden.
-              update: "Aktualisieren Sie ein Thema. Ändern Sie den Titel, die Kategorie, Tags usw."
               read_lists: "Lesen Sie  Themenlisten wie „Angesagt“, „Neu“, „Aktuell“ usw. RSS wird ebenfalls unterstützt."
             posts:
               edit: Bearbeiten Sie jeden Beitrag oder einen bestimmten.
@@ -915,11 +860,9 @@ de_formal:
               sync_sso: Synchronisiert einen Benutzer mit DiscourseConnect.
             email:
               receive_emails: "Kombiniert diesen Bereich mit dem E-Mail-Empfänger, um eingehende E-Mails zu verarbeiten."
-            badges:
-              create: Erstellen Sie ein neues Abzeichen.
-              show: Erhalten Sie Informationen über ein Abzeichen.
+            wordpress:
+              utilities: "Erforderlich, wenn Sie WP-Discourse-Plug-in-Dienstprogramme verwenden."
       web_hooks:
-        warn_local_payload_url: "Es scheint, dass Sie versuchen, den Webhook für eine lokale URL einzurichten. Ein Ereignis, das an eine lokale Adresse übermittelt wird, kann einen Nebeneffekt oder ein unerwartetes Verhalten verursachen. Möchten Sie fortfahren?"
         event_type_missing: "Sie müssen mindestens einen Ereignistyp definieren."
         individual_event: "Einzelne Ereignisse auswählen."
         verify_certificate: "Überprüfen Sie das TLS-Zertifikat der Payload-URL"
@@ -1037,21 +980,11 @@ de_formal:
         suspend_message_placeholder: "Optional: Geben Sie weitere Informationen zur Sperre an und sie werden dem Benutzer per E-Mail geschickt."
         silence_reason_label: "Warum schalten Sie diesen Benutzer/diese Benutzerin stumm?"
         penalty_post_actions: "Was möchten Sie mit dem zugehörigen Beitrag machen?"
-        delete_all_posts_confirm_MF: "Sie werden {POSTS, plural, one {# Beitrag} other {# Beiträge}} und {TOPICS, plural, one {# Thema} other {# Themen}} löschen. Sind Sie sich sicher?"
         show_public_profile: "Zeigt öffentliches Profil"
         grant_admin_confirm: "Wir haben Ihnen eine E-Mail geschickt, um den neuen Administrator zu überprüfen. Bitte öffnen Sie sie und folgen Sie den Anweisungen."
         warnings_list_warning: |
           Als Moderator können Sie unter Umständen nicht alle diese Themen sehen. Falls nötig, bitte einen Administrator oder den ausstellenden Moderator, <b>@Moderatoren</b> Zugriff auf die Nachricht gewähren.
         anonymize_confirm: "Möchten Sie dieses Konto WIRKLICH anonymisieren? Dadurch werden der Benutzername und die E-Mail-Adresse geändert und alle Informationen im Profil zurückgesetzt."
-        delete_posts:
-          confirmation:
-            title: "Löscht alle Beiträge von @%{username}"
-            description: |
-              <p>Sind Sie sicher, dass Sie <b>%{post_count}</b> Beiträge von @%{username} löschen möchten?
-
-              <p><b>Dies kann nicht rückgängig gemacht werden!</b></p>
-
-              <p>Um fortzufahren bitte eingeben: <code>%{text}</code></p>
         merge:
           prompt:
             description: |
@@ -1068,7 +1001,6 @@ de_formal:
         delete_forbidden:
           one: "Benutzer können nicht gelöscht werden, wenn diese Beiträge haben. Löschen Sie zuerst alle seine Beiträge, bevor Sie versuchen, einen Benutzer zu löschen. (Beiträge, die älter als %{count} Tag sind, können nicht gelöscht werden.)"
           other: "Benutzer können nicht gelöscht werden, wenn diese Beiträge haben. Löschen Sie zuerst alle seine Beiträge, bevor Sie versuchen, einen Benutzer zu löschen. (Beiträge, die älter als %{count} Tage sind, können nicht gelöscht werden.)"
-        delete_confirm: "Es ist grundsätzlich vorzuziehen, Benutzer zu anonymisieren, statt sie zu löschen, um zu vermeiden, dass Inhalt aus bestehenden Diskussionen entfernt wird.<br><br> Sind  Sie SICHER, dass Sie diesen Benutzer löschen möchten? Dies lässt sich nicht rückgängig machen."
         delete_failed: "Beim Löschen des Benutzers ist ein Fehler aufgetreten. Stellen Sie sicher, dass dieser Benutzer keine Beiträge mehr hat."
         silence_confirm: "Sind Sie sicher, dass Sie diesen Benutzer stummschalten möchtest? Der Benutzer wird keine Möglichkeit mehr haben, Themen oder Beiträge zu erstellen."
         visit_profile: "Besuchen Sie die <a href='%{url}'>Benutzer-Einstellungen</a>, um dieses Profil zu bearbeiten."
@@ -1083,7 +1015,6 @@ de_formal:
         search: "Suche nach dem Text, den Sie bearbeiten möchten"
         revert_confirm: "Möchten Sie wirklich Ihre Änderungen verwerfen?"
         recommended: "Wir empfehlen, dass Sie den folgenden Text an Ihre Bedürfnisse anpassen:"
-        fallback_locale_warning: "Sie bearbeiten eine Sprache basierend auf %{fallback}. Benutzer, die %{fallback} als Sprache ihrer Oberfläche wählen, werden Ihre Änderungen nicht sehen."
         more_than_50_results: "Es gibt mehr als 50 Ergebnisse. Bitte grenzen Sie Ihre Suche weiter ein."
       site_settings:
         more_than_30_results: "Es gibt mehr als 30 Ergebnisse. Bitte grenzen Sie Ihre Suche weiter ein oder wählen Sie eine Kategorie aus."
@@ -1109,22 +1040,17 @@ de_formal:
           aborted: "Bitte laden Sie eine CSV-Datei hoch, die entweder E-Mail-Adressen oder Benutzernamen enthält"
           success: "Ihre CSV-Datei wurde empfangen und %{count} Benutzer werden in Kürze ihr Abzeichen erhalten."
           replace_owners: Entfernt das Abzeichen von vorherigen Eigentümern
-          grant_existing_holders: Gewähren Sie weiteren Abzeichen an bestehende Abzeicheninhaber
       emoji:
-        help: "Fügen Sie neue Emojis hinzu, die für alle verfügbar sind. Ziehen Sie mehrere Dateien gleichzeitig per Drag & Drop, ohne einen Namen einzugeben, um Emojis mit ihren Dateinamen zu erstellen. Die ausgewählte Gruppe wird für alle Dateien verwendet, die gleichzeitig hinzugefügt werden. Sie können auch auf „Neues Emoji hinzufügen“ klicken, um die Dateiauswahl zu öffnen."
-        choose_files: "Wählen Sie Dateien"
         delete_confirm: "Möchten Sie wirklich das „:%{name}:“-Emoji löschen?"
       embedding:
         get_started: "Wenn Sie Discourse in einer anderen Website einbetten möchten, beginnen Sie mit dem Hinzufügen des Hosts."
         confirm_delete: "Möchten Sie diesen Host wirklich löschen?"
-        sample: "Verwenden Sie den folgenden HTML-Code auf Ihrer Website, um Discourse-Themen zu erstellen und einzubetten. Ersetzen Sie <b>REPLACE_ME</b> mit der URL der Seite, auf der Sie ihn einbetten."
         crawling_description: "Wenn Discourse Themen für Ihre Beiträge erstellt, wird es – falls kein RSS-/ATOM-Feed verfügbar ist – versuchen, den Inhalt aus dem HTML-Code zu extrahieren. Dies ist teilweise schwierig, weshalb hier CSS-Regeln angegeben werden können, die die Extraktion erleichtern."
         embed_truncate: "Die eingebetteten Beiträge kürzen"
       permalink:
         delete_confirm: "Möchten Sie wirklich diesen Permanentlink löschen?"
   wizard_js:
     wizard:
-      jump_in: "Springen Sie rein!"
       upload_error: "Entschuldigung, es gab einen Fehler beim Hochladen der Datei. Bitte versuchen Sie es noch einmal."
       staff_count:
         one: "Ihre Community hat %{count}Team-Mitglied (Sie)"

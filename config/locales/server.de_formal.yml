@@ -31,7 +31,7 @@ de_formal:
   emails:
     incoming:
       show_trimmed_content: "Zeigt gekürzten Inhalt"
-    secure_media_placeholder: "Geschwärzt: Auf dieser Website sind sichere Medien aktiviert, besuchen Sie das Thema oder klicken Sie auf „Medien anzeigen“, um die angehängten Medien zu sehen."
+    secure_uploads_placeholder: "Redigiert: Auf dieser Website sind sichere Uploads aktiviert, besuchen Sie das Thema oder klicken Sie auf „Medien anzeigen“, um die angehängten Uploads zu sehen."
   errors: &errors
     messages:
       too_long_validation: "darf höchstens %{max} Zeichen lang sein; Sie haben %{length} eingegeben."
@@ -53,7 +53,6 @@ de_formal:
       cannot_enable_s3_uploads_when_s3_enabled_globally: "Sie können S3-Uploads nicht aktivieren, weil S3-Uploads bereits global aktiviert sind. Aktivieren auf Website-Ebene kann zu kritischen Problemen mit Uploads führen"
       cors_origins_should_not_have_trailing_slash: "Sie sollten den abschließenden Schrägstrich (/) nicht zu CORS-Ursprüngen hinzufügen."
       slow_down_crawler_user_agent_cannot_be_popular_browsers: "Sie können keinen der folgenden Werte zu der Einstellung hinzufügen: %{values}."
-      strip_image_metadata_cannot_be_disabled_if_composer_media_optimization_image_enabled: "Sie können die Strip-Image-Metadaten nicht deaktivieren, wenn \"composer media optimization image enabled\" aktiviert ist. Deaktivieren Sie \"composer media optimization image enabled\", bevor Sie Strip-Image-Metadaten deaktivieren."
     conflicting_google_user_id: 'Die Google-Konto-ID für dieses Konto hat sich geändert; das Einschreiten des Teams ist aus Sicherheitsgründen erforderlich. Bitte kontaktieren Sie das Team und verweisen Sie es auf <br><a href="https://meta.discourse.org/t/76575">https://meta.discourse.org/t/76575</a>'
     onebox:
       invalid_address: "Leider konnten wir keine Vorschau für diese Webseite erstellen, da der Server „%{hostname}“ nicht gefunden werden konnte. Statt einer Vorschau erscheint nur ein Link in Ihrem Beitrag. :cry:"
@@ -86,6 +85,7 @@ de_formal:
   invite_link:
     email_taken: "Diese E-Mail-Adresse wird schon verwendet. Falls Sie bereits ein Konto haben, melden Sie sich bitte an oder setzen Sie Ihr Passwort zurück."
   topic_invite:
+    not_pm: "Sie können nur zu privaten Nachrichten einladen."
     user_exists: "Entschuldigung, dieser Benutzer ist bereits eingeladen worden. Sie können einen Benutzer nur einmal zu einem Thema einladen."
     muted_topic: "Entschuldigung, dieser Benutzer hat dieses Thema stummgeschaltet."
     receiver_does_not_allow_pm: "Entschuldigung, dieser Benutzer erlaubt es Ihnen nicht, ihm private Nachrichten zu senden."
@@ -125,8 +125,6 @@ de_formal:
   too_many_links:
     one: "Entschuldigung, neue Benutzer können Beiträgen höchstens einen Link hinzufügen."
     other: "Entschuldigung, neue Benutzer können Beiträgen höchstens %{count} Links hinzufügen."
-  contains_blocked_word: "Ihr Beitrag enthält ein nicht erlaubtes Wort: %{word}"
-  contains_blocked_words: "Ihr Beitrag enthält mehrere Worte, die nicht erlaubt sind: %{words}"
   spamming_host: "Entschuldigung, Sie können keine Links zu diesem Webserver posten."
   topic_not_found: "Etwas ist schief gelaufen. Wurde das Thema eventuell geschlossen oder gelöscht, während Sie es angeschaut haben?"
   not_accepting_pms: "Entschuldigung, %{username} akzeptiert gerade keine Nachrichten."
@@ -193,8 +191,6 @@ de_formal:
       Sie können Ihre letzte Antwort bearbeiten, um ein Zitat hinzuzufügen, indem Sie den Text auswählen und auf die erscheinende Schaltfläche <b>Zitat</b> klicken.
 
       Es ist für alle einfacher, Themen zu lesen, die wenige umfassende Antworten statt viele kleine und einzelne Antworten haben.
-    dominating_topic: "Sie haben mehr als %{percent}% der Antworten hier gepostet, gibt es noch jemanden, von dem Sie gerne hören würden?"
-    get_a_room: "Sie haben @%{reply_username} %{count} mal geantwortet, wussten Sie, dass Sie der Person stattdessen eine persönliche Nachricht schicken können?"
     too_many_replies: |
       ### Sie haben das Antwort-Limit für dieses Thema erreicht
 
@@ -236,6 +232,7 @@ de_formal:
             featured_topic_id:
               invalid: "Dieses Thema kann nicht in Ihrem Profil hervorgehoben werden."
       <<: *errors
+  general_category_description: "Erstellen Sie hier Themen, die in keine andere bestehende Kategorie passen."
   discourse_welcome_topic:
     body: |2
 
@@ -251,40 +248,13 @@ de_formal:
       <img src="%{base_path}/images/welcome/discourse-edit-post-animated.gif" width="508" height="106">
 
       Sie sollten dieses Thema eventuell mittels Themen-Administration :wrench: (oben rechts oder unten) schließen, damit sich bei dieser Ankündigung nicht die Antworten anhäufen.
-  lounge_welcome:
-    body: |2
-
-      Gratuliere! :confetti_ball:
-
-      Wenn Sie dieses Thema sehen können, wurden Sie vor Kurzem zum **Stammgast** (Vertrauensstufe 3) befördert.
-
-      Sie können nun &hellip;
-
-      * den Titel eines jeden Themas ändern
-      * Themen in andere Kategorien verschieben
-      * Links veröffentlichen, die von Suchmaschinen weiterverfolgt werden (das automatische [nofollow](https://de.wikipedia.org/wiki/Nofollow) wird entfernt)
-      * auf die private Lounge-Kategorie zugreifen, die für Benutzer mit Vertrauensstufe 3 oder höher sichtbar ist
-      * Spam durch eine einzige Meldung ausblenden
-
-      Hier ist die [aktuelle Liste aller Stammgäste](%{base_path}/badges/3/regular). Vergessen Sie nicht, Hallo zu sagen!
-
-      Vielen Dank dafür, dass Sie ein wichtiger Teil dieser Community sind!
-
-      (Wenn Sie mehr über Vertrauensstufen wissen möchten, können Sie [dieses Thema lesen][trust]. Beachten Sie bitte, dass nur jene Mitglieder Stammgäste bleiben, die auch im Laufe der Zeit die Anforderungen erfüllen.)
-
-      [trust]: https://blog.discourse.org/2018/06/understanding-discourse-trust-levels/
   category:
     replace_paragraph: "(Ersetzen Sie diesen ersten Absatz mit einer kurzen Beschreibung Ihrer neuen Kategorie. Diese Orientierung wird in der Kategorienauswahl angezeigt, versuchen Sie also, weniger als 200 Zeichen zu benutzen.)"
     post_template: "%{replace_paragraph}\n\nBenutzen Sie die folgenden Abschnitte für eine ausführlichere Beschreibung oder um Richtlinien oder Regeln für diese Kategorie festzulegen:\n\n- Warum sollten Benutzer diese Kategorie nutzen? Wofür ist sie gedacht?\n\n- Wie genau unterscheidet sie sich von den Kategorien, die es bereits gibt?\n\n- Was sollten Themen in dieser Kategorie generell beinhalten?\n\n- Brauchen wir diese Kategorie? Können wir sie mit einer anderen Kategorie oder Unter-Kategorie zusammenführen?\n"
   trust_levels:
     change_failed_explanation: "Sie wollten %{user_name} auf '%{new_trust_level}' zurückstufen. Die Vertrauensstufe ist jedoch bereits '%{current_trust_level}'. %{user_name} verbleibt auf '%{current_trust_level}'. Wenn Sie den Benutzer zurückstufen möchten, müssen Sie zuerst seine Vertrauensstufe sperren."
   post:
-    image_placeholder:
-      blocked_hotlinked_title: "Das Bild befindet sich auf einer anderen Website. Klicken SIe es an, um es in einem neuen Tab zu öffnen."
-    media_placeholder:
-      blocked_hotlinked_title: "Die Medien werden auf einer anderen Website gehostet. Klicken Sie sie an, um diese in einem neuen Tab zu öffnen."
     cannot_permanently_delete:
-      many_posts: "Sie können dieses Thema nicht dauerhaft löschen, da es andere Beiträge gibt."
       wait_or_different_admin: "Sie müssen %{time_left} warten, bevor Sie diesen Beitrag endgültig löschen können, oder ein anderer Administrator muss dies tun."
   rate_limiter:
     slow_down: "Sie haben diese Aktion zu oft durchgeführt. Bitte versuchen Sie es später noch einmal."
@@ -305,13 +275,8 @@ de_formal:
       unsubscribe_via_email: "Sie haben die maximale Anzahl an Abbestellungen per E-Mail erreicht. Bitte warten Sie %{time_left} bevor Sie es erneut versuchen."
       topic_invitations_per_day: "Sie haben die maximale Anzahl an Themeneinladungen erreicht. Sie können in %{time_left} mehr Einladungen versenden."
   password_reset:
-    no_token: "Entschuldigung, aber der Link zum Ändern des Passworts ist zu alt. Wählen Sie die Anmelden-Schaltfläche und nutzen Sie dann „Ich habe mein Passwort vergessen“, um einen neuen Link zu erhalten."
-    choose_new: "Wählen Sie ein neues Passwort"
-    choose: "Wählen Sie ein Passwort"
     success: "Ihr Passwort wurde erfolgreich geändert, und Sie sind nun angemeldet."
     success_unapproved: "Ihr Passwort wurde erfolgreich geändert."
-  email_login:
-    invalid_token: "Entschuldigung, aber der Link zum Anmelden ist zu alt. Wählen Sie die Anmelden-Schaltfläche und nutzen Sie „Ich habe mein Passwort vergessen“, um einen neuen Link zu erhalten."
   change_email:
     wrong_account_error: "Sie sind mit dem falschen Konto angemeldet. Bitte melden Sie sich ab und versuchen Sie es noch einmal."
     confirmed: "Ihre E-Mail-Adresse wurde aktualisiert."
@@ -366,7 +331,6 @@ de_formal:
     topic_description: "Um %{link} wieder zu abonnieren, verwenden Sie die Benachrichtigungseinstellungen unten oder rechts vom Thema."
   unsubscribe:
     different_user_description: "Sie sind derzeit als ein anderer Benutzer angemeldet als der, dem wir die E-Mail geschickt haben. Bitte melden Sie sich ab oder gehen Sie in den anonymen Modus und versuchen Sie es erneut."
-    not_found_description: "Entschuldigung, wir konnten Ihr Abo nicht abbestellen. Kann es sein, dass der Link aus Ihrer E-Mail zu alt und abgelaufen ist?"
     digest_frequency:
       title: "Sie erhalten E-Mail-Zusammenfassungen %{frequency}"
       never_title: "Sie erhalten keine E-Mail-Zusammenfassungen"
@@ -416,17 +380,12 @@ de_formal:
     allow_uncategorized_topics: "Erlaubt Themen ohne Kategorie zu erstellen. ACHTUNG: Falls es unkategorisierte Themen gibt, müssen Sie sie neu kategorisieren, bevor Sie diese Option abschalten."
     allow_duplicate_topic_titles: "Erlaubt Themen mit identischen und doppelten Titeln."
     educate_until_posts: "Zeigt das Hilfe-Panel im Editor, wenn ein Benutzer einen seiner ersten (n) Beiträge zu schreiben beginnt."
-    site_description: "Beschreiben Sie diese Website in einem Satz. Wird für das „description“-Meta-Tag verwendet."
-    download_remote_images_to_local: "Konvertieren Sie externe (mit Hotlinks versehene) Bilder in lokale Bilder, indem Sie diese herunterladen; so bleibt der Inhalt erhalten, auch wenn die Bilder in Zukunft von der verlinkten Seite entfernt werden."
-    block_hotlinked_media: "Verhindert, dass Benutzer externe (Hotlinked) Medien in ihren Beiträgen einfügen. Externe Medien, die nicht über 'download_remote_images_to_local' heruntergeladen werden, werden durch einen Platzhalter-Link ersetzt."
-    block_hotlinked_media_exceptions: "Eine Liste von Basis-URLs, die von der Einstellung block_hotlinked_media ausgenommen sind. Fügen Sie das Protokoll hinzu (z.B. https://example.com)."
     edit_history_visible_to_public: "Erlaubt jedem, vorherige Versionen eines bearbeiteten Beitrags zu sehen. Wenn deaktiviert, sind diese nur für Team-Mitglieder sichtbar."
     responsive_post_image_sizes: "Ändert die Größe der Vorschau Bilder um auf hochauflösenden Bildschirmen die folgenden Pixel Ratios zu erlauben. Alle Werte entfernen, um schnelle Bilder zu deaktivieren."
     add_rel_nofollow_to_user_content: 'Füge mit Ausnahme interner Links (schließt übergeordnete Domains ein) allen benutzergenerierten Inhalten ''rel nofollow'' hinzu. Die Änderung dieser Einstellung erfordert, dass Sie sämtliche Markdown-Beiträge aktualisieren: "rake posts:rebake"'
     exclude_rel_nofollow_domains: "Eine Liste von Domains, bei denen nofollow bei Links nicht hinzugefügt werden soll. Example.com wird automatisch auch Subdomains wie sub.example.com erlauben. Sie sollten zumindest die Domain dieser Seite hinzufügen, um Web-Crawlern zu helfen, alle Inhalte zu finden. Wenn andere Teile der Seite auf anderen Domains liegen, fügen Sie auch diese hinzu."
     show_pinned_excerpt_mobile: "Zeigt einen Auszug angehefteter Themen in der mobilen Ansicht."
     show_pinned_excerpt_desktop: "Zeigt einen Auszug angehefteter Themen in der Desktop-Ansicht."
-    block_onebox_on_redirect: "Blockiert Onebox für URLs, die umleiten."
     enable_inline_onebox_on_all_domains: "Ignoriert die Website-Einstellung `inline_onebox_domain_allowlist` und erlaubt Inline-Oneboxen für alle Domains"
     facebook_app_access_token: "Ein Token, das aus Ihrer Facebook-App-ID und Ihrem Geheimnis generiert wird. Wird verwendet, um Instagram-Oneboxes zu generieren."
     logo: "Das Logo oben links auf Ihrer Website. Verwenden Sie ein breites rechteckiges Bild mit einer Höhe von 120 Pixeln und einem Seitenverhältnis von mindestens 3:1. Wenn leer, wird die Website-Überschrift angezeigt."
@@ -438,7 +397,6 @@ de_formal:
     force_https: "Erzwingen Sie HTTPS für Ihre Website. ACHTUNG: Aktivieren Sie dies NICHT, bevor HTTPS nicht vollständig eingerichtet ist und auf jeden Fall überall funktioniert! Haben Sie Ihr CDN, alle Anmeldungen über soziale Netzwerke, alle externe Logos/Abhängigkeiten geprüft, um sicherzustellen, dass sie auch HTTPS-kompatibel sind?"
     summary_score_threshold: "Mindestpunktzahl, die ein Beitrag benötigt, um in der \"Thema zusammenfassen\"-Ansicht zu erscheinen."
     summary_percent_filter: "Die besten (n)% der Beiträge eines Themas in der \"Thema zusammenfassen\"-Ansicht anzeigen."
-    enable_personal_messages: "Benutzern mit der Vertrauensstufe 1 (konfigurierbar über die minimale Vertrauensstufe zum Senden von Nachrichten) erlauben, Nachrichten zu erstellen und auf Nachrichten zu antworten. Beachten Sie, dass das Team immer Nachrichten und Antworten senden kann."
     enable_system_message_replies: "Benutzern erlauben, auf Systemnachrichten zu antworten, auch wenn Nachrichten deaktiviert sind"
     enable_chunked_encoding: "Aktiviert „chunked encoding“-Antworten durch den Server. Diese Funktion ist mit den meisten Set-ups kompatibel, aber einige Proxys können puffern, wodurch die Antworten verzögert werden"
     long_polling_base_url: "Basis-URL für Long Polling (wenn zum Ausliefern von dynamischen Inhalten ein CDN verwendet wird, setzem Sie dies auf Origin-Pull), z. B. http://origin.site.com"
@@ -448,9 +406,6 @@ de_formal:
     tl2_additional_edits_per_day_multiplier: "Limit der Bearbeitungen pro Tag für Benutzer mit Vertrauensstufe 2 (Mitglied) mit diesem Faktor multiplizieren"
     tl3_additional_edits_per_day_multiplier: "Limit der Bearbeitungen pro Tag für Benutzer mit Vertrauensstufe 3 (Stammgast) mit diesem Faktor multiplizieren"
     tl4_additional_edits_per_day_multiplier: "Limit der Bearbeitungen pro Tag für Benutzer mit Vertrauensstufe 4 (Anführer) mit diesem Faktor multiplizieren"
-    tl2_additional_flags_per_day_multiplier: "Limit der „Meldungen“ pro Tag für Benutzer mit Vertrauensstufe 2 (Mitglied) mit diesem Faktor multiplizieren"
-    tl3_additional_flags_per_day_multiplier: "Limit der „Meldungen“ pro Tag für Benutzer mit Vertrauensstufe 3 (Stammgast) mit diesem Faktor multiplizieren"
-    tl4_additional_flags_per_day_multiplier: "Limit der „Meldungen“ pro Tag für Benutzer mit Vertrauensstufe 4 (Anführer) mit diesem Faktor multiplizieren"
     flag_sockpuppets: "Wenn ein neuer Benutzer auf ein Thema von derselben IP-Adresse antwortet wie der Benutzer, der das Thema begonnen hat, werden beide Beiträge als potenziellen Spam markiert."
     enable_markdown_typographer: "Typografische Regeln verwenden, um die Lesbarkeit von Text zu erhöhen: Ersetzt einfache Anführungszeichen ' durch geneigte Anführungszeichen ’, (c) (tm) durch Symbole, -- durch Gedankenstriche – usw."
     approve_suspect_users: "Fügt verdächtige Benutzer zur Warteschlange zur Überprüfung hinzu. Verdächtige Benutzer haben eine Bio/Website eingegeben, aber keine Leseaktivität."
@@ -465,11 +420,7 @@ de_formal:
     redirect_users_to_top_page: "Verweist neue und länger abwesende Benutzer automatisch zur Seite „Angesagt“."
     moderators_view_emails: "Erlaubt Moderatoren, Benutzer-E-Mails einzusehen."
     prioritize_username_in_ux: "Zeigt den Benutzernamen auf der Benutzerseite, der Benutzerkarte und in Beiträgen an erster Stelle (wenn deaktiviert, wird der Name an erster Stelle angezeigt)"
-    enable_whispers: "Erlaubt dem Team private Kommunikation innerhalb von Themen."
-    whispers_allowed_groups: "Erlaubt private Kommunikation innerhalb von Themen für Mitglieder bestimmter Gruppen."
     allow_index_in_robots_txt: "Legt in der robots.txt fest, dass diese Website von Websuchmaschinen indiziert werden darf. In Ausnahmefällen können Sie die <a href='%{base_path}/admin/customize/robots'>robots.txt dauerhaft überschreiben</a>."
-    normalize_emails: "Überprüft, ob normalisierte E-Mails eindeutig sind. Normalisierte E-Mail entfernt alle Punkte aus dem Benutzernamen und alles zwischen + und @ Symbolen."
-    hide_email_address_taken: "Informiert Benutzer beim Anmelden oder Passwort-Zurücksetzen nicht über ein bereits bestehendes Konto mit dieser E-Mail-Adresse. Benötigt die Angabe vollständiger E-Mail-Adressen zum Passwort-Zurücksetzen."
     version_checks: "Kontaktiert den Discourse Hub zur Überprüfung auf neue Versionen und zeige Benachrichtigungen über neue Versionen im <a href='%{base_path}/admin' target='_blank'>/admin</a>-Dashboard an."
     new_version_emails: "Sendet eine E-Mail an die contact_email-Adresse, wenn eine neue Version von Discourse verfügbar ist."
     block_common_passwords: "Erlaubt keine Passwörter, die zu den 10.000 häufigsten Passwörtern zählen."
@@ -490,7 +441,6 @@ de_formal:
     discord_client_id: 'Discord-Client-ID (Haben Sie noch keine? Besuchen Sie <a href="https://discordapp.com/developers/applications/me">das Discord-Entwickler-Portal</a>)'
     discord_trusted_guilds: 'Das Anmelden per Discord nur Mitgliedern dieser Discord-Gilden gestatten. Verwendt die numerische ID der Gilde. Lesen Sie die Anleitung <a href="https://meta.discourse.org/t/configuring-discord-login-for-discourse/127129">hier</a>, um mehr zu erfahren. Leer lassen, um jede Gilde zuzulassen.'
     enable_backups: "Erlaubt Administratoren, Backups des Forums zu erstellen"
-    allow_restore: "Wiederherstellung zulassen, die ALLE Site-Daten ersetzen kann! Lassen Sie es deaktiviert, es sei denn, Sie möchten ein Backup wiederherstellen."
     s3_backup_bucket: "Der entfernte Bucket, in dem Backups gespeichert werden. WARNUNG: Achten Sie darauf, dass es ein privater Bucket ist."
     s3_configure_tombstone_policy: "Aktiviert die automatische Löschregel für Uploads im Papierkorb. WICHTIG: Wenn deaktiviert, wird kein Speicherplatz freigegeben, wenn Uploads gelöscht werden."
     s3_disable_cleanup: "Verhindert das Entfernen von alten Backups aus S3, wenn es mehr Backups als das erlaubte Maximum gibt."
@@ -504,7 +454,6 @@ de_formal:
     external_system_avatars_enabled: "Nutzt einen externen System-Avatar-Dienst."
     external_emoji_url: "URL des externen Dienstes für Emoji-Bilder. Lassen Sie das Feld leer, um dies zu deaktivieren."
     use_site_small_logo_as_system_avatar: "Verwendet das kleine Logo der Website anstelle des Avatars des Systembenutzers. Das Logo muss vorhanden sein."
-    selectable_avatars_mode: "Erlaubt es den Nutzern, einen Avatar aus der Liste selectable_avatars auszuwählen, und beschränkt benutzerdefinierte Avatar-Uploads auf die ausgewählte Vertrauensstufe."
     allow_all_attachments_for_group_messages: "Erlaubt alle E-Mail-Anhänge für Gruppen-Nachrichten."
     allow_staff_to_upload_any_file_in_pm: "Erlaubt Team-Mitgliedern, in privaten Nachrichten alle Dateien hochzuladen."
     default_trust_level: "Standardwert für die Vertrauensstufe für alle neuen Benutzer (0–4). ACHTUNG! Wenn Sie dies ändern, setzen Sie sich einem ernsthaften Risiko für Spam aus."
@@ -531,7 +480,6 @@ de_formal:
     unsubscribe_via_email_footer: "Fügt einen „mailto:“-Link zum Abbestellen per E-Mail in der Fußzeile ausgehender E-Mails hinzu"
     delete_email_logs_after_days: "Löscht E-Mail-Protokolle nach (N) Tagen. Wählen Sie 0, um sie für immer zu behalten."
     disallow_reply_by_email_after_days: "Verbietet Antworten per E-Mail nach (N) Tagen. 0 für unbegrenzte Zeit"
-    maximum_recipients_per_new_group_email: "Blockiert eingehende E-Mails mit zu vielen Empfängern."
     trim_incoming_emails: "Schneidet einen Teil der eingehenden E-Mails ab, der nicht relevant ist."
     private_email: "Fügt keine Inhalte von Beiträgen oder Themen in den E-Mail-Titel oder den E-Mail-Text ein. HINWEIS: Deaktiviert auch die E-Mail-Zusammenfassungen."
     post_excerpts_in_emails: "Sendet in Benachrichtigungs-E-Mails immer Auszüge anstelle von ganzen Beiträgen"
@@ -549,7 +497,6 @@ de_formal:
     email_accent_fg_color: "Die Farbe des Textes, der in HTML-E-Mails auf der Hintergrundfarbe dargestellt wird. Geben Sie einen Farbnamen („white“) oder einen Hex-Wert („#FFFFFF“) ein."
     email_link_color: "Die Farbe von Links in HTML-E-Mails. Geben Sie einen Farbnamen („blue“) oder einen Hex-Wert („#0000FF“) ein."
     detect_custom_avatars: "Aktivieren Sie diese Option, um zu überprüfen, ob Benutzer eigene Profilbilder hochgeladen haben."
-    group_in_subject: "Setzt %%{optional_pm} im E-Mail-Betreff auf den Namen der ersten Gruppe in der privaten Nachricht, siehe: <a href='https://meta.discourse.org/t/customize-subject-format-for-standard-emails/20801' target='_blank'>Betreffformat für Standard-E-Mails anpassen</a>"
     anonymous_account_duration_minutes: "Erzeugt alle N Minuten ein neues anonymes Konto je Benutzer, um die Anonymität zu gewährleisten. Beispiel: Ein Wert von 600 sorgt dafür, dass ein neues anonymes Konto erzeugt wird, wenn ein Benutzer in den anonymen Modus wechselt UND mindestens 600 Minuten seit dem letzten Beitrag dieses Benutzers vergangen sind."
     allow_featured_topic_on_user_profiles: "Erlaubt Benutzern, ihrer Benutzerkarte und ihrem Profil einen Link zu einem Thema hinzuzufügen."
     show_inactive_accounts: "Erlaubt angemeldeten Benutzern, die Profile inaktiver Benutzer anzuschauen."
@@ -558,14 +505,11 @@ de_formal:
     ignored_users_count_message_threshold: "Benachrichtigt die Moderatoren, wenn ein bestimmter Benutzer von so vielen anderen Benutzern ignoriert wird."
     enable_mobile_theme: "Mobilgeräte verwenden eine mobile Darstellung mit der Möglichkeit, zur vollständigen Website zu wechseln. Deaktivieren Sie diese Option, wenn Sie ein eigenes Fully-Responsive-Stylesheet verwenden möchten."
     suppress_uncategorized_badge: "Zeigt kein Abzeichen für nicht kategorisierte Themen in der Themenliste."
-    disable_category_edit_notifications: "Deaktiviert Benachrichtigungen über Kategorie-Anpassungen von Themen."
-    disable_tags_edit_notifications: "Deaktiviert Benachrichtigungen über Schlagwort-Anpassungen von Themen."
     auto_handle_queued_age: "Einträge automatisch bearbeiten, die so viele Tage auf Überprüfung warten. Meldungen werden ignoriert. Beiträge und Benutzer in der Warteschlange werden zurückgewiesen. Setzen Sie den Wert auf 0, um diese Funktion zu deaktivieren."
     svg_icon_subset: "Fügen Sie zusätzliche Font Awesome 5 Icons hinzu, die Sie verfügbar machen möchten. Verwenden Sie das Präfix 'fa-' für Icons der Kategorie 'solid', 'far-' für die Kategorie 'regular' und 'fab-' für die Kategorie 'brand'."
     enable_names: "Zeigt den vollen Namen eines Benutzers auf dem Profil, der Benutzerkarte und in E-Mails an. Wenn deaktiviert wird der volle Name überall ausgeblendet."
     display_name_on_posts: "Zeigt zusätzlich zum @Benutzernamen auch den vollständigen Namen des Benutzers bei seinen Beiträgen."
     autohighlight_all_code: "Erzwingt Syntaxhervorhebung für alle Quellcode-Blöcke auch dann, wenn keine Sprache angegeben wurde."
-    show_copy_button_on_codeblocks: "Fügt eine Schaltfläche zu Codeblöcken hinzu, um den Inhalt des Blocks in die Zwischenablage des Nutzers zu kopieren."
     embed_truncate: "Kürzt die eingebetteten Beiträge."
     slug_generation_method: "Die Methode angeben, wie Kürzel in URLs generiert werden sollen. „encoded“ erzeugt einen Prozent-encodierten String, bei „none“ wird kein Kürzel verwendet."
     auto_close_topics_create_linked_topic: "Erstellt ein neues verknüpftes Thema, wenn ein Thema basierend auf der Einstellung „auto close topics post count“ automatisch geschlossen wird"
@@ -579,20 +523,15 @@ de_formal:
     allow_user_api_keys: "Erlaubt das Generieren von Benutzer-API-Schlüsseln"
     tags_sort_alphabetically: "Zeigt Schlagwörter in alphabetischer Reihenfolge. Standardmäßig werden sie nach Beliebtheit sortiert."
     tags_listed_by_group: "Zeigt Schlagwörter auf der <a href='%{base_path}/tags' target='_blank'>Schlagwort-Seite</a> geordnet nach Schlagwortgruppe an."
-    pm_tags_allowed_for_groups: "Erlaubt den Mitgliedern der einbezogenen Gruppe(n), jede persönliche Nachricht zu markieren"
     shared_drafts_category: "Aktiviert die Funktion „Gemeinsame Entwürfe“, indem Sie eine Kategorie für Themenentwürfe bestimmen. Themen in dieser Kategorie werden in den Themenlisten für Team-Mitglieder unterdrückt."
     shared_drafts_min_trust_level: "Erlaubt Benutzern, gemeinsame Entwürfe einzusehen und zu bearbeiten."
     push_notifications_prompt: "Zeigt eine Aufforderung zur Benutzerzustimmung an."
-    enable_sitemap: "Generiert eine Sitemap für Ihre Website und fügt sie in die robots.txt-Datei ein."
     dashboard_hidden_reports: "Erlaubt das Ausblenden der angegebenen Berichte im Dashboard."
     dashboard_visible_tabs: "Wählen Sie aus, welche Dashboard-Registerkarten sichtbar sind."
     dashboard_general_tab_activity_metrics: "Wählen Sie Berichte aus, die als Aktivitätsmetrik in der Registerkarte „Allgemein“ angezeigt werden."
     share_quote_buttons: "Legen Sie fest, welche Elemente im Widget zum Teilen von Zitaten erscheinen und in welcher Reihenfolge."
     share_quote_visibility: "Bestimmen Sie, wann die Schaltflächen zum Teilen von Zitaten angezeigt werden sollen: nie, nur für anonyme Benutzer oder für alle Benutzer. "
     create_revision_on_bulk_topic_moves: "Erstellt eine Überarbeitung für die ersten Beiträge, wenn Themen massenweise in eine neue Kategorie verschoben werden."
-    allow_changing_staged_user_tracking: "Erlaubt, dass die Kategorie- und Tag-Benachrichtigungseinstellungen eines bereitgestellten Benutzers von einem Administratorbenutzer geändert werden."
-    use_name_for_username_suggestions: "Verwendet den vollen Namen eines Benutzers, wenn Sie Benutzernamen vorschlagen."
-    suggest_weekends_in_date_pickers: "Bezieht die Wochenenden (Samstag und Sonntag) in die Datumsvorschläge mit ein (deaktivieren Sie dies, wenn Sie Discourse nur an Wochentagen von Montag bis Freitag benutzen)."
     errors:
       invalid_css_color: "Ungültige Farbe. Geben Sie einen Farbnamen oder einen Hexadezimalwert ein."
       pop3_polling_host_is_empty: "Sie müssen 'pop3 polling host' definieren, um POP3 Abfragen zu aktivieren."
@@ -670,13 +609,7 @@ de_formal:
       backup_code: "Benutzen Sie stattdessen einen Wiederherstellungscode"
   second_factor_auth:
     challenge_not_found: "Es konnte keine 2FA-Herausforderung in Ihrer aktuellen Sitzung gefunden werden."
-    challenge_expired: "Es ist zu viel Zeit vergangen, seit die 2FA-Herausforderung durchgeführt wurde, und sie ist nicht mehr gültig. Bitte versuchen Sie es erneut."
     challenge_not_completed: "Sie habendie 2FA-Herausforderung nicht abgeschlossen, um diese Aktion durchzuführen. Bitte schließen Sie die 2FA-Herausforderung ab und versuchen Sie es erneut."
-    actions:
-      grant_admin:
-        description: "Für zusätzliche Sicherheitsmaßnahmen müssen SIe Ihre 2FA bestätigen, bevor %{username} Administratorzugriff gewährt wird."
-      discourse_connect_provider:
-        description: "%{hostname} hat Sie aufgefordert, Ihre 2FA zu bestätigen. Sie werden zur Website zurückgeleitet, sobald Sie Ihre 2FA bestätigt haben."
   user:
     email:
       not_allowed: "ist für diesen E-Mail-Anbieter nicht erlaubt. Bitte verwenden Sie eine andere E-Mail-Adresse."
@@ -779,22 +712,6 @@ de_formal:
       Bitte bestätigen Sie, dass Sie **%{target_username} (%{target_email})** als Administrator für Ihr Forum hinzufügen möchten.
 
       [Administrator-Konto bestätigen](%{admin_confirm_url})
-  test_mailer:
-    text_body_template: |
-      Dies ist eine Test-E-Mail von
-
-      [**%{base_url}**][0]
-
-      Wir hoffen, Sie haben diesen E-Mail-Zustellbarkeitstest erhalten. OK!
-
-      Hier ist eine [praktische Checkliste zum Überprüfen der Konfiguration der E-Mail-Zustellung][1].
-
-      Viel Glück,
-
-      Ihre Freunde bei [Discourse](https://www.discourse.org)
-
-      [0]: %{base_url}
-      [1]: https://meta.discourse.org/t/email-delivery-configuration-checklist/209839
   new_version_mailer:
     text_body_template: |
       Hurra, eine neue Version von [Discourse](https://www.discourse.org) ist verfügbar!
@@ -825,11 +742,8 @@ de_formal:
       %{notes}
   flag_reasons:
     off_topic: "Ihr Beitrag wurde als **Thema verfehlt** gemeldet: Die Community glaubt, dass er nicht zum Thema passt, wie es durch den Titel und den ersten Beitrag definiert wurde."
-    inappropriate: "Ihr Beitrag wurde als **unangemessen** gemeldet: die Community glaubt, dass er anstößig oder beleidigend ist oder einen Verstoß gegen [die Community Richtlinien](%{base_path}/guidelines) darstellt."
     spam: "Ihr Beitrag wurde als **Spam** gemeldet: Die Community denkt, dass es sich um Werbung handelt, zu werblich in seiner Art und nicht nützlich oder für das Diskussionsthema relevant ist."
     notify_moderators: "Die Community denkt, dass etwas an Ihrem Beitrag das Eingreifen eines Moderator erfordert."
-    responder:
-      notify_moderators: "Der Beitrag wurde **den Moderatoren gemeldet**: Die Community denkt, dass etwas an Ihrem Beitrag das Eingreifen eines Team-Mitglieds erfordert."
   flags_dispositions:
     agreed: "Danke, dass Sie uns Bescheid gegeben haben. Wir sind auch der Meinung, dass es ein Problem gibt, und sehen uns das an."
     agreed_and_deleted: "Danke, dass Sie uns Bescheid gegeben hast. Wir sind auch der Meinung, dass es ein Problem gibt, und haben den Beitrag gelöscht."
@@ -911,27 +825,6 @@ de_formal:
         [/details]
 
         Bitte sehen Sie sich unsere [Verhaltensregeln](%{base_url}/guidelines) für weitere Informationen an.
-    flags_agreed_and_post_deleted_for_responders:
-      text_body_template: |
-        Hallo,
-
-        Dies ist eine automatische Nachricht von %{site_name} , um Sie zu informieren, dass ein [Beitrag](%{base_url}%{url}), auf den Sie geantwortet haben, entfernt wurde.
-
-        %{flag_reason}
-
-        Dieser Beitrag wurde von der Community markiert und ein Mitarbeiter hat sich entschieden, ihn zu entfernen.
-
-        ``` markdown
-        %{flagged_post_raw_content}
-        ```
-
-        Worauf Sie geantwortet haben
-
-        ``` markdown
-        %{flagged_post_response_raw_content}
-        ```
-
-        Für weitere Details zum Grund der Entfernung lesen Sie bitte unsere [Community-Richtlinien](%{base_url}/guidelines).
     usage_tips:
       text_body_template: |
         Für einige schnelle Tipps, um als neuer Benutzer loszulegen, [schauen Sie einmal diesen Blog-Beitrag an](https://blog.discourse.org/2016/12/discourse-new-user-tips-and-tricks/).
@@ -977,34 +870,6 @@ de_formal:
         [prefs]: %{user_preferences_url}
     tl2_promotion_message:
       subject_template: "Herzlichen Glückwunsch zur Beförderung Ihrer Vertrauensstufe!"
-      text_body_template: |
-        Wir haben Sie eine weitere [Vertrauensstufe](https://blog.discourse.org/2018/06/understanding-discourse-trust-levels/) aufsteigen lassen!
-
-        Das Erreichen der Vertrauensstufe 2 bedeutet, dass Sie genug gelesen und aktiv mitgemacht haben, um als Mitglied dieser Gemeinschaft angesehen zu werden.
-
-        Als erfahrener Nutzer werden Sie [diese Liste mit praktischen Tipps und Tricks](https://blog.discourse.org/2016/12/discourse-new-user-tips-and-tricks/) zu schätzen wissen.
-
-        Wir laden Sie ein, sich weiterhin einzubringen - wir freuen uns, Sie hier zu haben.
-    backup_succeeded:
-      text_body_template: |
-        Die Sicherung war erfolgreich.
-
-        Besuchen Sie den [admin > Backup-Bereich](%{base_url}/admin/backups), um Ihre neue Sicherung herunterzuladen.
-
-        Hier ist das Protokoll:
-
-        %{logs}
-    bulk_invite_succeeded:
-      text_body_template: "Ihre Masseneinladung von Benutzern wurde erfolgreich verarbeitet, insgesamt wurden %{sent} Einladungen per E-Mail verschickt."
-    bulk_invite_failed:
-      text_body_template: |
-        Ihre Datei zur Massenbenutzereinladung wurde verarbeitet, %{sent} Einladungen wurden verschickt mit %{failed} Fehler(n).
-
-        Hier ist das Protokoll:
-
-        ``` text
-        %{logs}
-        ```
     user_added_to_group_as_owner:
       subject_template: "Sie wurden als Eigentümer der Gruppe %{group_name} hinzugefügt"
       text_body_template: |
@@ -1169,13 +1034,6 @@ de_formal:
         Sie haben auf eine E-Mail-Zusammenfassung geantwortet, was nicht zulässig ist.
 
         Wenn Sie denken, dass dies ein Fehler ist, [kontaktieren Sie ein Team-Mitglied](%{base_url}/about).
-    email_reject_too_many_recipients:
-      text_body_template: |
-        Es tut uns leid, aber Ihre E-Mail-Nachricht an %{destination} (mit dem Titel %{former_title}) hat nicht funktioniert.
-
-        Sie haben versucht, an mehr als %{max_recipients_count} Personen zu schreiben und unser System hat Ihre E-Mail automatisch als Spam markiert.
-
-        Wenn Sie glauben, dass dies ein Fehler ist, [kontaktieren SIe einen Mitarbeiter](%{base_url}/about).
     email_error_notification:
       text_body_template: |
         Leider gab es einen Authentifizierungsfehler beim Abrufen von E-Mails vom POP-Server.
@@ -1305,8 +1163,6 @@ de_formal:
     visit_link_to_respond: "[Rufen Sie das Thema auf](%{base_url}%{url}), um zu antworten."
     visit_link_to_respond_pm: "[Rufen Sie die Nachricht auf](%{base_url}%{url}) um %{participants} zu antworten."
     reply_above_line: "## Bitte geben Sie Ihre Antwort oberhalb dieser Zeile ein. ##"
-    more_pm_participants:
-      one: "%{participants} und %{count} anderer"
     invited_group_to_private_message_body: |
       %{username} hat @%{group_name} zu einer Unterhaltung eingeladen
 
@@ -1366,10 +1222,6 @@ de_formal:
         Grund – %{reason}
     account_suspended_forever:
       subject_template: "[%{email_prefix}] Ihr Konto wurde gesperrt"
-      text_body_template: |
-        Sie wurden vom Forum gesperrt.
-
-        Grund - %{reason}
     account_silenced:
       subject_template: "[%{email_prefix}] Ihr Konto wurde stummgeschaltet"
       text_body_template: |
@@ -1378,10 +1230,6 @@ de_formal:
         Grund – %{reason}
     account_silenced_forever:
       subject_template: "[%{email_prefix}] Ihr Konto wurde stummgeschaltet"
-      text_body_template: |
-        Sie wurden im Forum stummgeschaltet.
-
-        Grund - %{reason}
     account_exists:
       text_body_template: |
         Sie haben gerade versuchst, ein Konto auf %{site_name} zu erstellen oder die E-Mail-Adresse eines Kontos zu %{email} zu ändern. Allerdings gibt es schon ein Konto für %{email}.
@@ -1567,9 +1415,7 @@ de_formal:
     unauthorized: "Es tut uns leid, die Datei, die Sie hochladen möchten ist nicht erlaubt (erlaubte Dateiendungen sind: %{authorized_extensions})."
     file_missing: "Bitte wählen Sie eine Datei zum Hochladen aus. "
     empty: "Entschuldigung, aber die angegebene Datei ist leer."
-    failed: "Sorry, aber Ihr Upload ist fehlgeschlagen. Bitte versuchen Sie es erneut."
     checksum_mismatch_failure: "Die Prüfsumme der hochgeladenen Datei stimmt nicht überein. Der Dateiinhalt könnte sich beim Hochladen geändert haben. Bitte versuchen Sie es erneut."
-    size_zero_failure: "Es tut uns leid, es sieht so aus, als ob etwas schief gelaufen ist. Die Datei, die Sie hochzuladen versuchen, hat 0 Bytes. Bitte versuchen Sie es erneut."
     attachments:
       too_large: "Entschuldigung, die Datei, die Sie hochladen möchten, ist zu groß (maximale Dateigröße ist %{max_size_kb}KB)."
       too_large_humanized: "Entschuldigung, die Datei, die Sie hochladen möchten, ist zu groß (maximale Dateigröße: %{max_size})."
@@ -1689,262 +1535,6 @@ de_formal:
       ## [Nutzungsbedingungen](#tos)
 
       Ja, die rechtliche Seite ist langweilig, aber wir müssen uns selbst schützen &ndash; und im erweiterten Sinne auch Sie und Ihre Daten &ndash; vor unfreundlichen Leuten. Wir haben [Nutzungsbedingungen](%{base_path}/tos), die Ihr (und unser) Verhalten und unsere Rechte bezüglich des Inhalts, der Privatsphäre und den Gesetzen beschreiben. Um diesen Dienst zu nutzen, müssen Sie sich mit unseren [Nutzungsbedingungen](%{base_path}/tos) einverstanden erklären.
-  tos_topic:
-    body: |
-      Diese Bedingungen regeln die Nutzung des Internetforums unter <%{base_url}>. Um das Forum zu nutzen, müssen Sie diesen Bedingungen von %{company_name} zustimmen, dem Betreiber des Forums.
-
-      Der Betreiber kann andere Produkte und Dienstleistungen zu unterschiedlichen Bedingungen anbieten. Diese Bedingungen gelten nur für die Nutzung des Forums.
-
-      Sprung zu:
-
-      - [Wichtige Bedingungen](#heading--important-terms)
-      - [Erlaubnis zur Nutzung des Forums](#heading--permission)
-      - [Bedingungen für die Nutzung des Forums](#heading--conditions)
-      - [Zulässige Nutzung](#heading--acceptable-use)
-      - [Zulässige Inhalte](#heading--content-standards)
-      - [Rechtsdurchsetzung](#heading--enforcement)
-      - [Ihr Konto](#heading--your-account)
-      - [Ihre Inhalte](#heading--your-content)
-      - [Ihre Pflichten](#heading--responsibility)
-      - [Haftungsausschlüsse](#heading--disclaimers)
-      - [Haftungsbeschränkungen](#heading--liability)
-      - [Feedback](#heading--feedback)
-      - [Kündigung](#heading--termination)
-      - [Streitigkeiten](#heading--disputes)
-      - [Allgemeine Bedingungen](#heading--general)
-      - [Kontakt](#heading--contact)
-      - [Änderungen](#heading--changes)
-
-      <h2 id="heading--important-terms"><a href="#heading--important-terms">Wichtige Bedingungen</a></h2>
-
-      ***Diese Bedingungen beinhalten eine Reihe wichtiger Bestimmungen, die Ihre Rechte und Pflichten betreffen, wie z.B. [Haftungsausschlüsse](#heading--disclaimers), [Haftungsbeschränkungen](#heading--liability), Ihr Einverständnis, durch Missbrauch des Forums verursachte Schäden gegenüber dem Betreiber zu decken unter [Ihre Pflichten](#heading--responsibility), und eine Vereinbarung zur Schlichtung von Streitfällen unter [Streitigkeiten](#heading--disputes).***
-
-      <h2 id="heading--permission"><a href="#heading--permission">Erlaubnis zur Nutzung des Forums</a></h2>
-
-      Vorbehaltlich der vollständigen Akzeptanz und Einhaltung dieser Bedingungen erteilt Ihnen der Betreiber die Erlaubnis, das Forum zu nutzen. Jeder muss diesen Bedingungen zustimmen, um das Forum nutzen zu können.
-
-      <h2 id="heading--conditions"><a href="#heading--conditions">Bedingungen für die Nutzung des Forums</a></h2>
-
-      Ihre Erlaubnis zur Nutzung des Forums unterliegt den folgenden Bedingungen:
-
-      1. Sie müssen mindestens dreizehn Jahre alt sein.
-
-      2. Sie dürfen das Forum nicht mehr nutzen, wenn sich der Betreiber direkt mit Ihnen in Verbindung setzt, um Ihnen mitzuteilen, dass Sie es nicht mehr nutzen dürfen.
-
-      3. Sie müssen das Forum in Übereinstimmung mit den Standards für [zulässige Nutzung](#heading--acceptable-use) und [zulässige Inhalte](#heading--content-standards) nutzen.
-
-      <h2 id="heading--acceptable-use"><a href="#heading--acceptable-use">Zulässige Nutzung</a></h2>
-
-      1. Sie dürfen nicht gegen das Gesetz verstoßen, wenn Sie das Forum benutzen.
-
-      2. Sie dürfen das Konto eines anderen im Forum ohne dessen ausdrückliche Erlaubnis nicht nutzen oder versuchen, es zu nutzen.
-
-      3. Sie dürfen keine Benutzernamen oder andere eindeutige Identifikatoren im Forum kaufen, verkaufen oder anderweitig handeln.
-
-      4. Sie dürfen keine Werbung, Kettenbriefe oder andere Aufforderungen über das Forum senden oder das Forum nutzen, um Adressen oder andere persönliche Daten für kommerzielle Mailinglisten oder Datenbanken zu sammeln.
-
-      5. Sie dürfen den Zugriff auf das Forum nicht automatisieren oder das Forum überwachen, z.B. mit einem Webcrawler, Browser-Plugin oder -Add-on oder einem anderen Computerprogramm, das kein Webbrowser ist. Sie können das Forum durchsuchen, um es für eine öffentlich zugängliche Suchmaschine zu indizieren, falls Sie eine solche betreiben.
-
-      6. Sie dürfen das Forum nicht nutzen, um E-Mails an Verteilerlisten, Newsgroups oder Gruppenmail-Aliase zu senden.
-
-      7. Sie dürfen nicht fälschlicherweise andeuten, dass Sie mit dem Betreiber verbunden sind oder von diesem unterstützt werden.
-
-      8. Sie dürfen keinen Hyperlink zu Bildern oder anderen nicht-hypertextuellen Inhalten im Forum auf anderen Webseiten setzen.
-
-      9. Sie dürfen keine Marken entfernen, die Eigentum an Materialien zeigen, die Sie vom Forum herunterladen.
-
-      10. Sie dürfen keinen Teil des Forums auf anderen Websites mit `<iframe>` zeigen.
-
-      11. Sie dürfen keine Sicherheits- oder Zugriffsbeschränkungen des Forums deaktivieren, vermeiden oder umgehen.
-
-      12. Sie dürfen die Infrastruktur des Forums nicht mit einer unangemessenen Anzahl von Anfragen oder Anfragen belasten, die darauf abzielen, die dem Forum zugrunde liegenden Informationssysteme unangemessen zu belasten.
-
-      13. Sie dürfen sich über das Forum nicht für andere ausgeben.
-
-      14. Sie dürfen niemanden ermutigen oder ihm helfen, der gegen diese Bedingungen verstößt.
-
-      <h2 id="heading--content-standards"><a href="#heading--content-standards">Zulässige Inhalte</a></h2>
-
-      1. Sie dürfen keine Inhalte in das Forum einstellen, die illegal, beleidigend oder anderweitig schädlich für andere sind. Dazu gehören auch Inhalte, die belästigend, unangemessen oder beleidigend sind.
-
-      2. Sie dürfen keine Inhalte an das Forum übermitteln, die gegen das Gesetz verstoßen, die Rechte an geistigem Eigentum Dritter verletzen, die Privatsphäre Dritter verletzen oder Vereinbarungen verletzen, die Sie mit anderen haben.
-
-      3. Sie dürfen keine Inhalte an das Forum übermitteln, die bösartigen Computercode wie Computerviren oder Spyware enthalten.
-
-      4. Sie dürfen keine Inhalte an das Forum als bloßen Platzhalter übermitteln, um eine bestimmte Adresse, einen bestimmten Benutzernamen oder eine andere eindeutige Kennung zu speichern.
-
-      5. Sie dürfen das Forum nicht nutzen, um Informationen offenzulegen, zu denen Sie nicht das Recht haben, sie offen zu legen, wie z.B. vertrauliche oder persönliche Informationen anderer.
-
-      <h2 id="heading--enforcement"><a href="#heading--enforcement">Rechtsdurchsetzung</a></h2>
-
-      Der Betreiber kann Verstöße gegen diese Bedingungen im vollen rechtlichen Umfang untersuchen und verfolgen. Der Betreiber kann die Strafverfolgungsbehörden bei der Verfolgung von Verstößen gegen das Gesetz und diese Bedingungen informieren und mit ihnen zusammenarbeiten.
-
-      Der Betreiber behält sich das Recht vor, Inhalte im Forum aus irgendeinem Grund zu ändern, zu bearbeiten und zu löschen. Wenn Sie glauben, dass jemand Inhalte in das Forum gestellt hat, die gegen diese Bedingungen verstoßen, [kontaktieren Sie uns sofort](#heading-contact).
-
-      <h2 id="heading--your-account"><a href="#heading--your-account">Ihr Konto</a></h2>
-
-      Sie müssen ein Konto erstellen und sich damit anmelden, um einige Funktionen des Forums nutzen zu können.
-
-      Um ein Konto zu erstellen, müssen Sie einige Informationen über sich selbst angeben. Wenn Sie ein Konto einrichten, stimmen Sie zu, mindestens eine gültige E-Mail Adresse anzugeben und diese Adresse auf dem neuesten Stand zu halten. Sie können Ihr Konto jederzeit per E-Mail an <%{contact_email}> schließen.
-
-      Sie stimmen zu, für alle Aktivitäten verantwortlich zu sein, die über Ihr Konto ergriffen werden, unabhängig davon, ob diese von Ihnen autorisiert sind oder nicht, bis Sie entweder Ihr Konto schließen oder den Betreiber darüber informieren, dass Ihr Konto gefährdet wurde. Sie stimmen zu, den Betreiber unverzüglich zu informieren, wenn Sie den Verdacht haben, dass Ihr Konto gefährdet ist. Sie stimmen zu, ein sicheres Passwort für Ihr Konto zu wählen und es geheim zu halten.
-
-      Der Betreiber kann Ihr Konto im Forum gemäß seiner Richtlinie für die Bearbeitung von urheberrechtlichen Abtretungsanträgen einschränken, aussetzen oder schließen, oder wenn der Betreiber der begründeten Annahme ist, dass Sie gegen eine Regel in diesen Bedingungen verstoßen haben.
-
-      <h2 id="heading--your-content"><a href="#heading--your-content">Ihre Inhalte</a></h2>
-
-      Nichts in diesen Bedingungen gibt dem Betreiber Eigentumsrechte an geistigem Eigentum, die Sie mit dem Forum teilen, wie z.B. Ihre Kontoinformationen, Beiträge oder andere Inhalte, die Sie im Forum einreichen. Nichts in diesen Bedingungen gibt Ihnen irgendwelche Eigentumsrechte an dem geistigen Eigentum des Betreibers.
-
-      Zwischen Ihnen und dem Betreiber bleiben Sie allein verantwortlich für die Inhalte, die Sie in das Forum einbringen. Sie stimmen zu, nicht fälschlicherweise anzudeuten, dass Inhalte, die Sie in das Forum einbringen, von dem Betreiber gesponsert oder genehmigt werden. Diese Bedingungen verpflichten den Betreiber nicht, die von Ihnen übermittelten Inhalte zu speichern, zu pflegen oder zu kopieren und gemäß diesen Bedingungen zu ändern.
-
-      Die Inhalte, die Sie im Forum einreichen, gehören Ihnen, und Sie entscheiden, welche Berechtigung Sie haben, anderen dafür zu geben. Aber zumindest lizenzieren Sie den Betreiber, Inhalte, die Sie im Forum einreichen, an andere Benutzer des Forums weiterzugeben. Diese spezielle Lizenz erlaubt es dem Betreiber, Inhalte, die Sie an das Forum übermitteln, zu kopieren, zu veröffentlichen und zu analysieren.
-
-      Wenn von Ihnen eingereichte Inhalte aus dem Forum entfernt werden, sei es von Ihnen oder von dem Betreiber, endet die spezielle Lizenz des Betreibers, wenn die letzte Kopie aus den Backups, Caches und anderen Systemen des Betreibers verschwindet. Andere Lizenzen, die Sie auf Inhalte anwenden, die Sie einreichen, wie z.B. Lizenzen von [Creative Commons](https://creativecommons.org), können fortgesetzt werden, nachdem Ihre Inhalte entfernt wurden. Diese Lizenzen können anderen oder dem Betreiber selbst das Recht geben, Ihre Inhalte über das Forum erneut zu teilen.
-
-      Andere, die Inhalte erhalten, die Sie in das Forum stellen, können gegen die Bedingungen verstoßen, unter denen Sie Ihre Inhalte lizenzieren. Sie stimmen zu, dass der Betreiber Ihnen gegenüber nicht für diese Verstöße oder deren Folgen haftet.
-
-      <h2 id="heading--responsibility"><a href="#heading--responsibility">Ihre Pflichten</a></h2>
-
-      Sie stimmen zu, den Betreiber von Rechtsansprüchen Dritter freizustellen, die mit Ihrem Verstoß gegen diese Bedingungen oder mit einem Verstoß gegen diese Bedingungen durch andere, die Ihr Konto im Forum nutzen, zusammenhängen. Sowohl Sie als auch der Betreiber verpflichten sich, die andere Seite über alle Rechtsansprüche zu informieren, für die Sie den Betreiber möglicherweise so schnell wie möglich entschädigen müssen. Wenn der Betreiber Sie nicht unverzüglich über einen Rechtsanspruch informiert, müssen Sie den Betreiber nicht für Schäden entschädigen, die Sie hätten verteidigen oder mildern können. Sie stimmen zu, dass der Betreiber die Untersuchung, Verteidigung und Beilegung von Rechtsansprüchen, für die Sie den Betreiber entschädigen müssten, kontrollieren und mit diesen Bemühungen zusammenarbeiten dürfen. Der Betreiber verpflichtet sich, ohne Ihre vorherige Zustimmung keinem Vergleich zuzustimmen, der ein Verschulden für Sie sich zulässt oder Ihnen Verpflichtungen auferlegt.
-
-      <h2 id="heading--disclaimers"><a href="#heading--disclaimers">Haftungsausschlüsse</a></h2>
-
-      ***Sie akzeptieren alle Risiken der Nutzung des Forums und der Inhalte im Forum. Soweit es das Gesetz zulässt, stellen der Betreiber und seine Lieferanten das Forum im vorliegenden Zustand ohne jegliche Gewährleistung zur Verfügung.***
-
-      Das Forum kann Hyperlinks zu Foren und Diensten anderer Anbieter enthalten. Der Betreiber übernimmt keine Garantie für Dienste, die von anderen betrieben werden, oder für Inhalte, die sie bereitstellen. Die Nutzung von Diensten, die von anderen betrieben werden, kann durch andere Bedingungen zwischen Ihnen und dem einen Betreiber geregelt sein.
-
-      <h2 id="heading--liability"><a href="#heading--liability">Haftungsbeschränkungen</a></h2>
-
-      ***Weder der Betreiber noch seine Lieferanten haften Ihnen gegenüber für Schäden aus Vertragsverletzungen, die ihr Personal nicht vorhersehen konnte, als Sie diesen Bedingungen zugestimmt haben.***
-
-      ***Soweit es das Gesetz erlaubt, ist die Gesamthaftung Ihnen gegenüber für Ansprüche jeglicher Art, die sich auf das Forum oder den Inhalt des Forums beziehen, auf $50 begrenzt.***
-
-      <h2 id="heading--feedback"><a href="#heading--feedback">Feedback</a></h2>
-
-      Der Betreiber freut sich über Ihr Feedback und Ihre Vorschläge für das Forum. Im Abschnitt [Kontakt](#heading--contact) unten finden Sie Möglichkeiten, mit uns in Kontakt zu treten.
-
-      Sie stimmen zu, dass es dem Betreiber freisteht, auf Feedback und Vorschläge, die Sie machen, zu reagieren, und dass der Betreiber Sie nicht darüber informieren muss, dass Ihr Feedback verwendet wurde, Ihre Erlaubnis einholen muss, es zu verwenden oder Sie zu bezahlen. Sie stimmen zu, kein Feedback oder Vorschläge, die Ihrer Meinung nach vertraulich oder urheberrechtlich geschützt sind, an sich oder andere zu senden.
-
-      <h2 id="heading--termination"><a href="#heading--termination">Kündigung</a></h2>
-
-      Sie oder der Betreiber können den in diesen Bedingungen ausgeführten Vertrag jederzeit kündigen. Wenn unsere Vereinbarung endet, endet auch Ihre Erlaubnis, das Forum zu nutzen.
-
-      Die folgenden Bestimmungen gelten auch über das Ende unserer Vereinbarung hinaus: [Ihre Inhalte](#heading--your-content), [Feedback](#heading--feedback), [Ihre Pflichten](#heading--responsibility), [Haftungsausschlüsse](#heading--disclaimers), [Haftungsbeschränkungen](#heading--liability), und [Allgemeine Bedingungen](#heading--general).
-
-      <h2 id="heading--disputes"><a href="#heading--disputes">Streitigkeiten</a></h2>
-
-      %{governing_law} wird alle Streitigkeiten im Zusammenhang mit diesen Bedingungen oder Ihrer Nutzung des Forums regeln.
-
-      Sie und der Betreiber stimmen zu, Unterlassungsklagen im Zusammenhang mit diesen Bedingungen nur vor einem staatlichen oder bundesstaatlichen Gericht in %{city_for_disputes} zu erheben. Weder Sie noch der Betreiber werden der Zuständigkeit, dem Gerichtsstand oder dem Gerichtsstand dieser Gerichte widersprechen.
-
-      ***Abgesehen davon, dass Sie und der Betreiber eine einstweilige Verfügung einholen oder Ansprüche nach dem Computer Fraud and Abuse Act geltend machen müssen, werden Sie und der Betreiber alle Streitigkeiten durch ein verbindliches Schiedsverfahren der American Arbitration Association lösen. Das Schiedsverfahren folgt den Commercial Arbitration Rules und Supplementary Procedures for Consumer Related Disputes der AAA. Das Schiedsverfahren findet in %{city_for_disputes}, statt. Sie werden alle Streitigkeiten als Einzelperson beilegen und nicht im Rahmen einer Sammelklage oder eines anderen repräsentativen Verfahrens, sei es als Kläger oder als Klassenmitglied. Kein Schiedsrichter wird Streitigkeiten mit anderen Schiedsgerichten ohne die Erlaubnis des Betreibers konsolidieren.***
-
-      Jeder Schiedsspruch beinhaltet die Kosten des Schiedsverfahrens, angemessene Anwaltskosten und angemessene Kosten für Zeugen. Sie und der Betreiber können Schiedssprüche vor jedem zuständigen Gericht einreichen.
-
-      <h2 id="heading--general"><a href="#heading--general">Allgemeine Bedingungen</a></h2>
-
-      Wenn eine Bestimmung dieser Bedingungen nicht wie geschrieben durchsetzbar ist, aber geändert werden könnte, um sie durchsetzbar zu machen, sollte diese Bestimmung so weit wie nötig geändert werden, um sie durchsetzbar zu machen. Andernfalls sollte diese Bestimmung aufgehoben werden.
-
-      Sie dürfen Ihre Vereinbarung mit dem Betreiber nicht abtreten. Der Betreiber kann Ihre Zustimmung zu diesen Bedingungen an jedes verbundene Unternehmen des Betreibers, jedes andere Unternehmen, das die Kontrolle über den Betreiber erlangt, oder jedes andere Unternehmen, das Vermögenswerte des Betreibers im Zusammenhang mit dem Forum kauft, übertragen. Jede versuchte Abtretung entgegen diesen Bedingungen hat keine Rechtswirkung.
-
-      Weder die Ausübung eines Rechts aus dieser Vereinbarung noch der Verzicht auf das Geltendmachen eine Verletzung aus dieser Vereinbarung, bedingen einen Verzicht auf eine andere Verletzung aus dieser Vereinbarung.
-
-      Diese Bedingungen verkörpern alle Bedingungen der Vereinbarung zwischen Ihnen und dem Betreiber über die Nutzung des Forums. Diese Bedingungen ersetzen vollständig alle anderen Vereinbarungen über Ihre Nutzung des Forums, ob schriftlich oder nicht.
-
-      <h2 id="heading--contact"><a href="#heading--contact">Kontakt</a></h2>
-
-      Sie können den Betreiber unter diesen Bedingungen informieren und Fragen an den Betreiber senden unter <%{contact_email}>.
-
-      Der Betreiber kann Sie unter diesen Bedingungen über die E-Mail-Adresse, die Sie für Ihr Konto im Forum angegeben haben, oder durch eine Nachricht auf der Homepage des Forums oder Ihrer Kontoseite informieren.
-
-      <h2 id="heading--changes"><a href="#heading--changes">Änderungen</a></h2>
-
-      Der Betreiber hat diese Bedingungen zuletzt am 12. Juli 2018 aktualisiert und kann diese Bedingungen erneut aktualisieren. Der Betreiber wird alle Updates im Forum veröffentlichen. Bei Updates, die wesentliche Änderungen enthalten, erklärt sich der Betreiber damit einverstanden, Ihnen eine E-Mail zu senden, wenn Sie ein Konto erstellt und eine gültige E-Mail-Adresse angegeben haben. Der Betreiber kann auch Updates mit speziellen Nachrichten oder Warnungen im Forum ankündigen.
-
-      Sobald Sie von einer Aktualisierung dieser Bedingungen Kenntnis erlangen, müssen Sie den neuen Bedingungen zustimmen, um das Forum weiterhin nutzen zu können.
-  privacy_topic:
-    body: |
-      <a name="collect"></a>
-
-      ## [Welche Informationen sammeln wir?](#collect)
-
-      Wir sammeln Informationen von Ihnen, wenn Sie sich auf unserer Seite registrieren, und erfassen Daten, wenn Sie sich hier am Forum durch Lesen, Schreiben und Bewertung der geteilten Inhalte beteiligen.
-
-      Wenn Sie sich auf unserer Seite registrieren, werden Sie möglicherweise gebeten, Ihren Namen und Ihre E-Mail-Adresse einzugeben. Sie können unsere Seite jedoch auch ohne Registrierung besuchen. Ihre E-Mail-Adresse wird durch eine E-Mail verifiziert, die einen eindeutigen Link enthält. Wenn der Link aufgerufen wird, wissen wir, dass Sie die Kontrolle über die E-Mail-Adresse haben.
-
-      Wenn Sie registriert sind und etwas schreiben, erfassen wir die IP-Adresse, von der der Beitrag stammt. Wir behalten möglicherweise Serverprotokolle, die die IP-Adresse jeder Anfrage an unseren Server enthält.
-
-      <a name="use"></a>
-
-      ## [Wofür nutzen wir Ihre Informationen?](#use)
-
-      Jede der Informationen, die wir von Ihnen sammeln, kann auf eine der folgenden Arten genutzt werden:
-
-      * Um Ihre Erfahrung zu personalisieren &mdash; Ihre Information hilft uns dabei, besser auf Ihre individuellen Bedürfnisse einzugehen.
-      * Um unsere Seite zu verbessern &mdash; wir streben kontinuierlich dazu, das Angebot unserer Seite auf Grundlage der Informationen und des Feedbacks zu verbessern, das wir von Ihnen erhalten.
-      * Um unseren Kundendienst zu verbessern &mdash; Ihre Information hilft uns, effizienter auf Ihre Anfragen an den Kundendienst und Ihre Hilfsbedürfnisse einzugehen.
-      * Um wiederkehrende E-Mails zu senden &mdash; Die E-Mail-Adresse, die Sie angeben, kann genutzt werden, um Ihnen Informationen und Benachrichtigungen zu senden, die Sie zu Änderungen an Themen oder in Bezug auf Ihren Benutzernamen angefordert haben, um Ihnen auf Nachfragen, Anfragen oder Fragen zu antworten.
-
-      <a name="protect"></a>
-
-      ## [Wie schützen wir Ihre Informationen?](#protect)
-
-      Wir setzen eine Vielzahl von Sicherheitsmechanismen ein, um die Sicherheit Ihrer persönlichen Daten sicherzustellen, wenn Sie persönliche Daten eingeben, übermitteln oder darauf zugreifen.
-
-      <a name="data-retention"></a>
-
-      ## [Wie sehen unsere Bestimmungen zur Datenaufbewahrung aus?](#data-retention)
-
-      Wir bemühen uns nach bestem Wissen und Gewissen:
-
-      * Serverprotokolle, die IP-Adressen aller Anfragen an unseren Server enthalten, nicht länger als 90 Tage zu speichern.
-      * IP-Adressen, die mit registrierten Benutzern und ihren Beiträgen verknüpft sind, nicht länger als 5 Jahre zu speichern.
-
-      <a name="cookies"></a>
-
-      ## [Verwenden wir Cookies?](#cookies)
-
-      Ja. Cookies sind kleine Dateien, die eine Seite bzw. ihr Dienstleister über einen Browser auf die Festplatte Ihres Computers überträgt (sofern Sie zustimmen). Diese Cookies erlauben es der Seite, Ihren Browser wiederzuerkennen und, sofern Sie ein registriertes Konto haben, diesen Ihrem registrierten Konto zuzuordnen.
-
-      Wir verwenden Cookies, um Ihre Einstellungen für Ihre nächsten Besuche zu verstehen und zu speichern und um aggregierte Daten über unseren Internetverkehr und Interaktionen auf der Seite zu berechnen, damit wir in der Zukunft eine bessere Seitenerfahrung und bessere Werkzeuge anbieten können. Wir beauftragen möglicherweise Drittanbieter, die uns dabei unterstützen, unsere Seitenbesucher besser zu verstehen. Diese Dienstleister sind nicht befugt, unsere gesammelten Informationen anders zu verwenden als zur Unterstützung und Verbesserung unseres Geschäfts.
-
-      <a name="disclose"></a>
-
-      ## [Geben wir irgendwelche Informationen an Dritte weiter?](#disclose)
-
-      Weder verkaufen oder handeln wir Ihre personenbezogenen Daten noch übermitteln wir diese an Dritte. Dies schließt nicht Drittanbieter ein, die uns beim Betrieb unserer Seite, bei der Durchführung unseres Geschäfts oder Ihnen helfen, solange diese Parteien einwilligen, diese Informationen vertraulich zu behandeln. Wir geben Ihre Informationen möglicherweise frei, wenn wir glauben, dass die Freigabe zweckmäßig ist, um das Gesetz einzuhalten, unsere Nutzungsbedingungen durchzusetzen oder unsere oder fremde Rechte, Werte oder Sicherheit zu schützen. Nicht-personenbezogene Daten werden möglicherweise anderen Parteien für Marketing, Werbung und andere Zwecke zugänglich gemacht.
-
-      <a name="third-party"></a>
-
-      ## [Links auf fremde Webseiten](#third-party)
-
-      Gelegentlich können wir Produkte oder Dienste von Dritten nach unserer Wahl auf unserer Seite einbinden oder darauf bewerben. Diese Drittanbieter haben eigene und unabhängige Datenschutzrichtlinien. Wir übernehmen daher keine Verantwortung oder Haftung für den Inhalt und die Aktivitäten dieser verknüpften Seite. Dennoch sind wir bemüht, die Integrität unserer Seite zu schützen und freuen uns über jedes Feedback zu diesen Seiten.
-
-      <a name="coppa"></a>
-
-      ## [Gesetz zum Schutz der Privatsphäre von Kindern im Internet](#coppa)
-
-      Unsere Seite, Produkte und Dienstleistungen richten sich alle an Menschen, die mindestens 13 Jahre oder älter sind. Wenn sich dieser Server in der USA befindet und Sie unter 13 Jahre alt sind, so benutzen SIe diese Seite gemäß der Anforderungen des COPPA-Gesetzes ([Children's Online Privacy Protection Act](https://de.wikipedia.org/wiki/Children%27ss_Online_Privacy_Protection_Act)) nicht.
-
-      <a name="online"></a>
-
-      ## [Online-Datenschutzrichtlinie](#online)
-
-      Diese Online-Datenschutzrichtlinie gilt nur für Informationen, die durch unsere Seite gesammelt werden, und nicht für offline erfasste Informationen.
-
-      <a name="consent"></a>
-
-      ## [Ihre Zustimmung](#consent)
-
-      Indem Sie unsere Seite benutzen, stimmen Sie der Datenschutzrichtlinie unserer Webseite zu.
-
-      <a name="changes"></a>
-
-      ## [Änderungen unserer Datenschutzrichtlinie](#changes)
-
-      Wenn wir uns dazu entscheiden, unsere Datenschutzrichtlinie zu ändern, werden wir diese Änderungen auf dieser Seite veröffentlichen.
-
-      Dieses Dokument ist als CC-BY-SA lizenziert. Es wurde zuletzt aktualisiert am 31. Mai 2013.
   badges:
     mass_award:
       errors:
@@ -2111,19 +1701,13 @@ de_formal:
       other: "Sie müssen mindestens %{count} Schlagwörter auswählen. "
     forbidden:
       synonym: 'Synonyme sind nicht erlaubt. Verwenden Sie stattdessen „%{tag_name}“.'
-      restricted_tags_cannot_be_used_in_category:
-        one: 'Das Schlagwort "%{tags}" kann nicht in der Kategorie "%{category}" verwendet werden. Bitte entfernen SIe es.'
-        other: 'Die folgenden Schlagwörter können nicht in der Kategorie "%{category}" verwendet werden: %{tags}. Bitte entfernen Sie diese.'
-      category_does_not_allow_tags:
-        one: 'In der Kategorie "%{category}" ist das Schlagwort "%{tags}" nicht zulässig. Bitte entfernen Sie es.'
-        other: 'In der Kategorie "%{category}" sind die folgenden Schlagwörter nicht zulässig: "%{tags}“. Bitte entfernen Sie diese.'
     required_tags_from_group:
       one: "Sie müssen mindestens %{count} „%{tag_group_name}“-Schlagwort hinzufügen. Die Schlagwörter in dieser Gruppe sind: %{tags}."
       other: "Sie müssen mindestens %{count} „%{tag_group_name}“-Schlagwörter hinzufügen. Die Schlagwörter in dieser Gruppe sind: %{tags}."
   finish_installation:
     congratulations: "Glückwunsch, Sie haben Discourse installiert!"
     register:
-      help: "registrieren Sie ein neues Konto, um loszulegen"
+      help: "Registrieren Sie ein neues Konto, um loszulegen."
       no_emails: "Leider wurde bei der Einrichtung keine Administrator-E-Mail-Adresse festgelegt, sodass es schwer sein könnte, die Konfiguration abzuschließen. Bitte fügen Sie eine Entwickler-E-Mail-Adresse in der Konfigurationsdatei hinzu oder <a href='https://meta.discourse.org/t/create-admin-account-from-console/17274'>erstellen Sie ein Administrator-Konto über die Konsole</a>."
     confirm_email:
       title: "Bestätigen Sie Ihre E-Mail-Adresse"
@@ -2131,38 +1715,17 @@ de_formal:
     resend_email:
       title: "Aktivierungsmail erneut senden"
   safe_mode:
-    description: "Der abgesicherte Modus ermöglicht es Ihnen, Ihre Website zu testen, ohne Plugins oder Themes zu laden."
     must_select: "Sie müssen mindestens eine Option auswählen, um den abgesicherten Modus zu betreten."
   wizard:
     step:
       introduction:
-        title: "Erzählen SIe uns von Ihrer Community"
         fields:
           site_description:
             label: "Beschreiben Sie Ihre Community in einem Satz"
       ready:
-        title: "Ihr Discourse ist bereit!"
         description: "Das war's! Sie habendie Grundlagen für die Einrichtung Ihrer Community geschaffen. Jetzt können Sie sich umsehen, ein Willkommensthema schreiben und Einladungen verschicken!<br><br>Viel Spaß!"
-      branding:
-        fields:
-          logo:
-            description: "Das Logo oben links auf Ihrer Seite. Verwenden Sie ein breites rechteckiges Bild mit einer Höhe von 120 Pixeln und einem Seitenverhältnis von mindestens 3:1."
-          logo_small:
-            description: "Eine quadratische Version Ihres Logos. Es wird beim Scrollen in der oben links angezeigt und beim Teilen auf sozialen Netzwerken. Idealerweise größer als 512 x 512."
-          favicon:
-            description: "Ein Icon, das Ihre Website in Webbrowsern darstellt und auch bei kleinen Größen gut aussieht. PNG oder JPG wird empfohlen. Standardmäßig wird ein quadratisches Logo verwendet."
-          large_icon:
-            description: "Ein Icon, das Ihre Website auf mobilen Geräten darstellt und auch bei größeren Größen gut aussieht. Idealerweise größer als 512x512. Standardmäßig wird ein quadratisches Logo verwendet."
       corporate:
         fields:
-          company_name:
-            description: "Eingetragen auf Ihrer Seite mit den Nutzungsbedingungen. Wenn es kein Unternehmen gibt, können Sie es überspringen."
-          governing_law:
-            description: "Eingetragen auf Ihrer Seite mit den Nutzungsbedingungen. Wenn es kein Unternehmen gibt, können Sie es überspringen."
-          contact_url:
-            description: "Allgemeines Kontaktformular für Sie oder Ihre Organisation. Wird angezeigt auf <a href='%{base_path}/about' target='_blank'>der „Über uns“-Seite</a>."
-          city_for_disputes:
-            description: "Eingetragen auf Ihrer Seite mit den Nutzungsbedingungen. Wenn es kein Unternehmen gibt, können Sie es überspringen."
           site_contact:
             description: "Alle automatischen Discourse-Nachrichten werden von diesem Benutzer geschickt, wie zum Beispiel Warnungen zu Meldungen und Benachrichtigungen über den Abschluss von Sicherungen."
       invites:
@@ -2191,7 +1754,6 @@ de_formal:
     missing_version: "Sie müssen eine Version angeben."
     conflict: "Es gab ein Bearbeitungskonflikt, der Sie daran gehindert hat."
     reasons:
-      watched_word: "Dieser Beitrag enthielt ein beobachtetes Wort. Siehe  %{link}."
       email_auth_res_enqueue: "Diese E-Mail hat eine DMARC-Prüfung nicht bestanden. Sie stammt höchstwahrscheinlich nicht von der Person, von der sie zu stammen scheint. Überprüfen Sie den E-Mail-Header auf weitere Informationen."
     actions:
       agree_and_hide:
@@ -2208,7 +1770,6 @@ de_formal:
   notification_level:
     ignore_error: "Es tut uns leid, Sie können diesen Benutzer nicht ignorieren."
     mute_error: "Es tut uns leid, Sie können diesen Benutzer nicht stummschalten."
-    error: "Leider können SIe die Benachrichtigungsebene für diesen Benutzer nicht ändern."
   discord:
     not_in_allowed_guild: "Authentifizierung fehlgeschlagen. Sie sind kein Mitglied einer erlaubten Discord-Gilde."
   old_keys_reminder:
